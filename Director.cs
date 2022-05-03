@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using THETHREEPENDANTS.Casting;
-using THETHREEPENDANTS.Services;
-using THETHREEPENDANTS.Scripting;
+using HolesAreBad.Casting;
+using HolesAreBad.Services;
+using HolesAreBad.Scripting;
 
-namespace THETHREEPENDANTS
+namespace HolesAreBad
 {
     /// <summary>
     /// The director is responsible to direct the game, including to keep track of all

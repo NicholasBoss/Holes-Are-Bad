@@ -2,7 +2,7 @@ using System;
 using Raylib_cs;
 using System.Collections.Generic;
 
-namespace THETHREEPENDANTS.Services
+namespace HolesAreBad.Services
 {
     /// <summary>
     /// Handles all the audio elements the game.

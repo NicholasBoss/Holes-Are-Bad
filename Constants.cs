@@ -1,6 +1,6 @@
 using System;
 
-namespace THETHREEPENDANTS
+namespace HolesAreBad
 {
     /// <summary>
     /// This is a set of program wide constants to be used in other classes.
@@ -16,7 +16,7 @@ namespace THETHREEPENDANTS
         public const int DEFAULT_TEXT_OFFSET = 4;
 
         public const int NUM_BUSHES = 20;
-        public const string DEFAULT_BILLBOARD_MESSAGE = "Find the three pendants. Use WASD to move around.";
+        public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message At top of screen.";
 
         // Images for the game will be initialized here
         // Primative Graphics
@@ -29,19 +29,19 @@ namespace THETHREEPENDANTS
 
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/player.png";
-        public const string IMAGE_BUSH = "./Assets/bush.png";
-        public const string IMAGE_PENDANT = "./Assets/pendant.png";
-        public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
-        public const string IMAGE_PENDANT2 = "./Assets/pendant2.png";
-        public const string IMAGE_CHEST = "./Assets/chest.png";
+        // public const string IMAGE_BUSH = "./Assets/bush.png";
+        // public const string IMAGE_PENDANT = "./Assets/pendant.png";
+        // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
+        // public const string IMAGE_PENDANT2 = "./Assets/pendant2.png";
+        // public const string IMAGE_CHEST = "./Assets/chest.png";
 
 
         // Sounds for the game will be initialized here
-        public const string SOUND_LEAF = "./Assets/leaf.mp3";
-        public const string SOUND_PENDANTFOUND = "./Assets/PendantFound.wav";
-        public const string SOUND_WIN = "./Assets/Win.wav";
-        public const string SOUND_START = "./Assets/Start.wav";
-        public const string SOUND_LOSE = "./Assets/Lose.wav";
+        // public const string SOUND_LEAF = "./Assets/leaf.mp3";
+        // public const string SOUND_PENDANTFOUND = "./Assets/PendantFound.wav";
+        // public const string SOUND_WIN = "./Assets/Win.wav";
+        // public const string SOUND_START = "./Assets/Start.wav";
+        // public const string SOUND_LOSE = "./Assets/Lose.wav";
 
         
         //Speed and position of the actors will be initialized here

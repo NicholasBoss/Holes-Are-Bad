@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using THETHREEPENDANTS.Casting;
+using HolesAreBad.Casting;
 
-namespace THETHREEPENDANTS
+namespace HolesAreBad
 {
     /// <summary>
     /// The base class of all other actions.

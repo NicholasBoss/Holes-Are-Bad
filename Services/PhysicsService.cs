@@ -1,8 +1,8 @@
 using System;
 using Raylib_cs;
-using THETHREEPENDANTS.Casting;
+using HolesAreBad.Casting;
 
-namespace THETHREEPENDANTS.Services
+namespace HolesAreBad.Services
 {
     /// <summary>
     /// Handles all the physics related parts of the game such as

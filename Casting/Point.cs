@@ -1,6 +1,6 @@
 using System;
 
-namespace THETHREEPENDANTS.Casting
+namespace HolesAreBad.Casting
 {
     /// <summary>
     /// Represents an X, Y pair.

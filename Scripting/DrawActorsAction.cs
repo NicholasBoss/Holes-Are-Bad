@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using THETHREEPENDANTS.Casting;
-using THETHREEPENDANTS.Services;
+using HolesAreBad.Casting;
+using HolesAreBad.Services;
 
 
-namespace THETHREEPENDANTS.Scripting
+namespace HolesAreBad.Scripting
 {
     /// <summary>
     /// An action to draw all of the actors in the game.

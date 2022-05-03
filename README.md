@@ -4,9 +4,9 @@ Mike Heston, Olivia Richards, Jake Zakensy, Ben Heydorn, Nicholas Boss, and Mark
 
 # Development Environment
 
-Python
+C#
 
 
-GODOT
+Visual Studio Code
 
 # You can do this!!! :)

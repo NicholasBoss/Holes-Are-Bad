@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using THETHREEPENDANTS.Casting;
-using THETHREEPENDANTS.Services;
+using HolesAreBad.Casting;
+using HolesAreBad.Services;
 
-namespace THETHREEPENDANTS
+namespace HolesAreBad
 {
     ///<summary>
     /// This class will control how each actor will recieve input from the user

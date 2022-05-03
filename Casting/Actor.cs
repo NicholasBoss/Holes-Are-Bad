@@ -1,6 +1,6 @@
 using System;
-using THETHREEPENDANTS.Services;
-namespace THETHREEPENDANTS.Casting
+using HolesAreBad.Services;
+namespace HolesAreBad.Casting
 {
     /// <summary>
     /// Base class for all actors in the game.
@@ -49,10 +49,10 @@ namespace THETHREEPENDANTS.Casting
             SetVelocity(new Point(speed,-y));
         }
 
-        public bool IsFound()
-        {
-            return (GetImage() == Constants.IMAGE_PENDANT);
-        }
+        // public bool IsFound()
+        // {
+        //     return (GetImage() == Constants.IMAGE_PENDANT);
+        // }
 
         public void SetImage(string image)
         {

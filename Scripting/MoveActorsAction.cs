@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using THETHREEPENDANTS.Casting;
-using THETHREEPENDANTS.Services;
-namespace THETHREEPENDANTS.Scripting
+using HolesAreBad.Casting;
+using HolesAreBad.Services;
+namespace HolesAreBad.Scripting
 {
     ///<summary>
     /// This class will control how each actor will move on the screen

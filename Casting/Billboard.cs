@@ -1,6 +1,6 @@
 using System;
 
-namespace THETHREEPENDANTS.Casting
+namespace HolesAreBad.Casting
 {
     /// <summary>
     /// Defines the Billboard that displays the description of the artifacts.

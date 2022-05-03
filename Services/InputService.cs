@@ -1,9 +1,9 @@
 using System;
 using Raylib_cs;
 
-using THETHREEPENDANTS.Casting;
+using HolesAreBad.Casting;
 
-namespace THETHREEPENDANTS.Services
+namespace HolesAreBad.Services
 {
     /// <summary>
     /// Handles all the interaction with the user input library.
