@@ -16,7 +16,7 @@ namespace HolesAreBad
         public const int DEFAULT_TEXT_OFFSET = 4;
 
         public const int NUM_BUSHES = 20;
-        public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message At top of screen.";
+        public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message at top of screen.";
 
         // Images for the game will be initialized here
         // Primative Graphics

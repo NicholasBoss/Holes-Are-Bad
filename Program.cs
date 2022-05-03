@@ -49,10 +49,10 @@ namespace HolesAreBad
             // cast["chest"].Add(chest);
 
             // The player
-            // cast["character"] = new List<Actor>();
+            cast["character"] = new List<Actor>();
 
-            // Character character = new Character();
-            // cast["character"].Add(character);
+            Character character = new Character();
+            cast["character"].Add(character);
 
             // Create the script
             Dictionary<string, List<Action>> script = new Dictionary<string, List<Action>>();

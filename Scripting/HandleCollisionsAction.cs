@@ -11,8 +11,8 @@ namespace HolesAreBad.Scripting
     {
         PhysicsService _physicsService;
         AudioService _audioService;
-        private int delay = 0;
-        private bool _lose = false;
+        // private int delay = 0;
+        // private bool _lose = false;
 
         public HandleCollisionsAction(PhysicsService physicsService, AudioService audioService)
         {
@@ -24,7 +24,7 @@ namespace HolesAreBad.Scripting
         {
             Actor billboard = cast["environment"][0];
             // Actor tries = cast["environment"][1];
-            // Actor character = cast["character"][0];
+            Actor character = cast["character"][0];
             // Actor chest = cast["chest"][0];
             
             // List<Actor> bushes = cast["bushes"];
