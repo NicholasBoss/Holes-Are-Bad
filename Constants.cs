@@ -9,13 +9,13 @@ namespace HolesAreBad
     {
         public const int MAX_X = 1600;
         public const int MAX_Y = 900;
-        public const int FRAME_RATE = 50;
+        public const int FRAME_RATE = 60;
 
         public const int DEFAULT_SQUARE_SIZE = 20;
         public const int DEFAULT_FONT_SIZE = 20;
         public const int DEFAULT_TEXT_OFFSET = 4;
 
-        public const int NUM_BUSHES = 20;
+        // public const int NUM_BUSHES = 20;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message at top of screen.";
 
         // Images for the game will be initialized here
@@ -48,8 +48,8 @@ namespace HolesAreBad
         public const int CHARACTER_X = MAX_X / 2;
         public const int CHARACTER_Y = MAX_Y - 125;
 
-        public const int CHARACTER_WIDTH = 1;
-        public const int CHARACTER_HEIGHT = 1;
+        public const int CHARACTER_WIDTH = 5;
+        public const int CHARACTER_HEIGHT = 5;
 
         public const int BUSH_WIDTH = 20;
         public const int BUSH_HEIGHT = 20;
