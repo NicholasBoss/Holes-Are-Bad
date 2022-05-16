@@ -32,6 +32,10 @@ namespace HolesAreBad.Services
         {
             return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_S);
         }
+        public bool IsSpacePressed()
+        {
+            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_SPACE);
+        }
 
         /// <summary>
         /// Gets the direction asked for by the current key presses
@@ -60,6 +64,11 @@ namespace HolesAreBad.Services
             if (IsDownPressed())
             {
                 y = 1;
+            }
+
+            if(IsSpacePressed())
+            {
+                y = -1; 
             }
             
             return new Point(x, y);
