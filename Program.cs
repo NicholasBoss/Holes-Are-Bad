@@ -14,10 +14,13 @@ namespace HolesAreBad
 
             //Environment Objects
             cast["environment"] = new List<Actor>();
+            Background background = new Background();
+            cast["environment"].Add(background);
 
             Billboard billboard = new Billboard();
+            
             cast["environment"].Add(billboard);
-
+            
             // Tries tries = new Tries();
             // cast["environment"].Add(tries);
 
