@@ -33,7 +33,7 @@ namespace HolesAreBad
         public const string IMAGE_ENEMY = "./Assets/Bad_Dude_1.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Spike.png";
-
+        public const string IMAGE_BACKGROUND = "./Assets/Vaporwave Background_Sample_Real.gif";
         // public const string IMAGE_BUSH = "./Assets/bush.png";
         // public const string IMAGE_PENDANT = "./Assets/pendant.png";
         // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
