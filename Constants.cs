@@ -20,7 +20,7 @@ namespace HolesAreBad
         public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message at top of screen.";
 
         // Images for the game will be initialized here
-        // Primative Graphics
+        // Primitive Graphics
         // public const string IMAGE_CHARACTER = "./Assets/bluebox.png";
         // public const string IMAGE_BUSH = "./Assets/graybox.png";
         // public const string IMAGE_PENDANT = "./Assets/yellowbox.png";
