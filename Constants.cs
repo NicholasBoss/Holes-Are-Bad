@@ -29,6 +29,8 @@ namespace HolesAreBad
 
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/player.png";
+        public const string IMAGE_SPIKE_ROW = "./Assets/Spike_Row.png";
+        public const string IMAGE_SPIKE = "./Assets/Spike.png";
         // public const string IMAGE_BUSH = "./Assets/bush.png";
         // public const string IMAGE_PENDANT = "./Assets/pendant.png";
         // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
