@@ -23,11 +23,19 @@ namespace HolesAreBad
 
             // Stationary Objects
             // cast["bushes"] = new List<Actor>();
+            cast["enemies"] = new List<Actor>();
 
             // cast["pendants"] = new List<Actor>();
             // cast["chest"] = new List<Actor>();
 
             // BushesGenerator generator = new BushesGenerator();
+            EnemyGenerator generator = new EnemyGenerator();
+
+            for (int i = 0; i < Constants.NUM_ENEMIES; i++)
+            {
+                Enemy enemy = generator.Generate();
+                cast["enemies"].Add(enemy);
+            }
 
             // Bush pendant1 = generator.Generate();
             // pendant1.SetDescription("You have found the first pendant");
