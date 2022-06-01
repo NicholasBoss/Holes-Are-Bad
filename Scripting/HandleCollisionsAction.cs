@@ -11,8 +11,8 @@ namespace HolesAreBad.Scripting
     {
         PhysicsService _physicsService;
         AudioService _audioService;
-        // private int delay = 0;
-        // private bool _lose = false;
+        private int delay = 0;
+        private bool _lose = false;
 
         public HandleCollisionsAction(PhysicsService physicsService, AudioService audioService)
         {
@@ -22,59 +22,59 @@ namespace HolesAreBad.Scripting
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-            Actor billboard = cast["environment"][0];
-            // Actor tries = cast["environment"][1];
+            Actor billboard = cast["environment"][1];
+            Actor lives = cast["environment"][2];
             Actor character = cast["character"][0];
             // Actor chest = cast["chest"][0];
             
-            // List<Actor> bushes = cast["bushes"];
+            List<Actor> bushes = cast["bushes"];
             // List<Actor> pendants = cast["pendants"];
-            // List<Actor> bushesToRemove = new List<Actor>();
+            List<Actor> holesToRemove = new List<Actor>();
             
             
 
             billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
 
-            // // This checks to see if the player collides with a bush
-            // foreach(Actor actor in bushes)
-            // {
-            //     Bush bush = (Bush)actor;
-            //     if(_physicsService.IsCollision(character, bush))
-            //     {
-            //         _audioService.PlaySound(Constants.SOUND_LEAF);
-            //         string bushText = bush.GetDescription();
-            //         billboard.SetText(bushText);
-            //         bushesToRemove.Add(bush);
-            //     }
-            // }
+            // This checks to see if the player collides with a bush
+            foreach(Actor actor in bushes)
+            {
+                Hole hole = (Hole)actor;
+                if(_physicsService.IsCollision(character, hole))
+                {
+                    // _audioService.PlaySound(Constants.SOUND_LEAF);
+                    // string bushText = bush.GetDescription();
+                    // billboard.SetText(bushText);
+                    holesToRemove.Add(hole);
+                }
+            }
 
-            // while(delay > 5)
-            // {
-            //     delay -= 1;
-            // }
+            while(delay > 5)
+            {
+                delay -= 1;
+            }
 
-            // if (delay == 5)
-            // {
-            //     _audioService.PlaySound(Constants.SOUND_LOSE);
-            //     System.Threading.Thread.Sleep(2000);
-            //     Director._keepPlaying = false;
-            // }
+            if (delay == 5)
+            {
+                // _audioService.PlaySound(Constants.SOUND_LOSE);
+                System.Threading.Thread.Sleep(2000);
+                Director._keepPlaying = false;
+            }
 
             // This will be a lose condition
-            // if(bushes.Count == Constants.NUM_BUSHES-15)
-            // {
-            //     billboard.SetText("Sorry, you lose. Better luck next time");
-            //     System.Threading.Thread.Sleep(2000);
-            //     delay = 7;
-            // }
+            if(bushes.Count == Constants.NUM_HOLES-15)
+            {
+                billboard.SetText("Sorry, you lose. Better luck next time");
+                System.Threading.Thread.Sleep(200);
+                delay = 5;
+            }
 
 
             // This removes the bushes from the game once they've been searched.
-            // foreach(Actor bush in bushesToRemove)
-            // {
-            //     cast["bushes"].Remove(bush);
-            //     tries.SetText($"Tries left: {Tries.tries -= 1}");
-            // }
+            foreach(Actor hole in holesToRemove)
+            {
+                cast["bushes"].Remove(hole);
+                lives.SetText($"Lives left: {Lives.lives -= 1}");
+            }
 
             // This checks to see if the player collides with a pendant hiding spot
             // foreach (Actor actor in pendants)

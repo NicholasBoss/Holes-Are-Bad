@@ -15,14 +15,14 @@ namespace HolesAreBad
         public const int DEFAULT_FONT_SIZE = 20;
         public const int DEFAULT_TEXT_OFFSET = 4;
 
-        // public const int NUM_BUSHES = 20;
+        public const int NUM_HOLES = 20;
         public const int NUM_ENEMIES = 5;
-        public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message at top of screen.";
+        public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
 
         // Images for the game will be initialized here
         // Primitive Graphics
         // public const string IMAGE_CHARACTER = "./Assets/bluebox.png";
-        // public const string IMAGE_BUSH = "./Assets/graybox.png";
+        public const string IMAGE_HOLE = "./Assets/graybox.png";
         // public const string IMAGE_PENDANT = "./Assets/yellowbox.png";
         // public const string IMAGE_PENDANT1 = "./Assets/yellowbox.png";
         // public const string IMAGE_PENDANT2 = "./Assets/yellowbox.png";
@@ -61,8 +61,8 @@ namespace HolesAreBad
         public const int ENEMY_WIDTH = 5;
         public const int ENEMY_HEIGHT = 5;
 
-        public const int BUSH_WIDTH = 20;
-        public const int BUSH_HEIGHT = 20;
+        public const int HOLE_WIDTH = 20;
+        public const int HOLE_HEIGHT = 20;
 
         public const int CHARACTER_SPEED = 5;
 

@@ -21,23 +21,28 @@ namespace HolesAreBad
             
             cast["environment"].Add(billboard);
             
-            // Tries tries = new Tries();
-            // cast["environment"].Add(tries);
+            Lives lives = new Lives();
+            cast["environment"].Add(lives);
 
             // Stationary Objects
-            // cast["bushes"] = new List<Actor>();
+            cast["bushes"] = new List<Actor>();
             cast["enemies"] = new List<Actor>();
 
             // cast["pendants"] = new List<Actor>();
             // cast["chest"] = new List<Actor>();
 
-            // BushesGenerator generator = new BushesGenerator();
+            HolesGenerator hgenerator = new HolesGenerator();
             EnemyGenerator generator = new EnemyGenerator();
 
             for (int i = 0; i < Constants.NUM_ENEMIES; i++)
             {
                 Enemy enemy = generator.Generate();
                 cast["enemies"].Add(enemy);
+            }
+            for (int i = 0; i < Constants.NUM_HOLES; i++)
+            {
+                Hole hole = hgenerator.hGenerate();
+                cast["bushes"].Add(hole);
             }
 
             // Bush pendant1 = generator.Generate();
@@ -50,11 +55,7 @@ namespace HolesAreBad
             // pendant3.SetDescription("You have found the third pendant");
             // cast["pendants"].Add(pendant3);
 
-            // for (int i = 0; i < Constants.NUM_BUSHES; i++)
-            // {
-            //     Bush bush = generator.Generate();
-            //     cast["bushes"].Add(bush);
-            // }
+            
             
             // Chest chest = new Chest();
             // cast["chest"].Add(chest);
