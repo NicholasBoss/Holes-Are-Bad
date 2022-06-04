@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
+using System.Linq;
 
 namespace HolesAreBad.Scripting
 {
@@ -141,6 +142,41 @@ namespace HolesAreBad.Scripting
             //     Director._keepPlaying = false;
             // }
 
+            foreach (Actor actor1 in cast["movable_objects"])
+            {
+                foreach (Actor actor2 in cast["physical_objects"])
+                {
+                    if (actor1 != actor2) {
+                        if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox())
+                        {
+                            int leftShift = actor1.GetRightEdge() - actor2.GetLeftEdge();
+                            int rightShift = actor2.GetRightEdge() - actor1.GetLeftEdge();
+                            int upShift = actor1.GetBottomEdge() - actor2.GetTopEdge();
+                            int downShift = actor2.GetBottomEdge() - actor1.GetTopEdge();
+
+                            int shift = new int[] {leftShift, rightShift, upShift, downShift}.Min();
+                            if (shift == int.MaxValue) shift = 0;
+                            if (shift == upShift) // This will be by far the most common case so it goes first
+                            {
+                                actor1.SetVelocity(new Point(actor1.GetVelocity().GetX(), 0));
+                                actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
+                                actor1.SetJumpReady(true);
+                            }
+                            else if (shift == leftShift)
+                            {
+                                actor1.SetPosition(new Point(actor1.GetPosition().GetX() - leftShift, actor1.GetPosition().GetY()));
+                            }
+                            else if (shift == rightShift){
+                                actor1.SetPosition(new Point(actor1.GetPosition().GetX() + rightShift, actor1.GetPosition().GetY()));
+                            }
+                            else if (shift == downShift) {
+                                actor1.SetVelocity(new Point(actor1.GetVelocity().GetX(), 0));
+                                actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() + downShift));
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

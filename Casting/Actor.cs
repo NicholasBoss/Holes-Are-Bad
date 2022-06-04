@@ -16,12 +16,28 @@ namespace HolesAreBad.Casting
         protected string _text = "";
         private string _image = "";
 
+        private bool _using_gravity;
+
+        private bool _jump_ready;
+
 
         public Actor()
         {
             // Start these at 0, 0 by default
             _position = new Point(0, 0);
             _velocity = new Point(0, 0);
+            _using_gravity = false;
+            _jump_ready = true;
+        }
+
+        public void SetUseGravity(bool using_gravity)
+        {
+            _using_gravity = using_gravity;
+        }
+
+        public void SetJumpReady(bool jump_ready)
+        {
+            _jump_ready = jump_ready;
         }
 
         public void ChangeVelocityX()
@@ -156,7 +172,17 @@ namespace HolesAreBad.Casting
 
         public void SetVelocity(Point newVelocity)
         {
+            newVelocity = HandleGravity(newVelocity);
             _velocity = newVelocity;
+        }
+
+        private Point HandleGravity(Point v)
+        {
+            if (_using_gravity)
+            {
+                return v;//.Add(new Point(0, _velocity.GetY() + Constants.GRAVITY));
+            }
+            return v;
         }
 
         public void MoveNext()
