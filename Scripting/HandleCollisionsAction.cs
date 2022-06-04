@@ -142,6 +142,10 @@ namespace HolesAreBad.Scripting
             //     Director._keepPlaying = false;
             // }
 
+            foreach (Actor c in cast["character"])
+            {
+                c.SetJumpReady(false);
+            }
             foreach (Actor actor1 in cast["movable_objects"])
             {
                 foreach (Actor actor2 in cast["physical_objects"])
@@ -158,7 +162,7 @@ namespace HolesAreBad.Scripting
                             if (shift == int.MaxValue) shift = 0;
                             if (shift == upShift) // This will be by far the most common case so it goes first
                             {
-                                actor1.SetVelocity(new Point(actor1.GetVelocity().GetX(), 0));
+                                actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
                                 actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
                                 actor1.SetJumpReady(true);
                             }
@@ -170,7 +174,7 @@ namespace HolesAreBad.Scripting
                                 actor1.SetPosition(new Point(actor1.GetPosition().GetX() + rightShift, actor1.GetPosition().GetY()));
                             }
                             else if (shift == downShift) {
-                                actor1.SetVelocity(new Point(actor1.GetVelocity().GetX(), 0));
+                                actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
                                 actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() + downShift));
                             }
                         }

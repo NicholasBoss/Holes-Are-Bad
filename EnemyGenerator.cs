@@ -44,8 +44,8 @@ namespace HolesAreBad
         {
             Enemy enemy = new Enemy();
             int diff = 20;
-            int x = _randomGenerator.Next(20, Constants.MAX_X-diff);
-            int y = _randomGenerator.Next(20, Constants.MAX_Y-diff);
+            int x = _randomGenerator.Next(diff, Constants.MAX_X-diff);
+            int y = _randomGenerator.Next(diff, Constants.MAX_Y-diff);
             enemy.SetPosition(new Point(x, y));
 
             enemy.SetImage(Constants.IMAGE_ENEMY);

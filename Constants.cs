@@ -16,7 +16,7 @@ namespace HolesAreBad
         public const int DEFAULT_TEXT_OFFSET = 4;
 
         // public const int NUM_BUSHES = 20;
-        public const int NUM_ENEMIES = 5;
+        public const int NUM_ENEMIES = 25;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Default Message at top of screen.";
 
         // Images for the game will be initialized here
@@ -29,7 +29,7 @@ namespace HolesAreBad
         // public const string IMAGE_CHEST = "./Assets/brownbox.png";
 
         // Fancy Graphics
-        public const string IMAGE_CHARACTER = "./Assets/player.png";
+        public const string IMAGE_CHARACTER = "./Assets/player_big.png";
         public const string IMAGE_ENEMY = "./Assets/Blue Studded Block.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Spike.png";
@@ -53,8 +53,8 @@ namespace HolesAreBad
         public const int CHARACTER_X = MAX_X / 2;
         public const int CHARACTER_Y = MAX_Y - 125;
 
-        public const int CHARACTER_WIDTH = 16;
-        public const int CHARACTER_HEIGHT = 29;
+        public const int CHARACTER_WIDTH = 80;
+        public const int CHARACTER_HEIGHT = 145;
 
         public const int ENEMY_WIDTH = 36;
         public const int ENEMY_HEIGHT = 21;
@@ -62,9 +62,9 @@ namespace HolesAreBad
         public const int BUSH_WIDTH = 20;
         public const int BUSH_HEIGHT = 20;
 
-        public const int CHARACTER_SPEED = 3;
-
-        public const float GRAVITY = .01F;
+        public const int CHARACTER_SPEED = 2;
+        public const int JUMP_POWER = 8;
+        public const double GRAVITY = .11;
 
         public const string MESSAGE_FILE = "messages.txt";
     }
