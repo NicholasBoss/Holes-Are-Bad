@@ -20,10 +20,12 @@ namespace HolesAreBad
         {
             Point direction = _inputService.GetDirection();
             
-            Actor paddle = cast["character"][0];
+            Actor player = cast["character"][0];
 
-            Point velocity = direction.Scale(Constants.CHARACTER_SPEED);
-            paddle.SetVelocity(velocity);
+            player.SetJump(direction.GetY() != 0);
+
+            Pointf velocity = new Pointf(direction.GetX() * Constants.CHARACTER_SPEED, player.GetVelocity().GetY());
+            player.SetVelocity(velocity);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace HolesAreBad.Casting
     public class Actor
     {
         protected Point _position;
-        protected Point _velocity;
+        protected Pointf _velocity;
 
         protected int _width = 0;
         protected int _height = 0;
@@ -16,37 +16,76 @@ namespace HolesAreBad.Casting
         protected string _text = "";
         private string _image = "";
 
+        private bool _using_gravity;
+
+        private bool _jump_ready;
+
+        private bool _jump;
+
 
         public Actor()
         {
             // Start these at 0, 0 by default
             _position = new Point(0, 0);
-            _velocity = new Point(0, 0);
+            _velocity = new Pointf(0f, 0f);
+            _using_gravity = false;
+            _jump_ready = false;
+            _jump = false;
+        }
+
+        public void SetUseGravity(bool using_gravity)
+        {
+            _using_gravity = using_gravity;
+        }
+
+        public bool GetUseGravity()
+        {
+            return _using_gravity;
+        }
+
+        public void SetJumpReady(bool jump_ready)
+        {
+            _jump_ready = jump_ready;
+        }
+
+        public bool GetJumpReady()
+        {
+            return _jump_ready;
+        }
+
+        public void SetJump(bool jump)
+        {
+            _jump = jump;
+        }
+
+        public bool GetJump()
+        {
+            return _jump;
         }
 
         public void ChangeVelocityX()
         {
-            Point velocity = GetVelocity();
-            int x = velocity.GetX();
-            int y = velocity.GetY();
-            SetVelocity(new Point(-x,y));
+            Pointf velocity = GetVelocity();
+            double x = velocity.GetX();
+            double y = velocity.GetY();
+            SetVelocity(new Pointf(-x,y));
         
         }
         public void ChangeVelocityY()
         {
-            Point velocity = GetVelocity();
-            int x = velocity.GetX();
-            int y = velocity.GetY();
-            SetVelocity(new Point(x,-y));
+            Pointf velocity = GetVelocity();
+            double x = velocity.GetX();
+            double y = velocity.GetY();
+            SetVelocity(new Pointf(x,-y));
         }
         public void ChangeSpeed()
         {
-            Point velocity = GetVelocity();
+            Pointf velocity = GetVelocity();
             double x = velocity.GetX();
             double newspeed = x + 0.5;
             int speed = Convert.ToInt32(newspeed);
-            int y = velocity.GetY();
-            SetVelocity(new Point(speed,-y));
+            double y = velocity.GetY();
+            SetVelocity(new Pointf(speed,-y));
         }
 
         // public bool IsFound()
@@ -149,12 +188,12 @@ namespace HolesAreBad.Casting
             _position = position;
         }
 
-        public Point GetVelocity()
+        public Pointf GetVelocity()
         {
             return _velocity;
         }
 
-        public void SetVelocity(Point newVelocity)
+        public void SetVelocity(Pointf newVelocity)
         {
             _velocity = newVelocity;
         }
@@ -164,8 +203,8 @@ namespace HolesAreBad.Casting
             int x = _position.GetX();
             int y = _position.GetY();
 
-            int dx = _velocity.GetX();
-            int dy = _velocity.GetY();
+            int dx = (int)_velocity.GetX();
+            int dy = (int)_velocity.GetY();
 
             int newX = (x + dx) % Constants.MAX_X;
             int newY = (y + dy) % Constants.MAX_Y;

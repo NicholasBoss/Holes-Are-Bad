@@ -27,6 +27,8 @@ namespace HolesAreBad
             // Stationary Objects
             cast["bushes"] = new List<Actor>();
             cast["enemies"] = new List<Actor>();
+            cast["physical_objects"] = new List<Actor>();
+            cast["movable_objects"] = new List<Actor>();
 
             // cast["pendants"] = new List<Actor>();
             // cast["chest"] = new List<Actor>();
@@ -38,6 +40,9 @@ namespace HolesAreBad
             {
                 Enemy enemy = generator.Generate();
                 cast["enemies"].Add(enemy);
+                cast["physical_objects"].Add(enemy);
+                // leaving this line commented out until we have non-moveable objects (platforms) to interact with the moveable objects.
+                //cast["movable_objects"].Add(enemy);
             }
             for (int i = 0; i < Constants.NUM_HOLES; i++)
             {
@@ -64,7 +69,10 @@ namespace HolesAreBad
             cast["character"] = new List<Actor>();
 
             Character character = new Character();
+            character.SetUseGravity(true);
             cast["character"].Add(character);
+            cast["physical_objects"].Add(character);
+            cast["movable_objects"].Add(character);
 
             // Create the script
             Dictionary<string, List<Action>> script = new Dictionary<string, List<Action>>();
