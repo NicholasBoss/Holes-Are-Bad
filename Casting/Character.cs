@@ -19,7 +19,7 @@ namespace HolesAreBad.Casting
             Point position = new Point(x, y);
             SetPosition(position);
 
-            SetVelocity(new Point(1, 0));
+            SetVelocity(new Pointf(0, 0));
         }
     }
 }
