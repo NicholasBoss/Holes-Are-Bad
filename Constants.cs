@@ -24,7 +24,7 @@ namespace HolesAreBad
         // Images for the game will be initialized here
         // Primitive Graphics
         // public const string IMAGE_CHARACTER = "./Assets/bluebox.png";
-        public const string IMAGE_HOLE = "./Assets/graybox.png";
+        public const string IMAGE_HOLE = "./Assets/Hole_lvl_1.png";
         // public const string IMAGE_PENDANT = "./Assets/yellowbox.png";
         // public const string IMAGE_PENDANT1 = "./Assets/yellowbox.png";
         // public const string IMAGE_PENDANT2 = "./Assets/yellowbox.png";
