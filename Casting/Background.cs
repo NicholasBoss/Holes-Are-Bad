@@ -10,9 +10,8 @@ namespace HolesAreBad.Casting
     {
         public Background()
         {
-            string IMAGE_BACKGROUND = "./Assets/Vaporwave Background_Sample_Real.gif";
             //ImageCrop(IMAGE_BACKGROUND, 1600, 900);
-            SetImage(IMAGE_BACKGROUND);
+            SetImage(Constants.IMAGE_BACKGROUND);
 
             Point position = new Point(1, 1);
             SetPosition(position);

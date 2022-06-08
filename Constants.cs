@@ -17,7 +17,7 @@ namespace HolesAreBad
 
 
         public const int NUM_HOLES = 20;
-        public const int NUM_ENEMIES = 5;
+        public const int NUM_ENEMIES = 50;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
 
 
@@ -31,11 +31,11 @@ namespace HolesAreBad
         // public const string IMAGE_CHEST = "./Assets/brownbox.png";
 
         // Fancy Graphics
-        public const string IMAGE_CHARACTER = "./Assets/player_big.png";
+        public const string IMAGE_CHARACTER = "./Assets/player.png";
         public const string IMAGE_ENEMY = "./Assets/Blue Studded Block.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Spike.png";
-        public const string IMAGE_BACKGROUND = "./Assets/Vaporwave Background_Sample_Real.gif";
+        public const string IMAGE_BACKGROUND = "./Assets/Vaporwave Background_Sample_Real_big.gif";
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Blue Studded Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Pink Studded Block.png";
         // public const string IMAGE_BUSH = "./Assets/bush.png";
@@ -57,8 +57,8 @@ namespace HolesAreBad
         public const int CHARACTER_X = MAX_X / 2;
         public const int CHARACTER_Y = MAX_Y - 125;
 
-        public const int CHARACTER_WIDTH = 80;
-        public const int CHARACTER_HEIGHT = 145;
+        public const int CHARACTER_WIDTH = 16;
+        public const int CHARACTER_HEIGHT = 29;
 
         public const int ENEMY_WIDTH = 36;
         public const int ENEMY_HEIGHT = 21;
