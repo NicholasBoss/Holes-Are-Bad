@@ -26,9 +26,11 @@ namespace HolesAreBad.Scripting
             Actor billboard = cast["environment"][1];
             Actor lives = cast["environment"][2];
             Actor character = cast["character"][0];
+            Actor enemy = cast["enemies"][0];
+            List<Actor> holes = cast["holes"];
             // Actor chest = cast["chest"][0];
             
-            List<Actor> bushes = cast["bushes"];
+            // List<Actor> bushes = cast["bushes"];
             // List<Actor> pendants = cast["pendants"];
             List<Actor> holesToRemove = new List<Actor>();
             
@@ -37,7 +39,7 @@ namespace HolesAreBad.Scripting
             billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
 
             // This checks to see if the player collides with a bush
-            foreach(Actor actor in bushes)
+            foreach(Actor actor in holes)
             {
                 Hole hole = (Hole)actor;
                 if(_physicsService.IsCollision(character, hole))
@@ -62,7 +64,7 @@ namespace HolesAreBad.Scripting
             }
 
             // This will be a lose condition
-            if(bushes.Count == Constants.NUM_HOLES-15)
+            if(holes.Count == Constants.NUM_HOLES-15)
             {
                 billboard.SetText("Sorry, you lose. Better luck next time");
                 System.Threading.Thread.Sleep(200);
@@ -73,7 +75,7 @@ namespace HolesAreBad.Scripting
             // This removes the bushes from the game once they've been searched.
             foreach(Actor hole in holesToRemove)
             {
-                cast["bushes"].Remove(hole);
+                cast["holes"].Remove(hole);
                 lives.SetText($"Lives left: {Lives.lives -= 1}");
             }
 
@@ -151,15 +153,15 @@ namespace HolesAreBad.Scripting
                 foreach (Actor actor2 in cast["physical_objects"])
                 {
                     if (actor1 != actor2) {
-                        if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox())
+                        if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox()) 
                         {
-                            int leftShift = actor1.GetRightEdge() - actor2.GetLeftEdge();
-                            int rightShift = actor2.GetRightEdge() - actor1.GetLeftEdge();
-                            int upShift = actor1.GetBottomEdge() - actor2.GetTopEdge();
-                            int downShift = actor2.GetBottomEdge() - actor1.GetTopEdge();
+                            int leftShift = actor1.GetRightEdge() - actor2.GetLeftEdge(); // how much actor1 needs to shift to the left to avoid collision
+                            int rightShift = actor2.GetRightEdge() - actor1.GetLeftEdge();// how much actor2 needs to shift to the right to avoid collision
+                            int upShift = actor1.GetBottomEdge() - actor2.GetTopEdge();// how much actor1 needs to shift up to avoid collision
+                            int downShift = actor2.GetBottomEdge() - actor1.GetTopEdge();// how much actor2 needs to shift down to avoid collision
 
-                            int shift = new int[] {leftShift, rightShift, upShift, downShift}.Min();
-                            if (shift == int.MaxValue) shift = 0;
+                            int shift = new int[] {leftShift, rightShift, upShift, downShift}.Min();// which shift is the smallest?
+                            if (shift == int.MaxValue) shift = 0;// if all shifts are infinite, don't shift anything
                             if (shift == upShift) // This will be by far the most common case so it goes first
                             {
                                 actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));

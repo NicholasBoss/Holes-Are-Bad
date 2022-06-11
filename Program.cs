@@ -24,11 +24,11 @@ namespace HolesAreBad
             Lives lives = new Lives();
             cast["environment"].Add(lives);
 
-            // Stationary Objects
-            cast["bushes"] = new List<Actor>();
+            // Physics Objects
             cast["enemies"] = new List<Actor>();
             cast["physical_objects"] = new List<Actor>();
             cast["movable_objects"] = new List<Actor>();
+            cast["holes"] = new List<Actor>();
 
             // cast["pendants"] = new List<Actor>();
             // cast["chest"] = new List<Actor>();
@@ -47,7 +47,7 @@ namespace HolesAreBad
             for (int i = 0; i < Constants.NUM_HOLES; i++)
             {
                 Hole hole = hgenerator.hGenerate();
-                cast["bushes"].Add(hole);
+                cast["holes"].Add(hole);
             }
 
             // Bush pendant1 = generator.Generate();
@@ -102,7 +102,7 @@ namespace HolesAreBad
             // Start up the game
             outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Holes Are Bad", Constants.FRAME_RATE);
             audioService.StartAudio();
-            // audioService.PlaySound(Constants.SOUND_START);
+            audioService.PlaySound(Constants.SOUND_START);
 
             Director theDirector = new Director(cast, script);
             theDirector.Direct();
