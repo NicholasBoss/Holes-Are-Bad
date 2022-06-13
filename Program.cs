@@ -52,6 +52,10 @@ namespace HolesAreBad
             }
 
             // List<Platform> platforms = fgenerator.Generate();
+            // foreach (int item in platforms)
+            // {
+            //     cast["platforms"].Add(platforms);
+            // }
 
 
 

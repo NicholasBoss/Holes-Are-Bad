@@ -10,9 +10,11 @@ namespace HolesAreBad
     /// </summary>
     public class FileGenerator
     {
-        
-
         public FileGenerator()
+        {
+            //loadMessages();
+        }
+        private void FileGen()
         {
             // LoadMessages();
         }
