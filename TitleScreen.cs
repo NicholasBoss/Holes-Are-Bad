@@ -20,5 +20,9 @@ namespace HolesAreBad
         _cast["buttons"] = new List<Actor>();
         private Button _startButton = new Button();
         _cast["buttons"].Add(_startButton);
+        private Button _creditButton = new Button();
+        _cast["buttons"].Add(_creditButton);
+        private Button _icon = new Button();
+        _cast["buttons"].Add(_icon);
         
     }}

@@ -8,6 +8,6 @@ namespace HolesAreBad
     /// </summary>
     public class TitleImage
     {
-
+        private string 
     }
     }
