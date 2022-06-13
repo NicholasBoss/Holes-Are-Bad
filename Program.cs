@@ -35,6 +35,7 @@ namespace HolesAreBad
 
             HolesGenerator hgenerator = new HolesGenerator();
             EnemyGenerator generator = new EnemyGenerator();
+            // FileGenerator fgenerator = new FileGenerator();
 
             for (int i = 0; i < Constants.NUM_ENEMIES; i++)
             {
@@ -49,6 +50,10 @@ namespace HolesAreBad
                 Hole hole = hgenerator.hGenerate();
                 cast["holes"].Add(hole);
             }
+
+            // List<Platform> platforms = fgenerator.Generate();
+
+
 
             // Bush pendant1 = generator.Generate();
             // pendant1.SetDescription("You have found the first pendant");

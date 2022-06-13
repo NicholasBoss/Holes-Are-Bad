@@ -19,6 +19,10 @@ namespace HolesAreBad
         public const int NUM_ENEMIES = 50;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
 
+        public const int GRID_X = 10;
+        public const int GRID_Y = 10;
+        public const string FILE = "";
+
 
         // Images for the game will be initialized here
         // Primitive Graphics
@@ -37,6 +41,7 @@ namespace HolesAreBad
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
+        public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block.png";
         // public const string IMAGE_BUSH = "./Assets/bush.png";
         // public const string IMAGE_PENDANT = "./Assets/pendant.png";
         // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
