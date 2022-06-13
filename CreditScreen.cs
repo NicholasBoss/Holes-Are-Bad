@@ -12,8 +12,8 @@ namespace HolesAreBad
         private Dictionary<string, List<Actor>> _cast = new Dictionary<string, List<Actor>>();
 
         //environment objects
-        _cast["Cenvironment"] = new List<Actor>();
-        private CreditImage _background = new CreditImage();
-        _cast["Cenvironment"].Add(_background);
+        // _cast["Cenvironment"] = new List<Actor>();
+        // private CreditImage _background = new CreditImage();
+        // _cast["Cenvironment"].Add(_background);
 
     }}
