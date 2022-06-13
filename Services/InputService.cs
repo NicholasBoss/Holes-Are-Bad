@@ -56,7 +56,7 @@ namespace HolesAreBad.Services
                 x += 1;
             }
             
-            if (IsSpacePressed())
+            if (IsUpPressed() || IsSpacePressed())
             {
                 y += -1;
             }

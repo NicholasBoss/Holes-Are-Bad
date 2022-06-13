@@ -15,7 +15,6 @@ namespace HolesAreBad
         public const int DEFAULT_FONT_SIZE = 20;
         public const int DEFAULT_TEXT_OFFSET = 4;
 
-
         public const int NUM_HOLES = 20;
         public const int NUM_ENEMIES = 50;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
@@ -24,20 +23,20 @@ namespace HolesAreBad
         // Images for the game will be initialized here
         // Primitive Graphics
         // public const string IMAGE_CHARACTER = "./Assets/bluebox.png";
-        public const string IMAGE_HOLE = "./Assets/Hole_lvl_1.png";
+        public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
         // public const string IMAGE_PENDANT = "./Assets/yellowbox.png";
         // public const string IMAGE_PENDANT1 = "./Assets/yellowbox.png";
         // public const string IMAGE_PENDANT2 = "./Assets/yellowbox.png";
         // public const string IMAGE_CHEST = "./Assets/brownbox.png";
 
         // Fancy Graphics
-        public const string IMAGE_CHARACTER = "./Assets/player.png";
-        public const string IMAGE_ENEMY = "./Assets/Blue Studded Block.png";
-        public const string IMAGE_SPIKE_ROW = "./Assets/Spike_Row.png";
-        public const string IMAGE_SPIKE = "./Assets/Spike.png";
-        public const string IMAGE_BACKGROUND = "./Assets/Vaporwave Background_Sample_Real_big.gif";
-        public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Blue Studded Block.png";
-        public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Pink Studded Block.png";
+        public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
+        public const string IMAGE_ENEMY = "./Assets/Platforms/Blue_Studded_Block.png";
+        public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
+        public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
+        public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
+        public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
+        public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
         // public const string IMAGE_BUSH = "./Assets/bush.png";
         // public const string IMAGE_PENDANT = "./Assets/pendant.png";
         // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
@@ -49,7 +48,7 @@ namespace HolesAreBad
         // public const string SOUND_LEAF = "./Assets/leaf.mp3";
         // public const string SOUND_PENDANTFOUND = "./Assets/PendantFound.wav";
         // public const string SOUND_WIN = "./Assets/Win.wav";
-        // public const string SOUND_START = "./Assets/Start.wav";
+        public const string SOUND_START = "./Assets/Music/i_think_i_like_you.mp3";
         // public const string SOUND_LOSE = "./Assets/Lose.wav";
 
         
