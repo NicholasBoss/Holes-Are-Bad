@@ -19,8 +19,8 @@ namespace HolesAreBad
         public const int NUM_ENEMIES = 1;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
 
-        public const int GRID_X = 10;
-        public const int GRID_Y = 10;
+        public const int GRID_X = 25;
+        public const int GRID_Y = 25;
         public const string FILE = "./Assets/Test.txt";
 
 
@@ -41,7 +41,7 @@ namespace HolesAreBad
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
-        public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block.png";
+        public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
         // public const string IMAGE_BUSH = "./Assets/bush.png";
         // public const string IMAGE_PENDANT = "./Assets/pendant.png";
         // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
@@ -70,11 +70,11 @@ namespace HolesAreBad
         public const int HOLE_WIDTH = 20;
         public const int HOLE_HEIGHT = 20;
 
-        public const int PLATFORM_WIDTH = 36;
-        public const int PLATFORM_HEIGHT = 21;
+        public const int PLATFORM_WIDTH = 64;
+        public const int PLATFORM_HEIGHT = 36;
 
         public const int CHARACTER_SPEED = 2;
-        public const int JUMP_POWER = 8;
+        public const int JUMP_POWER = 6;
         public const double GRAVITY = .11;
 
         public const string MESSAGE_FILE = "messages.txt";
