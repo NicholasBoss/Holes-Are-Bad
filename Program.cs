@@ -56,6 +56,7 @@ namespace HolesAreBad
             foreach (Platform item in platforms)
             {
                 cast["platforms"].Add(item);
+                cast["physical_objects"].Add(item);
             }
 
 

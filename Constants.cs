@@ -16,7 +16,7 @@ namespace HolesAreBad
         public const int DEFAULT_TEXT_OFFSET = 4;
 
         public const int NUM_HOLES = 20;
-        public const int NUM_ENEMIES = 50;
+        public const int NUM_ENEMIES = 1;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
 
         public const int GRID_X = 10;
