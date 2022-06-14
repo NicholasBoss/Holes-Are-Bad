@@ -29,13 +29,14 @@ namespace HolesAreBad
             cast["physical_objects"] = new List<Actor>();
             cast["movable_objects"] = new List<Actor>();
             cast["holes"] = new List<Actor>();
+            cast["platforms"] = new List<Actor>();
 
             // cast["pendants"] = new List<Actor>();
             // cast["chest"] = new List<Actor>();
 
             HolesGenerator hgenerator = new HolesGenerator();
             EnemyGenerator generator = new EnemyGenerator();
-            // FileGenerator fgenerator = new FileGenerator();
+            FileGenerator fgenerator = new FileGenerator();
 
             for (int i = 0; i < Constants.NUM_ENEMIES; i++)
             {
@@ -51,11 +52,11 @@ namespace HolesAreBad
                 cast["holes"].Add(hole);
             }
 
-            // List<Platform> platforms = fgenerator.Generate();
-            // foreach (int item in platforms)
-            // {
-            //     cast["platforms"].Add(platforms);
-            // }
+            List<Platform> platforms = fgenerator.Generate();
+            foreach (int item in platforms)
+            {
+                cast["platforms"].Add(platforms);
+            }
 
 
 
