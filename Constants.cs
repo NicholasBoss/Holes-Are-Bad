@@ -21,7 +21,7 @@ namespace HolesAreBad
 
         public const int GRID_X = 10;
         public const int GRID_Y = 10;
-        public const string FILE = "";
+        public const string FILE = "./Assets/Test.txt";
 
 
         // Images for the game will be initialized here

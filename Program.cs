@@ -53,9 +53,9 @@ namespace HolesAreBad
             }
 
             List<Platform> platforms = fgenerator.Generate();
-            foreach (int item in platforms)
+            foreach (Platform item in platforms)
             {
-                cast["platforms"].Add(platforms);
+                cast["platforms"].Add(item);
             }
 
 
