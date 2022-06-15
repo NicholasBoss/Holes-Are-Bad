@@ -67,8 +67,8 @@ namespace HolesAreBad
         public const int ENEMY_WIDTH = 36;
         public const int ENEMY_HEIGHT = 21;
 
-        public const int HOLE_WIDTH = 20;
-        public const int HOLE_HEIGHT = 20;
+        public const int HOLE_WIDTH = 35;
+        public const int HOLE_HEIGHT = 25;
 
         public const int PLATFORM_WIDTH = 64;
         public const int PLATFORM_HEIGHT = 36;
