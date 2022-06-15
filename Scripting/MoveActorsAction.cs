@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
+using System;
 namespace HolesAreBad.Scripting
 {
     ///<summary>
@@ -27,7 +28,7 @@ namespace HolesAreBad.Scripting
         {
             if (actor.GetUseGravity())
             {   
-                double newVY = velocityY + Constants.GRAVITY;
+                double newVY = Math.Min(Constants.TERMINAL_VELOCITY, velocityY + Constants.GRAVITY);
                 actor.SetVelocity(new Pointf(actor.GetVelocity().GetX(), newVY));
                 return newVY;
             }

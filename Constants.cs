@@ -76,6 +76,7 @@ namespace HolesAreBad
         public const int CHARACTER_SPEED = 2;
         public const int JUMP_POWER = 6;
         public const double GRAVITY = .11;
+        public const double TERMINAL_VELOCITY = 30;
 
         public const string MESSAGE_FILE = "messages.txt";
     }
