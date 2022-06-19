@@ -18,10 +18,11 @@ namespace HolesAreBad
         public const int NUM_HOLES = 20;
         public const int NUM_ENEMIES = 1;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
-
+        
+        // File setup for the level
         public const int GRID_X = 25;
         public const int GRID_Y = 25;
-        public const string FILE = "./Assets/Test.txt";
+        public const string FILE = "./Assets/Level_Design/Level1.map";
 
 
         // Images for the game will be initialized here
