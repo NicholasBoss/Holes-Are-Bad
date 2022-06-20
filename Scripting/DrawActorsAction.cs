@@ -8,7 +8,7 @@ namespace HolesAreBad.Scripting
     /// <summary>
     /// An action to draw all of the actors in the game.
     /// </summary>
-    public class DrawActorsAction : Action
+    public class DrawActorsAction : OutputAction
     {
         private OutputService _outputService;
 

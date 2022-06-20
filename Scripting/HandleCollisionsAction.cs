@@ -8,7 +8,7 @@ namespace HolesAreBad.Scripting
     ///<summary>
     /// This class will control how each actor will act when collided with.
     ///<summary>
-    public class HandleCollisionsAction : Action
+    public class HandleCollisionsAction : UpdateAction
     {
         PhysicsService _physicsService;
         AudioService _audioService;

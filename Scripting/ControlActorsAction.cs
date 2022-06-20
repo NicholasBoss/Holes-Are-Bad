@@ -7,7 +7,7 @@ namespace HolesAreBad
     ///<summary>
     /// This class will control how each actor will recieve input from the user
     ///<summary>
-    public class ControlActorsAction : Action
+    public class ControlActorsAction : UpdateAction
     {
         InputService _inputService;
 

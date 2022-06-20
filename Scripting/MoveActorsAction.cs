@@ -7,7 +7,7 @@ namespace HolesAreBad.Scripting
     ///<summary>
     /// This class will control how each actor will move on the screen
     ///<summary>
-    public class MoveActorsAction : Action
+    public class MoveActorsAction : UpdateAction
     {
         public MoveActorsAction()
         {

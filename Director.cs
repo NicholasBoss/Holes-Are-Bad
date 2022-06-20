@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
 using HolesAreBad.Scripting;
+using System.Linq;
 
 namespace HolesAreBad
 {
@@ -17,12 +18,12 @@ namespace HolesAreBad
     {
         public static bool _keepPlaying = true;
         private Dictionary<string, List<Actor>> _cast;
-        private Dictionary<string, List<Action>> _script;
+        private List<Action> _actions;
 
-        public Director(Dictionary<string, List<Actor>> cast, Dictionary<string, List<Action>> script)
+        public Director(Dictionary<string, List<Actor>> cast, List<Action> actions)
         {
             _cast = cast;
-            _script = script;
+            _actions = actions;
         }
 
         /// <summary>
@@ -30,17 +31,20 @@ namespace HolesAreBad
         /// </summary>
         public void Direct()
         {
+            // Display Title Screen
+            // cueAction("Title");
             while (_keepPlaying)
             {
-                CueAction("input");
-                CueAction("update");
-                CueAction("output");
+                CueAction(_actions.OfType<InputAction>().ToArray());
+                CueAction(_actions.OfType<UpdateAction>().ToArray());
+                CueAction(_actions.OfType<OutputAction>().ToArray());
 
                 if (Raylib_cs.Raylib.WindowShouldClose())
                 {
                     _keepPlaying = false;
                 }
             }
+            // Display Credit Screen
 
             Console.WriteLine("Game over!");
         }
@@ -49,10 +53,8 @@ namespace HolesAreBad
         /// Executes all of the actions for the provided phase.
         /// </summary>
         /// <param name="phase"></param>
-        private void CueAction(string phase)
+        private void CueAction(Action[] actions)
         {
-            List<Action> actions = _script[phase];
-
             foreach (Action action in actions)
             {
                 action.Execute(_cast);
