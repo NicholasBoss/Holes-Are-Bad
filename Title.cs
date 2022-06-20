@@ -1,15 +1,33 @@
 using System.Collections.Generic;
 using HolesAreBad.Casting;
+using HolesAreBad.Services;
+using Raylib_cs;
 
 namespace HolesAreBad
 {
     /// <summary>
     /// The TitleScreen class is responsible for handling the title screen of the game.
     /// </summary>
-    public class Title
+    public class Title : Action
+
     {
+        private OutputService _outputService;
+
+        public Title(OutputService outputService)
+        {
+            _outputService = outputService;
+        }
+
+        public override bool Execute(Dictionary<string, List<Actor>> cast)
+        {
+            _outputService.StartDrawing();
+
+            _outputService.DrawText(100, 100, "Holes are bad", false);
+
+            _outputService.EndDrawing();
+            return true;
+        }
         //create the cast
-        private Dictionary<string, List<Actor>> _cast = new Dictionary<string, List<Actor>>();
 
         //environment objects
         // _cast["Tenvironment"] = new List<Actor>();

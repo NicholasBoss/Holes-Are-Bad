@@ -16,7 +16,7 @@ namespace HolesAreBad
             _inputService = inputService;
         }
 
-        public override void Execute(Dictionary<string, List<Actor>> cast)
+        public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             Point direction = _inputService.GetDirection();
             
@@ -26,6 +26,7 @@ namespace HolesAreBad
 
             Pointf velocity = new Pointf(direction.GetX() * Constants.CHARACTER_SPEED, player.GetVelocity().GetY());
             player.SetVelocity(velocity);
+            return true;
         }
     }
 }

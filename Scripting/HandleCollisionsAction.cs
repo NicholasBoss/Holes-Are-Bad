@@ -21,7 +21,7 @@ namespace HolesAreBad.Scripting
             _audioService = audioService;
         }
 
-        public override void Execute(Dictionary<string, List<Actor>> cast)
+        public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             Actor billboard = cast["environment"][1];
             Actor lives = cast["environment"][2];
@@ -60,7 +60,7 @@ namespace HolesAreBad.Scripting
             {
                 // _audioService.PlaySound(Constants.SOUND_LOSE);
                 System.Threading.Thread.Sleep(2000);
-                Director._keepPlaying = false;
+                return false;
             }
 
             // This will be a lose condition
@@ -183,6 +183,7 @@ namespace HolesAreBad.Scripting
                     }
                 }
             }
+            return true;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace HolesAreBad.Scripting
         {
         }
 
-        public override void Execute(Dictionary<string, List<Actor>> cast)
+        public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             foreach (List<Actor> group in cast.Values)
             {
@@ -22,6 +22,7 @@ namespace HolesAreBad.Scripting
                     MoveActor(actor);
                 }
             }
+            return true;
         }
 
         private double HandleGravity(Actor actor, double velocityY)

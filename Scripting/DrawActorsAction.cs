@@ -17,7 +17,7 @@ namespace HolesAreBad.Scripting
             _outputService = outputService;
         }
 
-        public override void Execute(Dictionary<string, List<Actor>> cast)
+        public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             _outputService.StartDrawing();
 
@@ -27,6 +27,7 @@ namespace HolesAreBad.Scripting
             }
 
             _outputService.EndDrawing();
+            return true;
         }
 
     }

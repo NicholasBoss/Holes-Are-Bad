@@ -9,6 +9,6 @@ namespace HolesAreBad
     /// </summary>
     public abstract class Action
     {
-        public abstract void Execute(Dictionary<string, List<Actor>> cast);
+        public abstract bool Execute(Dictionary<string, List<Actor>> cast);
     }
 }

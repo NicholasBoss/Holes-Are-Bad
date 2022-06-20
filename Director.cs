@@ -19,11 +19,13 @@ namespace HolesAreBad
         public static bool _keepPlaying = true;
         private Dictionary<string, List<Actor>> _cast;
         private List<Action> _actions;
+        private OutputService _outputService;
 
-        public Director(Dictionary<string, List<Actor>> cast, List<Action> actions)
+        public Director(Dictionary<string, List<Actor>> cast, List<Action> actions, OutputService outputService)
         {
             _cast = cast;
             _actions = actions;
+            _outputService = outputService;
         }
 
         /// <summary>
@@ -32,19 +34,38 @@ namespace HolesAreBad
         public void Direct()
         {
             // Display Title Screen
-            // cueAction("Title");
+            var title = new Title(_outputService);
+            for (int i = 0; i < 250; i++)
+            {
+                CueAction(title);
+            }
+
             while (_keepPlaying)
             {
-                CueAction(_actions.OfType<InputAction>().ToArray());
-                CueAction(_actions.OfType<UpdateAction>().ToArray());
-                CueAction(_actions.OfType<OutputAction>().ToArray());
+                if (!CueAction(_actions.OfType<InputAction>().ToArray()))
+                {
+                    break;
+                }
+                if(!CueAction(_actions.OfType<UpdateAction>().ToArray()))
+                {
+                    break;
+                }
+                if(!CueAction(_actions.OfType<OutputAction>().ToArray()))
+                {
+                    break;
+                }
 
                 if (Raylib_cs.Raylib.WindowShouldClose())
                 {
                     _keepPlaying = false;
                 }
             }
+            var creditScreen = new CreditScreen(_outputService);
             // Display Credit Screen
+            for (int i = 0; i < 500; i++)
+            {
+                CueAction(creditScreen);
+            }
 
             Console.WriteLine("Game over!");
         }
@@ -53,12 +74,16 @@ namespace HolesAreBad
         /// Executes all of the actions for the provided phase.
         /// </summary>
         /// <param name="phase"></param>
-        private void CueAction(Action[] actions)
+        private bool CueAction(params Action[] actions)
         {
             foreach (Action action in actions)
             {
-                action.Execute(_cast);
+                if (!action.Execute(_cast))
+                {
+                    return false;
+                }
             }
+            return true;
         }
 
     }
