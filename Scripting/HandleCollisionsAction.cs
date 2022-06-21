@@ -211,7 +211,6 @@ namespace HolesAreBad.Scripting
                             if (shiftType != "none") 
                             {
                                 int leftRightOffset = Math.Abs(dy) > 3 ? 3 : 0;
-                                if (leftRightOffset > 0) Console.WriteLine("left right offset");
                                 collision_num[actor1] = shiftType;
                                 if (shiftType == "up") // This will be by far the most common case (standing on platform) so it goes first
                                 {
