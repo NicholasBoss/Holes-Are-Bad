@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
 using System.Linq;
+using System;
 
 namespace HolesAreBad.Scripting
 {
@@ -143,7 +144,8 @@ namespace HolesAreBad.Scripting
             //     System.Threading.Thread.Sleep(2000);
             //     Director._keepPlaying = false;
             // }
-
+            
+            Dictionary<Actor, string> collision_num = new Dictionary<Actor, string>();
             foreach (Actor c in cast["character"])
             {
                 c.SetJumpReady(false);
@@ -152,32 +154,84 @@ namespace HolesAreBad.Scripting
             {
                 foreach (Actor actor2 in cast["physical_objects"])
                 {
-                    if (actor1 != actor2) {
+                    if (actor1 != actor2) 
+                    {
                         if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox()) 
                         {
-                            int leftShift = actor1.GetRightEdge() - actor2.GetLeftEdge(); // how much actor1 needs to shift to the left to avoid collision
-                            int rightShift = actor2.GetRightEdge() - actor1.GetLeftEdge();// how much actor2 needs to shift to the right to avoid collision
-                            int upShift = actor1.GetBottomEdge() - actor2.GetTopEdge();// how much actor1 needs to shift up to avoid collision
-                            int downShift = actor2.GetBottomEdge() - actor1.GetTopEdge();// how much actor2 needs to shift down to avoid collision
-
-                            int shift = new int[] {leftShift, rightShift, upShift, downShift}.Min();// which shift is the smallest?
-                            if (shift == int.MaxValue) shift = 0;// if all shifts are infinite, don't shift anything
-                            if (shift == upShift) // This will be by far the most common case so it goes first
+                            // Measure all possible shifts that resolve the collision
+                            int leftShift = actor1.GetRightEdge() - actor2.GetLeftEdge();
+                            int rightShift = actor2.GetRightEdge() - actor1.GetLeftEdge();
+                            int upShift = actor1.GetBottomEdge() - actor2.GetTopEdge();
+                            int downShift = actor2.GetBottomEdge() - actor1.GetTopEdge();
+                            
+                            int shift = new int[] {leftShift, rightShift, upShift, downShift}.Min(); // Choose the smallest shift
+                            if (shift == int.MaxValue) shift = 0;
+                            string shiftType = "none";
+                            double dy = actor1.GetVelocity().GetY();
+                            if (shift == upShift)
                             {
-                                actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
-                                actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
-                                actor1.SetJumpReady(true);
+                                shiftType = "up";
                             }
                             else if (shift == leftShift)
                             {
-                                actor1.SetPosition(new Point(actor1.GetPosition().GetX() - leftShift, actor1.GetPosition().GetY()));
+                                shiftType = "left";
                             }
-                            else if (shift == rightShift){
-                                actor1.SetPosition(new Point(actor1.GetPosition().GetX() + rightShift, actor1.GetPosition().GetY()));
+                            else if (shift == rightShift)
+                            {
+                                shiftType = "right";
                             }
-                            else if (shift == downShift) {
-                                actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
-                                actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() + downShift));
+                            else if (shift == downShift)
+                            {
+                                shiftType = "down";
+                            }
+                            if (shiftType == "down" && actor2.GetBottomEdge() >= Constants.MAX_Y) {
+                                shiftType = "up";
+                            }
+                            if (shiftType == "up" && actor1.GetTopEdge() >= Constants.MAX_Y -5) {
+                                shiftType = "down";
+                            }
+                            if (shiftType == "down" && dy > 0) {
+                                shift = new int[] {leftShift, rightShift, upShift}.Min();
+                            }
+                            if (shiftType == "up" && dy < 0) {
+                                shift = new int[] {leftShift, rightShift, downShift}.Min();
+                            }
+                            if (collision_num.ContainsKey(actor1))
+                            {
+                                if (shiftType == "left" && collision_num[actor1] == "right" ||
+                                    shiftType == "right" && collision_num[actor1] == "left" ||
+                                    shiftType == "up" && collision_num[actor1] == "down" ||
+                                    shiftType == "down" && collision_num[actor1] == "up")
+                                {
+                                    actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
+                                    actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
+                                    actor1.SetJumpReady(true);
+                                }
+                            }
+                            if (shiftType != "none") 
+                            {
+                                int leftRightOffset = Math.Abs(dy) > 3 ? 3 : 0;
+                                if (leftRightOffset > 0) Console.WriteLine("left right offset");
+                                collision_num[actor1] = shiftType;
+                                if (shiftType == "up") // This will be by far the most common case (standing on platform) so it goes first
+                                {
+                                    actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
+                                    actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
+                                    actor1.SetJumpReady(true);
+                                }
+                                else if (shiftType == "left")
+                                {
+                                    actor1.SetPosition(new Point(actor1.GetPosition().GetX() - leftShift - leftRightOffset, actor1.GetPosition().GetY()));
+                                }
+                                else if (shiftType == "right")
+                                {
+                                    actor1.SetPosition(new Point(actor1.GetPosition().GetX() + rightShift + leftRightOffset, actor1.GetPosition().GetY()));
+                                }
+                                else if (shiftType == "down")
+                                {
+                                    actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
+                                    actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() + downShift));
+                                }
                             }
                         }
                     }

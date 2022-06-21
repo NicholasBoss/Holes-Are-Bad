@@ -24,9 +24,34 @@ namespace HolesAreBad
 
             player.SetJump(direction.GetY() != 0);
 
-            Pointf velocity = new Pointf(direction.GetX() * Constants.CHARACTER_SPEED, player.GetVelocity().GetY());
+            double dx = direction.GetX() * Constants.CHARACTER_SPEED;
+            Pointf velocity = new Pointf(dx, player.GetVelocity().GetY());
+            if ((dx > 0 && player.GetPosition().GetX() > Constants.MAX_X * Constants.SCROLL_THRESHOLD_FORWARD) ||
+                (dx < 0 && player.GetPosition().GetX() < Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD)) {
+                ScrollAllActors(cast, dx);
+            }
             player.SetVelocity(velocity);
             return true;
+        }
+
+        private void ScrollAllActors(Dictionary<string, List<Actor>> cast, double dx) {
+            List<Actor> checklist = new List<Actor>();
+            foreach (List<Actor> group in cast.Values)
+            {
+                foreach (Actor actor in group)
+                {
+                    if (!checklist.Contains(actor)){
+                        int x = actor.GetX();
+                        //int y = actor.GetY();
+
+                        double newX = (x - dx);
+                        //double newY = (y + dy) % Constants.MAX_Y;
+
+                        actor.SetPosition(new Point((int)newX, actor.GetPosition().GetY()));
+                        checklist.Add(actor);
+                    }
+                }
+            }
         }
     }
 }

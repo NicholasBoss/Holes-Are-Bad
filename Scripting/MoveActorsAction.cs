@@ -15,11 +15,15 @@ namespace HolesAreBad.Scripting
 
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
+            List<Actor> checklist = new List<Actor>();
             foreach (List<Actor> group in cast.Values)
             {
                 foreach (Actor actor in group)
                 {
-                    MoveActor(actor);
+                    if (!checklist.Contains(actor)){
+                        MoveActor(actor);
+                        checklist.Add(actor);
+                    }
                 }
             }
             return true;
@@ -59,10 +63,10 @@ namespace HolesAreBad.Scripting
             dy = HandleGravity(actor, dy);
             dy = HandleJump(actor, dy);
 
-            double newX = (x + dx) % Constants.MAX_X;
+            double newX = (x + dx) /*% Constants.MAX_X*/;
             double newY = (y + dy) % Constants.MAX_Y;
 
-            if (newX < 0)
+            /*if (newX < 0)
             {
                 newX = Constants.MAX_X;
             }
@@ -70,7 +74,7 @@ namespace HolesAreBad.Scripting
             if (newY < 0)
             {
                 newY = Constants.MAX_Y;
-            }
+            }*/
 
             actor.SetPosition(new Point((int)newX, (int)newY));
         }

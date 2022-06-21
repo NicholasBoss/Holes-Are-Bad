@@ -22,7 +22,7 @@ namespace HolesAreBad
         // File setup for the level
         public const int GRID_X = 25;
         public const int GRID_Y = 25;
-        public const string FILE = "./Assets/Level_Design/Level1.map";
+        public const string FILE = "./Assets/Level_Design/Test.txt";
 
 
         // Images for the game will be initialized here
@@ -74,10 +74,13 @@ namespace HolesAreBad
         public const int PLATFORM_WIDTH = 64;
         public const int PLATFORM_HEIGHT = 36;
 
-        public const int CHARACTER_SPEED = 2;
-        public const int JUMP_POWER = 6;
-        public const double GRAVITY = .11;
+        public const int CHARACTER_SPEED = 6;
+        public const int JUMP_POWER = 20;
+        public const double GRAVITY = .99;
         public const double TERMINAL_VELOCITY = 30;
+
+        public const double SCROLL_THRESHOLD_FORWARD = 0.55; // Percentage of screen before beginning to scroll screen forward. Must be greater than 0.5 (50%).
+        public const double SCROLL_THRESHOLD_BACKWARD = 0.2; // Percentage of screen before beginning to scroll screen forward. Must be less than 0.5 (50%).
 
         public const string MESSAGE_FILE = "messages.txt";
     }
