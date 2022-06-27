@@ -35,6 +35,7 @@ namespace HolesAreBad
         {
             // Display Title Screen
             var title = new Title(_outputService);
+            // while play != true, don't go beyond title screen
             for (int i = 0; i < 250; i++)
             {
                 CueAction(title);
@@ -62,7 +63,7 @@ namespace HolesAreBad
             }
             var creditScreen = new CreditScreen(_outputService);
             // Display Credit Screen
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < 250; i++)
             {
                 CueAction(creditScreen);
             }

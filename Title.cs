@@ -16,19 +16,23 @@ namespace HolesAreBad
         public Title(OutputService outputService)
         {
             _outputService = outputService;
+
         }
 
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             _outputService.StartDrawing();
 
-            _outputService.DrawText(100, 100, "Holes are bad", false);
+            _outputService.DrawImage(800,450, "./Assets/Backgrounds/Start.png");
+
+            _outputService.DrawText(100, 100, "Holes are bad", true);
 
             _outputService.EndDrawing();
             return true;
         }
-        //create the cast
 
+        //create the cast
+        
         //environment objects
         // _cast["Tenvironment"] = new List<Actor>();
         // private TitleImage _background = new TitleImage();
