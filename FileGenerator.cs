@@ -19,10 +19,9 @@ namespace HolesAreBad
             // LoadMessages();
         }
 
-        public List<Platform> Generate()
+        public int Generate(Dictionary<string, List<Actor>> cast, int xOffset)
         {
             string[] lines = System.IO.File.ReadAllLines(Constants.FILE);
-            List<Platform> platforms = new List<Platform>();
             int row = 0;
             int column = 0;
             foreach (string line in lines)
@@ -32,12 +31,13 @@ namespace HolesAreBad
                 {
                     if (c.Equals('X'))
                     {
-                        int x = (Constants.MAX_X / Constants.GRID_X) * column;
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Platform platform = new Platform();
                         platform.SetPosition(new Point(x, y));
                         platform.SetImage(Constants.IMAGE_PLATFORM);
-                        platforms.Add(platform);
+                        cast["platforms"].Add(platform);
+                        cast["physical_objects"].Add(platform);
                     }
                     else
                     {
@@ -47,8 +47,8 @@ namespace HolesAreBad
                 }
                 row++;
             }
-
-            return platforms;
+            
+            return column * Constants.MAX_X / Constants.GRID_X;
         }
 
     }
