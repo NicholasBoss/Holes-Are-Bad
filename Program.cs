@@ -52,13 +52,10 @@ namespace HolesAreBad
                 cast["holes"].Add(hole);
             }
 
-            List<Platform> platforms = fgenerator.Generate();
-            foreach (Platform item in platforms)
-            {
-                cast["platforms"].Add(item);
-                cast["physical_objects"].Add(item);
-            }
-
+            Actor marker = new Actor();
+            marker.SetPosition(new Point(0, 0));
+            cast["map_gen_marker"] = new List<Actor>();
+            cast["map_gen_marker"].Add(marker);
 
 
             // Bush pendant1 = generator.Generate();
@@ -106,6 +103,9 @@ namespace HolesAreBad
 
             HandleCollisionsAction handleCollisionsAction = new HandleCollisionsAction(physicsService, audioService);
             actions.Add(handleCollisionsAction);
+
+            MapGenerateAction mapGenerateAction = new MapGenerateAction(fgenerator);
+            actions.Add(mapGenerateAction);
 
             // Start up the game
             outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Holes Are Bad", Constants.FRAME_RATE);
