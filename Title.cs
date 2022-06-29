@@ -22,7 +22,8 @@ namespace HolesAreBad
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             _outputService.StartDrawing();
-
+            
+            _outputService.DrawImage(0,0, "./Assets/Backgrounds/Icon.png");
             _outputService.DrawImage(800,450, "./Assets/Backgrounds/Start.png");
 
             _outputService.DrawText(100, 100, "Holes are bad", true);
