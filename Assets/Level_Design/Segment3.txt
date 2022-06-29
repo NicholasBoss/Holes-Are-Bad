@@ -1,12 +1,12 @@
 
-XX     XXX  XXX     XXXXX  
+XX      XX  XX XXXXXXXXXX  
 X     XX      X         X
 XX     X      X         X
-X     XX      XXXXXX   XX 
+X     XX      X         X 
 XX     X      X         X   
 X     XX      X         X
 XX     X      X         X
-X      XXXXXXXX   XXXXXXX
+X      XXXXXXXXXXXXXXXXXX
 X                       X
 XXXXXXXXXXXXXXXXXXXXX   X
 X                       X
@@ -17,9 +17,9 @@ X                       X
 XXXXXXXXXXX  XXXXXXXXXXXX
 X                       X
 XXXXXX  XX  XXXXXX  XXXXX
-                        X           
-       XXXXXXXXXXXXXXX  X 
-       X                X
+x                       X           
+x      XXXXXXXXXXXXXXX  X 
+x      X                X
 XXXXXXXX   XXXXXXXXXXXXXX
-
+                        x
 XXXXXXXXXXXXXXXXXXXXXXXXX
