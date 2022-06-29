@@ -22,7 +22,7 @@ namespace HolesAreBad
         // File setup for the level
         public const int GRID_X = 25;
         public const int GRID_Y = 25;
-        public const string FILE = "./Assets/Level_Design/Test.txt";
+        public const string FILE = "./Assets/Level_Design/Segment3.txt";
 
 
         // Images for the game will be initialized here
