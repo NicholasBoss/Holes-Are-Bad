@@ -23,6 +23,7 @@ namespace HolesAreBad
         {
             string[] lines = System.IO.File.ReadAllLines(Constants.FILE);
             List<Platform> platforms = new List<Platform>();
+            List<Spike> spikes = new List<Spike>();
             int row = 0;
             int column = 0;
             foreach (string line in lines)
@@ -39,7 +40,7 @@ namespace HolesAreBad
                         platform.SetImage(Constants.IMAGE_PLATFORM);
                         platforms.Add(platform);
                     }
-                    else
+                    else if (c.Equals('A'))
                     {
                         // Check for spikes, collectables, and other stuff
                     }

@@ -74,6 +74,9 @@ namespace HolesAreBad
         public const int PLATFORM_WIDTH = 64;
         public const int PLATFORM_HEIGHT = 36;
 
+        public const int SPIKE_WIDTH = 32;
+        public const int SPIKE_HEIGHT = 32;
+
         public const int CHARACTER_SPEED = 6;
         public const int JUMP_POWER = 20;
         public const double GRAVITY = .99;
