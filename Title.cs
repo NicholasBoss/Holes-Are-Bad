@@ -12,11 +12,11 @@ namespace HolesAreBad
 
     {
         private OutputService _outputService;
+        private InputService _inputService;
 
         public Title(OutputService outputService)
         {
             _outputService = outputService;
-
         }
 
         public override bool Execute(Dictionary<string, List<Actor>> cast)
@@ -29,6 +29,7 @@ namespace HolesAreBad
             _outputService.DrawText(100, 100, "Holes are bad", true);
 
             _outputService.EndDrawing();
+            
             return true;
         }
 

@@ -112,7 +112,7 @@ namespace HolesAreBad
             audioService.StartAudio();
             audioService.PlaySound(Constants.SOUND_START);
 
-            Director theDirector = new Director(cast, actions, outputService);
+            Director theDirector = new Director(cast, actions, outputService, inputService);
             theDirector.Direct();
 
             audioService.StopAudio();
