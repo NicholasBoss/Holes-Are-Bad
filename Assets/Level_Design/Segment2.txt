@@ -1,6 +1,6 @@
 
            X
-
+  A                   A
 XXXX                 XXXX
 
 
@@ -12,7 +12,7 @@ X                X
      XX     X       XX 
 
 XX             X
-
+         A
         XXXX           X
 
 

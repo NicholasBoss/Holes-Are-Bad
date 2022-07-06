@@ -30,27 +30,13 @@ namespace HolesAreBad
             cast["movable_objects"] = new List<Actor>();
             cast["holes"] = new List<Actor>();
             cast["platforms"] = new List<Actor>();
+            cast["spikes"] = new List<Actor>();
 
             // cast["pendants"] = new List<Actor>();
             // cast["chest"] = new List<Actor>();
 
-            HolesGenerator hgenerator = new HolesGenerator();
-            EnemyGenerator generator = new EnemyGenerator();
             FileGenerator fgenerator = new FileGenerator();
 
-            for (int i = 0; i < Constants.NUM_ENEMIES; i++)
-            {
-                Enemy enemy = generator.Generate();
-                cast["enemies"].Add(enemy);
-                cast["physical_objects"].Add(enemy);
-                // leaving this line commented out until we have non-moveable objects (platforms) to interact with the moveable objects.
-                //cast["movable_objects"].Add(enemy);
-            }
-            for (int i = 0; i < Constants.NUM_HOLES; i++)
-            {
-                Hole hole = hgenerator.hGenerate();
-                cast["holes"].Add(hole);
-            }
 
             Actor marker = new Actor();
             marker.SetPosition(new Point(0, 0));
@@ -61,7 +47,6 @@ namespace HolesAreBad
             marker.SetPosition(new Point(0, 0));
             cast["back_marker"] = new List<Actor>();
             cast["back_marker"].Add(back_marker);
-
 
             // Bush pendant1 = generator.Generate();
             // pendant1.SetDescription("You have found the first pendant");

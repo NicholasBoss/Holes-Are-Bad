@@ -21,7 +21,7 @@ namespace HolesAreBad
         {
             _outputService.StartDrawing();
 
-            _outputService.DrawText(100, 100, "Game Over", false);
+            _outputService.DrawText(100, 100, "You Win", false);
 
             _outputService.EndDrawing();
             return true;

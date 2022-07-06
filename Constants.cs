@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace HolesAreBad
 {
@@ -22,7 +23,15 @@ namespace HolesAreBad
         // File setup for the level
         public const int GRID_X = 25;
         public const int GRID_Y = 25;
-        public const string FILE = "./Assets/Level_Design/Segment5.txt";
+        private const string segmentDir = "./Assets/Level_Design/";
+        public static Dictionary<string, int> LEVEL1LIST = new Dictionary<string, int>()
+        {
+            {segmentDir+"Segment1.txt", 1},
+            {segmentDir+"Segment2.txt", 2},
+            {segmentDir+"Segment3.txt", 3},
+            {segmentDir+"Segment4.txt", 4},
+            {segmentDir+"Segment5.txt", 5},
+        };
 
 
         // Images for the game will be initialized here
@@ -36,7 +45,7 @@ namespace HolesAreBad
 
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
-        public const string IMAGE_ENEMY = "./Assets/Platforms/Blue_Studded_Block.png";
+        public const string IMAGE_ENEMY = "./Assets/Enemies/Flying_Enemy_lvl_2.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";

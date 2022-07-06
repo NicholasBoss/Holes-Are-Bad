@@ -27,28 +27,27 @@ namespace HolesAreBad.Scripting
             Actor billboard = cast["environment"][1];
             Actor lives = cast["environment"][2];
             Actor character = cast["character"][0];
-            Actor enemy = cast["enemies"][0];
-            List<Actor> holes = cast["holes"];
+            List<Actor> spikes = cast["spikes"];
             // Actor chest = cast["chest"][0];
             
             // List<Actor> bushes = cast["bushes"];
             // List<Actor> pendants = cast["pendants"];
-            List<Actor> holesToRemove = new List<Actor>();
+            List<Actor> spikesToRemove = new List<Actor>();
             
             
 
             billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
 
             // This checks to see if the player collides with a bush
-            foreach(Actor actor in holes)
+            foreach(Actor actor in spikes)
             {
-                Hole hole = (Hole)actor;
-                if(_physicsService.IsCollision(character, hole))
+                Spike spike = (Spike)actor;
+                if(_physicsService.IsCollision(character, spike))
                 {
                     // _audioService.PlaySound(Constants.SOUND_LEAF);
                     // string bushText = bush.GetDescription();
                     // billboard.SetText(bushText);
-                    holesToRemove.Add(hole);
+                    spikesToRemove.Add(spike);
                 }
             }
 
@@ -64,86 +63,25 @@ namespace HolesAreBad.Scripting
                 return false;
             }
 
-            // This will be a lose condition
-            if(holes.Count == Constants.NUM_HOLES-15)
+            // This will be a Win condition
+            if(Lives.lives == 20)
             {
-                billboard.SetText("Sorry, you lose. Better luck next time");
+                billboard.SetText("You Win!");
                 System.Threading.Thread.Sleep(200);
                 delay = 5;
             }
 
 
             // This removes the bushes from the game once they've been searched.
-            foreach(Actor hole in holesToRemove)
+            foreach(Actor spike in spikesToRemove)
             {
-                cast["holes"].Remove(hole);
-                lives.SetText($"Lives left: {Lives.lives -= 1}");
+                cast["spikes"].Remove(spike);
+                lives.SetText($"Lives left: {Lives.lives += 1}");
             }
 
-            // This checks to see if the player collides with a pendant hiding spot
-            // foreach (Actor actor in pendants)
-            // {
-            //     Bush pendant1 = (Bush)pendants[0];
-            //     Bush pendant2 = (Bush)pendants[1];
-            //     Bush pendant3 = (Bush)pendants[2];
-                
-            //     if(_physicsService.IsCollision(character,pendant1))
-            //     {
-            //         _audioService.PlaySound(Constants.SOUND_PENDANTFOUND);
-            //         string pendantText = pendant1.GetDescription();
-            //         billboard.SetText(pendantText);
-            //         pendant1.SetImage(Constants.IMAGE_PENDANT);
-            //         pendant1.IsFound();
-                    
-            //     }
-            //     else if(_physicsService.IsCollision(character,pendant2))
-            //     {
-            //         _audioService.PlaySound(Constants.SOUND_PENDANTFOUND);
-            //         string pendantText1 = pendant2.GetDescription();
-            //         billboard.SetText(pendantText1);
-            //         pendant2.SetImage(Constants.IMAGE_PENDANT1);
-            //         pendant2.IsFound();
-                    
-            //     }
-            //     else if(_physicsService.IsCollision(character,pendant3))
-            //     {
-            //         _audioService.PlaySound(Constants.SOUND_PENDANTFOUND);
-            //         string pendantText2 = pendant3.GetDescription();
-            //         billboard.SetText(pendantText2);
-            //         pendant3.SetImage(Constants.IMAGE_PENDANT2);
-            //         pendant3.IsFound();
-                    
-            //     }
-
-                
-            // }
             
-            // This loop is to check for images to handle the win condition
-            // foreach(Actor actor in pendants)
-            // {
-            //     Actor pendant1 = pendants[0];
-            //     Actor pendant2 = pendants[1];
-            //     Actor pendant3 = pendants[2];
-
-            //     if(pendant1.GetImage() == Constants.IMAGE_PENDANT && pendant2.GetImage() == Constants.IMAGE_PENDANT1 && pendant3.GetImage() == Constants.IMAGE_PENDANT2)
-            //     {
-            //         billboard.SetText("You have found all three pendants. Open the chest to Win! \n Press 'ESC' to leave the game");
-            //         chest.SetImage(Constants.IMAGE_CHEST);
-            //         chest.SetHeight(10);
-            //         chest.SetWidth(10);
-            //         foreach(Actor bush in bushes)
-            //         {
-            //             bush.SetHeight(0);
-            //             bush.SetWidth(0);
-            //         }
-            //     }
-            // }
-            // if(_physicsService.IsCollision(character,chest))
-            // {
-            //     _audioService.PlaySound(Constants.SOUND_WIN);
-            //     System.Threading.Thread.Sleep(2000);
-            //     Director._keepPlaying = false;
-            // }
+            
+        
             
             Dictionary<Actor, string> collision_num = new Dictionary<Actor, string>();
             List<Actor> delListPhy = new List<Actor>();
