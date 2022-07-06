@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
@@ -20,55 +21,82 @@ namespace HolesAreBad
         private Dictionary<string, List<Actor>> _cast;
         private List<Action> _actions;
         private OutputService _outputService;
+        private InputService _inputService;
+        private bool play = false;
+        private bool end = false;
+        private bool restart = true;
 
-        public Director(Dictionary<string, List<Actor>> cast, List<Action> actions, OutputService outputService)
+
+        public Director(Dictionary<string, List<Actor>> cast, List<Action> actions, OutputService outputService, InputService inputService)
         {
             _cast = cast;
             _actions = actions;
             _outputService = outputService;
+            _inputService = inputService;
         }
 
         /// <summary>
         /// This method starts the game and continues running until it is finished.
         /// </summary>
+     
         public void Direct()
         {
+            while (restart)
+            {
             // Display Title Screen
-            var title = new Title(_outputService);
-            // while play != true, don't go beyond title screen
-            for (int i = 0; i < 250; i++)
-            {
-                CueAction(title);
-            }
-
-            while (_keepPlaying)
-            {
-                if (!CueAction(_actions.OfType<InputAction>().ToArray()))
+                var title = new Title(_outputService);
+                while (play != true) //, don't go beyond title screen
+                // for (int i = 0; i < 250; i++)
                 {
-                    break;
-                }
-                if(!CueAction(_actions.OfType<UpdateAction>().ToArray()))
-                {
-                    break;
-                }
-                if(!CueAction(_actions.OfType<OutputAction>().ToArray()))
-                {
-                    break;
+                    CueAction(title);
+                    if (_inputService.IsSpacePressed())
+                    {
+                        play = true;
+                    }
                 }
 
-                if (Raylib_cs.Raylib.WindowShouldClose())
+                while (_keepPlaying)
                 {
-                    _keepPlaying = false;
-                }
-            }
-            var creditScreen = new CreditScreen(_outputService);
-            // Display Credit Screen
-            for (int i = 0; i < 250; i++)
-            {
-                CueAction(creditScreen);
-            }
+                    if (!CueAction(_actions.OfType<InputAction>().ToArray()))
+                    {
+                        break;
+                    }
+                    if(!CueAction(_actions.OfType<UpdateAction>().ToArray()))
+                    {
+                        break;
+                    }
+                    if(!CueAction(_actions.OfType<OutputAction>().ToArray()))
+                    {
+                        break;
+                    }
 
-            Console.WriteLine("Game over!");
+                    if (Raylib_cs.Raylib.WindowShouldClose())
+                    {
+                        _keepPlaying = false;
+                        restart = false;
+                        play = false;
+                    }
+                }
+                var creditScreen = new CreditScreen(_outputService);
+                // Display Credit Screen
+                while (restart != true || end != true) //, don't go beyond credit screen
+                {
+                    
+                    CueAction(creditScreen);
+                    if (_inputService.IsSpacePressed())
+                    {
+                        end = true;
+                        Environment.Exit(0);
+                    }
+                    // else if (_inputService.IsKeyRPressed())
+                    // {
+                    //     restart = true;
+                    //     _keepPlaying = true;
+                    // }
+                }
+
+                Console.WriteLine("Game over!");
+            }
         }
 
         /// <summary>
@@ -86,6 +114,6 @@ namespace HolesAreBad
             }
             return true;
         }
-
     }
+
 }

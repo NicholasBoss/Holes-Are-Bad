@@ -146,6 +146,8 @@ namespace HolesAreBad.Scripting
             // }
             
             Dictionary<Actor, string> collision_num = new Dictionary<Actor, string>();
+            List<Actor> delListPhy = new List<Actor>();
+            List<Actor> delListMov = new List<Actor>();
             foreach (Actor c in cast["character"])
             {
                 c.SetJumpReady(false);
@@ -156,6 +158,14 @@ namespace HolesAreBad.Scripting
                 {
                     if (actor1 != actor2) 
                     {
+                        if (actor2.GetRightEdge() < cast["back_marker"][0].GetX()) {
+                            delListPhy.Add(actor2);
+
+                        }
+                        if (actor1.GetRightEdge() < cast["back_marker"][0].GetX()) {
+                            delListMov.Add(actor1);
+                            
+                        }
                         if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox()) 
                         {
                             // Measure all possible shifts that resolve the collision
@@ -235,6 +245,12 @@ namespace HolesAreBad.Scripting
                         }
                     }
                 }
+            }
+            foreach (Actor c in delListPhy) {
+                cast["physical_objects"].Remove(c);
+            }
+            foreach (Actor c in delListMov) {
+                cast["movable_objects"].Remove(c);
             }
             return true;
         }
