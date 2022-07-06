@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace HolesAreBad
 {
@@ -22,7 +23,16 @@ namespace HolesAreBad
         // File setup for the level
         public const int GRID_X = 25;
         public const int GRID_Y = 25;
-        public const string FILE = "./Assets/Level_Design/Segment5.txt";
+        public const string FILE = "./Assets/Level_Design/Segment2.txt";
+        private const string segmentDir = "./Assets/Level_Design/";
+        public static Dictionary<string, int> LEVEL1LIST = new Dictionary<string, int>()
+        {
+            {segmentDir+"Segment1.txt", 1},
+            {segmentDir+"Segment2.txt", 2},
+            {segmentDir+"Segment3.txt", 3},
+            {segmentDir+"Segment4.txt", 4},
+            {segmentDir+"Segment5.txt", 5},
+        };
 
 
         // Images for the game will be initialized here

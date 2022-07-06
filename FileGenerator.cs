@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using HolesAreBad.Casting;
+using Weighted_Randomizer;
 
 namespace HolesAreBad
 {
@@ -10,9 +11,15 @@ namespace HolesAreBad
     /// </summary>
     public class FileGenerator
     {
+        private StaticWeightedRandomizer<string> randomizerLevel1;
+        private StaticWeightedRandomizer<string> randomizerLevel2;
+
         public FileGenerator()
         {
-            //loadMessages();
+            randomizerLevel1 = new StaticWeightedRandomizer<string>();
+            foreach (var item in Constants.LEVEL1LIST) {
+                randomizerLevel1.Add(item.Key, item.Value);
+            }
         }
         private void FileGen()
         {
@@ -21,7 +28,7 @@ namespace HolesAreBad
 
         public int Generate(Dictionary<string, List<Actor>> cast, int xOffset)
         {
-            string[] lines = System.IO.File.ReadAllLines(Constants.FILE);
+            string[] lines = System.IO.File.ReadAllLines(randomizerLevel1.NextWithReplacement());
 
             List<Platform> platforms = new List<Platform>();
             List<Spike> spikes = new List<Spike>();

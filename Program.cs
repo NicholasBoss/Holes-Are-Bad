@@ -62,7 +62,6 @@ namespace HolesAreBad
             cast["back_marker"] = new List<Actor>();
             cast["back_marker"].Add(back_marker);
 
-
             // Bush pendant1 = generator.Generate();
             // pendant1.SetDescription("You have found the first pendant");
             // cast["pendants"].Add(pendant1);
