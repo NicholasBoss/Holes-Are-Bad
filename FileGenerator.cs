@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using HolesAreBad.Casting;
+using Weighted_Randomizer;
 
 namespace HolesAreBad
 {
@@ -10,9 +11,15 @@ namespace HolesAreBad
     /// </summary>
     public class FileGenerator
     {
+        private StaticWeightedRandomizer<string> randomizerLevel1;
+        private StaticWeightedRandomizer<string> randomizerLevel2;
+
         public FileGenerator()
         {
-            //loadMessages();
+            randomizerLevel1 = new StaticWeightedRandomizer<string>();
+            foreach (var item in Constants.LEVEL1LIST) {
+                randomizerLevel1.Add(item.Key, item.Value);
+            }
         }
         private void FileGen()
         {
@@ -21,10 +28,11 @@ namespace HolesAreBad
 
         public int Generate(Dictionary<string, List<Actor>> cast, int xOffset)
         {
-            string[] lines = System.IO.File.ReadAllLines(Constants.FILE);
+            string[] lines = System.IO.File.ReadAllLines(randomizerLevel1.NextWithReplacement());
 
             List<Platform> platforms = new List<Platform>();
             List<Spike> spikes = new List<Spike>();
+            List<Enemy> enemies = new List<Enemy>();
             int row = 0;
             int column = 0;
             foreach (string line in lines)
@@ -42,9 +50,25 @@ namespace HolesAreBad
                         cast["platforms"].Add(platform);
                         cast["physical_objects"].Add(platform);
                     }
+                    // Check for spikes, collectables, and other stuff
                     else if (c.Equals('A'))
                     {
-                        // Check for spikes, collectables, and other stuff
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        Spike spike = new Spike();
+                        spike.SetPosition(new Point(x+20, y+25));
+                        spike.SetImage(Constants.IMAGE_SPIKE);
+                        cast["spikes"].Add(spike);
+                    }
+
+                    else if (c.Equals('E'))
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        Enemy enemy = new Enemy();
+                        enemy.SetPosition(new Point(x, y));
+                        enemy.SetImage(Constants.IMAGE_ENEMY);
+                        cast["enemies"].Add(enemy);
                     }
                     column++;
                 }
