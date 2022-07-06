@@ -27,15 +27,20 @@ namespace HolesAreBad
             double dx = direction.GetX() * Constants.CHARACTER_SPEED;
             Pointf velocity = new Pointf(dx, player.GetVelocity().GetY());
             if ((dx > 0 && player.GetPosition().GetX() > Constants.MAX_X * Constants.SCROLL_THRESHOLD_FORWARD) ||
-                (dx < 0 && player.GetPosition().GetX() < Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD)) {
+                (dx < 0 && player.GetPosition().GetX() > cast["back_marker"][0].GetX() + Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD && player.GetPosition().GetX() < Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD)) {
                 ScrollAllActors(cast, dx);
             }
             player.SetVelocity(velocity);
+            if (player.GetLeftEdge() < 0) {
+                player.SetPosition(new Point(0, player.GetY()));
+            }
             return true;
         }
 
         private void ScrollAllActors(Dictionary<string, List<Actor>> cast, double dx) {
             List<Actor> checklist = new List<Actor>();
+            Actor player = cast["character"][0];
+            Actor backMarker = cast["back_marker"][0];
             foreach (List<Actor> group in cast.Values)
             {
                 foreach (Actor actor in group)
@@ -51,6 +56,9 @@ namespace HolesAreBad
                         checklist.Add(actor);
                     }
                 }
+            }
+            if (player.GetPosition().GetX() - backMarker.GetX() > Constants.MAX_X * 2) {
+                backMarker.SetPosition(new Point((int)(backMarker.GetX() + dx), 0));
             }
         }
     }

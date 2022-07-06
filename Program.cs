@@ -57,6 +57,11 @@ namespace HolesAreBad
             cast["map_gen_marker"] = new List<Actor>();
             cast["map_gen_marker"].Add(marker);
 
+            Actor back_marker = new Actor();
+            marker.SetPosition(new Point(0, 0));
+            cast["back_marker"] = new List<Actor>();
+            cast["back_marker"].Add(back_marker);
+
 
             // Bush pendant1 = generator.Generate();
             // pendant1.SetDescription("You have found the first pendant");
