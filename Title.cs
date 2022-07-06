@@ -12,7 +12,6 @@ namespace HolesAreBad
 
     {
         private OutputService _outputService;
-        private InputService _inputService;
 
         public Title(OutputService outputService)
         {
