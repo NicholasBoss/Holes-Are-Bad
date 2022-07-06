@@ -46,7 +46,7 @@ namespace HolesAreBad
 
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
-        public const string IMAGE_ENEMY = "./Assets/Platforms/Blue_Studded_Block.png";
+        public const string IMAGE_ENEMY = "./Assets/Enemies/Flying_Enemy_lvl_2.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
