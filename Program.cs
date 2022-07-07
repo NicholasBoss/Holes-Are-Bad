@@ -57,6 +57,9 @@ namespace HolesAreBad
             cast["physical_objects"].Add(character);
             cast["movable_objects"].Add(character);
 
+            cast["last_known_location"] = new List<Actor>();
+            cast["last_known_location"].Add(new Actor());
+
             // Create the action list
             List<Action> actions = new List<Action>();
 
