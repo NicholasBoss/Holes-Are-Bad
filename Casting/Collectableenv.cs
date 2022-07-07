@@ -8,7 +8,7 @@ namespace HolesAreBad.Casting
         public static int collectable = 0;
         public Collectableenv()
         {
-            SetText($"Collectables: {collectable}");
+            SetText($"Collectables: {collectable}/10");
             Point position = new Point(Constants.MAX_X - 360, 0);
             SetPosition(position);
             

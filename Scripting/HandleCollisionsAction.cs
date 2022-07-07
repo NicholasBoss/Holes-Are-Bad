@@ -90,7 +90,7 @@ namespace HolesAreBad.Scripting
             foreach (Actor collectable in collectablesToRemove)
             {
                 cast["collectables"].Remove(collectable);
-                collectableenv.SetText($"Collectables: {Collectableenv.collectable += 1}");
+                collectableenv.SetText($"Collectables: {Collectableenv.collectable += 1}/10");
             }
 
             
