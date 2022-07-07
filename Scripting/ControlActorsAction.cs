@@ -60,6 +60,10 @@ namespace HolesAreBad
             if (player.GetPosition().GetX() - backMarker.GetX() > Constants.MAX_X * 2) {
                 backMarker.SetPosition(new Point((int)(backMarker.GetX() + dx), 0));
             }
+            foreach (Actor actor in cast["environment"])
+            {
+                actor.SetPosition(new Point((int)(actor.GetX() + dx), 0));
+            }
         }
     }
 }
