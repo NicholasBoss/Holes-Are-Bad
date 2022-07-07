@@ -10,13 +10,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXXXXXXX
                                                 AX
                                                 XX
                   XXXXXXXXXXXXXXXXXX             X
-                                                 X
                            A                     X
       X                    X                 X   X
                                                  X
                                     C            X
 XXXXXXXXX   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                                                 X
                                           A      X
       X                   X               X      X
                                                  X
