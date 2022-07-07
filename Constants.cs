@@ -23,7 +23,6 @@ namespace HolesAreBad
         // File setup for the level
         public const int GRID_X = 25;
         public const int GRID_Y = 25;
-        public const string FILE = "./Assets/Level_Design/Segment2.txt";
         private const string segmentDir = "./Assets/Level_Design/";
         public static Dictionary<string, int> LEVEL1LIST = new Dictionary<string, int>()
         {
