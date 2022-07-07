@@ -22,6 +22,7 @@ namespace HolesAreBad
         private List<Action> _actions;
         private OutputService _outputService;
         private InputService _inputService;
+        private ParallaxEffect _parallax = new ParallaxEffect(); 
         private bool play = false;
         private bool end = false;
         private bool restart = true;
@@ -44,7 +45,7 @@ namespace HolesAreBad
             while (restart)
             {
             // Display Title Screen
-                var title = new Title(_outputService);
+                var title = new Title(_outputService, _parallax);
                 while (play != true) //, don't go beyond title screen
                 // for (int i = 0; i < 250; i++)
                 {

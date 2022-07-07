@@ -42,7 +42,7 @@ namespace HolesAreBad
         public const string IMAGE_ENEMY = "./Assets/Enemies/Flying_Enemy_lvl_2.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
-        public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
+        public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
         public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
