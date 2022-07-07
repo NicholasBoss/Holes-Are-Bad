@@ -26,6 +26,7 @@ namespace HolesAreBad.Scripting
         {
             Actor billboard = cast["environment"][1];
             Actor lives = cast["environment"][2];
+            Actor collectableenv = cast["environment"][3];
             Actor character = cast["character"][0];
             List<Actor> spikes = cast["spikes"];
             List<Actor> collectables = cast["collectables"];
@@ -71,7 +72,7 @@ namespace HolesAreBad.Scripting
             }
 
             // This will be a Win condition
-            if(Collectable.collectable == 10)
+            if(Collectableenv.collectable == 10)
             {
                 billboard.SetText("You Win!");
                 System.Threading.Thread.Sleep(200);
@@ -89,8 +90,7 @@ namespace HolesAreBad.Scripting
             foreach (Actor collectable in collectablesToRemove)
             {
                 cast["collectables"].Remove(collectable);
-                Collectable.collectable += 1;
-                billboard.SetText($"Collectables left: {Collectable.collectable}");
+                collectableenv.SetText($"Collectables: {Collectableenv.collectable += 1}");
             }
 
             
