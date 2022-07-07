@@ -108,15 +108,13 @@ namespace HolesAreBad.Scripting
             {
                 foreach (Actor actor2 in cast["physical_objects"])
                 {
-                    if (actor1 != actor2) 
+                    if (actor1 != actor2)
                     {
-                        if (actor2.GetRightEdge() < cast["back_marker"][0].GetX()) {
+                        if (actor2.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
                             delListPhy.Add(actor2);
-
                         }
-                        if (actor1.GetRightEdge() < cast["back_marker"][0].GetX()) {
+                        if (actor1.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
                             delListMov.Add(actor1);
-                            
                         }
                         if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox()) 
                         {
