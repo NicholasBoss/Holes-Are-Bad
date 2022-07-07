@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
+using HolesAreBad.Scripting;
 using Raylib_cs;
 
 namespace HolesAreBad
@@ -12,10 +13,12 @@ namespace HolesAreBad
 
     {
         private OutputService _outputService;
+        private ParallaxEffect _parallax; 
 
-        public Title(OutputService outputService)
+        public Title(OutputService outputService, ParallaxEffect parallax)
         {
             _outputService = outputService;
+            _parallax = parallax; 
         }
 
         public override bool Execute(Dictionary<string, List<Actor>> cast)
@@ -23,7 +26,8 @@ namespace HolesAreBad
             _outputService.StartDrawing();
             
             _outputService.DrawImage(0,0, "./Assets/Backgrounds/Icon.png");
-            _outputService.DrawImage(800,450, "./Assets/Backgrounds/Start.png");
+            _outputService.DrawImage(1600, 900, "./Assets/Backgrounds/Start.png");
+            _outputService.DrawParallax(_parallax);
 
             _outputService.DrawText(100, 100, "Holes are bad", true);
 

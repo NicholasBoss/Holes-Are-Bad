@@ -4,7 +4,8 @@ using Raylib_cs;
 using HolesAreBad.Casting;
 using HolesAreBad.Scripting;
 using static Raylib_cs.Raylib;
-using static Raylib_cs.Color;   
+using static Raylib_cs.Color;
+using System.Numerics;    
 
 namespace HolesAreBad.Services
 {
@@ -158,6 +159,7 @@ namespace HolesAreBad.Services
 
         public void DrawParallax(ParallaxEffect parallax)
         {
+            parallax.CalculateParallax(); 
             Texture2D _background = parallax.GetBackground(); 
             Texture2D _midground = parallax.GetMidground(); 
             Texture2D _foreground = parallax.GetForeground(); 
@@ -166,8 +168,18 @@ namespace HolesAreBad.Services
             float _scrollingMid = parallax.GetScrollingMid(); 
             float _scrollingFore = parallax.GetScrollingFore(); 
 
-
+            // Far background
             DrawTextureEx(_background, new Vector2(_scrollingBack, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
+            DrawTextureEx(_background, new Vector2(_background.width * 2 + _scrollingBack, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
+
+            // Mid background
+            DrawTextureEx(_midground, new Vector2(_scrollingMid, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
+            DrawTextureEx(_midground, new Vector2(_midground.width * 2 + _scrollingMid, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
+
+            //Foreground 
+            DrawTextureEx(_foreground, new Vector2(_scrollingFore, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
+            DrawTextureEx(_foreground, new Vector2(_foreground.width * 2 + _scrollingFore, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
+
         }
 
     }
