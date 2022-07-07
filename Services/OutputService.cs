@@ -100,14 +100,9 @@ namespace HolesAreBad.Services
         /// <param name="y"></param>
         /// <param name="text"></param>
         /// <param name="darkText"></param>
-        public void DrawText(int x, int y, string text, bool darkText)
+        public void DrawText(int x, int y, string text)
         {
             Raylib_cs.Color color = Raylib_cs.Color.WHITE;
-
-            if (darkText)
-            {
-                color = Raylib_cs.Color.BLACK;
-            }
 
             Raylib.DrawText(text,
                 x + Constants.DEFAULT_TEXT_OFFSET,
@@ -137,7 +132,7 @@ namespace HolesAreBad.Services
             {
                 bool darkText = true;
                 string text = actor.GetText();
-                DrawText(x, y, text, darkText);
+                DrawText(x, y, text);
             }
             else
             {
