@@ -8,12 +8,13 @@ namespace HolesAreBad.Casting
         private string _charimg = Constants.IMAGE_COLLECTABLE;
         private int _charwidth = Constants.COLLECTABLE_WIDTH;
         private int _charheight = Constants.COLLECTABLE_HEIGHT;
-        public static int collectable = 0;
         public Collectable()
         {
             SetImage(_charimg);
             SetHeight(_charheight);
             SetWidth(_charwidth);
+
+            
         }
     }
 }

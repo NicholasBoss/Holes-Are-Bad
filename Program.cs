@@ -24,6 +24,9 @@ namespace HolesAreBad
             Lives lives = new Lives();
             cast["environment"].Add(lives);
 
+            Collectableenv collectableenv = new Collectableenv();
+            cast["environment"].Add(collectableenv);
+
             // Physics Objects
             cast["enemies"] = new List<Actor>();
             cast["physical_objects"] = new List<Actor>();
