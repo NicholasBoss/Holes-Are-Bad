@@ -16,10 +16,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXXXXXXX
                                     C            X
 XXXXXXXXX   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                                           A      X
-      X                   X               X      X
+      X                                   X      X
                                                  X
              C                                   X
 XXX         XXX                    XXX         XXX
                                                  X
                    A                A            X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX           XXXXXXXXXXXXXXXXXXX
