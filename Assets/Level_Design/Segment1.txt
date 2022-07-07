@@ -19,7 +19,7 @@ X                     X
 
 XXX    X    X        XX 
       XX    XXX
-
+                  C
 XX                X
-     X     X          X
+     X     X    C     X
 XXXXXXXXXXXXXXXXXXXXXXXXX

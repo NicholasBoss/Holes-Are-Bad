@@ -6,20 +6,20 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXXXXXXX
                                                  X
        X                            X            X
                                                  X
-                                                 X
+                       C                         X
                   XXXXXXXXXXXXXXXXXX             X
                                                  X
                                                  X
       X                    X                 X   X
                                                  X
-                                                 X
+                                    C            X
 XXXXXXXXX   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                                                  X
                                                  X
       X                   X               X      X
                                                  X
-                                                 X
+             C                                   X
 XXX         XXX                    XXX         XXX
                                                  X
-                                                 X
+                   A                A            X
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

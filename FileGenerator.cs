@@ -33,6 +33,7 @@ namespace HolesAreBad
             List<Platform> platforms = new List<Platform>();
             List<Spike> spikes = new List<Spike>();
             List<Enemy> enemies = new List<Enemy>();
+            List<Collectable> collectables = new List<Collectable>();
             int row = 0;
             int column = 0;
             foreach (string line in lines)
@@ -69,6 +70,16 @@ namespace HolesAreBad
                         enemy.SetPosition(new Point(x, y));
                         enemy.SetImage(Constants.IMAGE_ENEMY);
                         cast["enemies"].Add(enemy);
+                    }
+
+                    else if (c.Equals('C'))
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        Collectable collectable = new Collectable();
+                        collectable.SetPosition(new Point(x, y));
+                        collectable.SetImage(Constants.IMAGE_COLLECTABLE);
+                        cast["collectables"].Add(collectable);
                     }
                     column++;
                 }
