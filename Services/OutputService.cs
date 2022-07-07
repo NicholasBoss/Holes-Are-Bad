@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using Raylib_cs;
 using HolesAreBad.Casting;
+using HolesAreBad.Scripting;
+using static Raylib_cs.Raylib;
+using static Raylib_cs.Color;   
 
 namespace HolesAreBad.Services
 {
@@ -151,6 +154,20 @@ namespace HolesAreBad.Services
             {
                 DrawActor(actor);
             }
+        }
+
+        public void DrawParallax(ParallaxEffect parallax)
+        {
+            Texture2D _background = parallax.GetBackground(); 
+            Texture2D _midground = parallax.GetMidground(); 
+            Texture2D _foreground = parallax.GetForeground(); 
+
+            float _scrollingBack = parallax.GetScrollingBack(); 
+            float _scrollingMid = parallax.GetScrollingMid(); 
+            float _scrollingFore = parallax.GetScrollingFore(); 
+
+
+            DrawTextureEx(_background, new Vector2(_scrollingBack, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
         }
 
     }
