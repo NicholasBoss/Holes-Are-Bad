@@ -1,47 +1,45 @@
-/*
+using HolesAreBad.Scripting; 
+using System;
+using System.Numerics;
+using Raylib_cs;
+using static Raylib_cs.Raylib;
+using static Raylib_cs.Color;
+using static Raylib_cs.KeyboardKey;
+
 namespace HolesAreBad.Casting
 {
-    private class SpriteAnimations
+    
+    public class SpriteAnimations
     {
-        public struct Sprite 
-        {
-            public Sprite() 
-            {
-                Texture2D texture; 
-                Vector2 frameSize; 
-                int maxFrame; 
-                int framesWide; 
-                Vector2 origin; 
-                int frame;
-            }
+        
+    private Texture2D character = Raylib_cs.Raylib.LoadTexture("Assets/Character/red-hood.png");
+        
+        public SpriteAnimations() 
+        {              
         }
 
-        public SpriteAnimations(Actor actor)
+        public Texture2D GetCharacter()
         {
-            image = actor.GetImage(); 
-            width = actor.GetWidth(); 
-            height = actor.GetHeight(); 
-            x = actor.GetX(); 
-            y = actor.GetY();
-            Sprite sprite = { 0 };
-            sprite.texture = LoadTexture(image);
-            sprite.frameSize = Vector2(width, height);
-            sprite.maxFrame = y; 
-            sprite.framesWide = x; 
-            sprite.origin = (64, 128);
-
+            return character;
         }
 
-        void drawSprite(float x, float y, float scale, Color c)
+        public float GetWidth()
         {
-            float ox, oy; 
-            ox = (sprite->frame % sprite->framesWide) * sprite->frameSize.x; 
-            oy = (int)(sprite->frame / sprite->framesWide) * sprite->framesWide.y;
-            DrawTexturePro(sprite->texture, (Rectangle){ox, oy, sprite->frameSize.x, sprite->frameSized.y}, 
-                            (Rectangle){x, y, sprite->frameSize.x * scale, sprite->frameSize.y * scale},
-                            (Vector2){sprite->origin.x * scale, sprite->origin.y * scale}); 
+            float frameWidth = (character.width / 12);
+            return frameWidth;
         }
+
+        public float GetHeight()
+        {
+            float frameHeight = (character.height / 8);
+            return frameHeight; 
+        }
+
+        public void InitSprite()
+        {
+            
+        }
+
     }
 
 }
-*/
