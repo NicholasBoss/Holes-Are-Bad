@@ -13,11 +13,11 @@ X                       X
 XA   XXXXXXXXX  XXXXXXXXX
 XX           X         XX
 XX        XXXXXXXXXX   XX
-X                       X
+X    A                  X
 XXXXXXXXXXX  XXXXXXXXXXXX
 X                       X
 XXXXXX  XX  XXXXXX  XXXXX
-X                       X           
+X             A         X           
 X      XXXXXXXXXXXXXXX  X 
 X     AX                X
 XXXXXXXX   XXXXXXXXXXXXXX

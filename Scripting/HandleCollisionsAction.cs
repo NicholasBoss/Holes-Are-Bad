@@ -28,26 +28,34 @@ namespace HolesAreBad.Scripting
             Actor lives = cast["environment"][2];
             Actor character = cast["character"][0];
             List<Actor> spikes = cast["spikes"];
+            List<Actor> collectables = cast["collectables"];
             // Actor chest = cast["chest"][0];
             
             // List<Actor> bushes = cast["bushes"];
             // List<Actor> pendants = cast["pendants"];
             List<Actor> spikesToRemove = new List<Actor>();
+            List<Actor> collectablesToRemove = new List<Actor>();
             
             
 
             billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
 
-            // This checks to see if the player collides with a bush
+            // This checks to see if the player collides with a spike or collectable.
             foreach(Actor actor in spikes)
             {
                 Spike spike = (Spike)actor;
                 if(_physicsService.IsCollision(character, spike))
                 {
-                    // _audioService.PlaySound(Constants.SOUND_LEAF);
-                    // string bushText = bush.GetDescription();
-                    // billboard.SetText(bushText);
                     spikesToRemove.Add(spike);
+                }
+            }
+
+            foreach(Actor actor in collectables)
+            {
+                Collectable collectable = (Collectable)actor;
+                if(_physicsService.IsCollision(character, collectable))
+                {
+                    collectablesToRemove.Add(collectable);
                 }
             }
 
@@ -58,13 +66,12 @@ namespace HolesAreBad.Scripting
 
             if (delay == 5)
             {
-                // _audioService.PlaySound(Constants.SOUND_LOSE);
                 System.Threading.Thread.Sleep(2000);
                 return false;
             }
 
             // This will be a Win condition
-            if(Lives.lives == 20)
+            if(Collectable.collectable == 10)
             {
                 billboard.SetText("You Win!");
                 System.Threading.Thread.Sleep(200);
@@ -77,6 +84,13 @@ namespace HolesAreBad.Scripting
             {
                 cast["spikes"].Remove(spike);
                 lives.SetText($"Lives left: {Lives.lives += 1}");
+            }
+
+            foreach (Actor collectable in collectablesToRemove)
+            {
+                cast["collectables"].Remove(collectable);
+                Collectable.collectable += 1;
+                billboard.SetText($"Collectables left: {Collectable.collectable}");
             }
 
             

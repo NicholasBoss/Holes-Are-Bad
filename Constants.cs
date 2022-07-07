@@ -36,13 +36,7 @@ namespace HolesAreBad
 
         // Images for the game will be initialized here
         // Primitive Graphics
-        // public const string IMAGE_CHARACTER = "./Assets/bluebox.png";
-        public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
-        // public const string IMAGE_PENDANT = "./Assets/yellowbox.png";
-        // public const string IMAGE_PENDANT1 = "./Assets/yellowbox.png";
-        // public const string IMAGE_PENDANT2 = "./Assets/yellowbox.png";
-        // public const string IMAGE_CHEST = "./Assets/brownbox.png";
-
+        
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
         public const string IMAGE_ENEMY = "./Assets/Enemies/Flying_Enemy_lvl_2.png";
@@ -52,19 +46,12 @@ namespace HolesAreBad
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
         public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
-        // public const string IMAGE_BUSH = "./Assets/bush.png";
-        // public const string IMAGE_PENDANT = "./Assets/pendant.png";
-        // public const string IMAGE_PENDANT1 = "./Assets/pendant1.png";
-        // public const string IMAGE_PENDANT2 = "./Assets/pendant2.png";
-        // public const string IMAGE_CHEST = "./Assets/chest.png";
+        public const string IMAGE_COLLECTABLE = "./Assets/Good/Collectable_1.png";
+        public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
 
 
         // Sounds for the game will be initialized here
-        // public const string SOUND_LEAF = "./Assets/leaf.mp3";
-        // public const string SOUND_PENDANTFOUND = "./Assets/PendantFound.wav";
-        // public const string SOUND_WIN = "./Assets/Win.wav";
         public const string SOUND_START = "./Assets/Music/i_think_i_like_you.mp3";
-        // public const string SOUND_LOSE = "./Assets/Lose.wav";
 
         
         //Speed and position of the actors will be initialized here
@@ -73,6 +60,9 @@ namespace HolesAreBad
 
         public const int CHARACTER_WIDTH = 16;
         public const int CHARACTER_HEIGHT = 29;
+
+        public const int COLLECTABLE_WIDTH = 16;
+        public const int COLLECTABLE_HEIGHT = 16;
 
         public const int ENEMY_WIDTH = 36;
         public const int ENEMY_HEIGHT = 21;

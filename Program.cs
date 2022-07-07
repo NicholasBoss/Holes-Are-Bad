@@ -31,9 +31,8 @@ namespace HolesAreBad
             cast["holes"] = new List<Actor>();
             cast["platforms"] = new List<Actor>();
             cast["spikes"] = new List<Actor>();
+            cast["collectables"] = new List<Actor>();
 
-            // cast["pendants"] = new List<Actor>();
-            // cast["chest"] = new List<Actor>();
 
             FileGenerator fgenerator = new FileGenerator();
 
@@ -48,20 +47,6 @@ namespace HolesAreBad
             cast["back_marker"] = new List<Actor>();
             cast["back_marker"].Add(back_marker);
 
-            // Bush pendant1 = generator.Generate();
-            // pendant1.SetDescription("You have found the first pendant");
-            // cast["pendants"].Add(pendant1);
-            // Bush pendant2 = generator.Generate();
-            // pendant2.SetDescription("You have found the second pendant");
-            // cast["pendants"].Add(pendant2);
-            // Bush pendant3 = generator.Generate();
-            // pendant3.SetDescription("You have found the third pendant");
-            // cast["pendants"].Add(pendant3);
-
-            
-            
-            // Chest chest = new Chest();
-            // cast["chest"].Add(chest);
 
             // The player
             cast["character"] = new List<Actor>();
