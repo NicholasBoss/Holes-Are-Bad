@@ -179,6 +179,9 @@ namespace HolesAreBad.Scripting
                                     actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
                                     actor1.SetJumpReady(true);
+                                    if (actor1 == cast["character"][0] && cast["platforms"].Contains(actor2)) {
+                                        cast["last_known_location"][0] = actor2;
+                                    }
                                 }
                                 else if (shiftType == "left")
                                 {

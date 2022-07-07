@@ -15,6 +15,8 @@ namespace HolesAreBad.Scripting
 
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
+            Actor player = cast["character"][0];
+            Actor lives = cast["environment"][2];
             List<Actor> checklist = new List<Actor>();
             foreach (List<Actor> group in cast.Values)
             {
@@ -22,6 +24,11 @@ namespace HolesAreBad.Scripting
                 {
                     if (!checklist.Contains(actor)){
                         MoveActor(actor);
+                        if (actor == player && actor.GetBottomEdge() > Constants.MAX_Y) {
+                            Actor restorePoint = cast["last_known_location"][0];
+                            actor.SetPosition(new Point(restorePoint.GetLeftEdge() + restorePoint.GetWidth() / 2 - actor.GetWidth() / 2, restorePoint.GetTopEdge() - actor.GetHeight()));
+                            lives.SetText($"Lives left: {Lives.lives -= 1}");
+                        }
                         checklist.Add(actor);
                     }
                 }
@@ -64,7 +71,7 @@ namespace HolesAreBad.Scripting
             dy = HandleJump(actor, dy);
 
             double newX = (x + dx) /*% Constants.MAX_X*/;
-            double newY = (y + dy) % Constants.MAX_Y;
+            double newY = (y + dy) /*% Constants.MAX_Y*/;
 
             /*if (newX < 0)
             {
