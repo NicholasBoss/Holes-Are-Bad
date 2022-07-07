@@ -41,7 +41,7 @@ namespace HolesAreBad
                 column = 0;
                 foreach (char c in line)
                 {
-                    if (c.Equals('X'))
+                    if (c.Equals('X')) // Adds Platforms
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
@@ -52,7 +52,7 @@ namespace HolesAreBad
                         cast["physical_objects"].Add(platform);
                     }
                     // Check for spikes, collectables, and other stuff
-                    else if (c.Equals('A'))
+                    else if (c.Equals('A')) // Adds Spikes
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
@@ -62,7 +62,7 @@ namespace HolesAreBad
                         cast["spikes"].Add(spike);
                     }
 
-                    else if (c.Equals('E'))
+                    else if (c.Equals('E')) // Adds Enemires
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
@@ -72,7 +72,7 @@ namespace HolesAreBad
                         cast["enemies"].Add(enemy);
                     }
 
-                    else if (c.Equals('C'))
+                    else if (c.Equals('C')) // Adds Collectables
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
