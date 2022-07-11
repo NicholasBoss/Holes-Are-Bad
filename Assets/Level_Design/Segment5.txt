@@ -21,5 +21,5 @@ X              CX X          XX
               XXX X           XX
 X                 X            XX
 X       C       X               XX
-X  XX  XXX XX   X X          ACAXX
-XXXXX  XXXXXXXX XXXXXX   XXXXXXXXX
+X  XX  GGG XX   X X          ACAXX
+XXXXX  GGGGGXXX XXXXXX   XXXXXXXXX
