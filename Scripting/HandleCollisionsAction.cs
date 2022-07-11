@@ -30,12 +30,17 @@ namespace HolesAreBad.Scripting
             Actor character = cast["character"][0];
             List<Actor> spikes = cast["spikes"];
             List<Actor> collectables = cast["collectables"];
+            List<Actor> holes = cast["holes"];
+            List<Actor> enemies = cast["enemies"];
+            List<Actor> flying_enemies = cast["flying_enemies"];
             // Actor chest = cast["chest"][0];
             
             // List<Actor> bushes = cast["bushes"];
             // List<Actor> pendants = cast["pendants"];
             List<Actor> spikesToRemove = new List<Actor>();
             List<Actor> collectablesToRemove = new List<Actor>();
+            List<Actor> holesToRemove = new List<Actor>();
+            List<Actor> enemiesToRemove = new List<Actor>();
             
             
 
@@ -48,6 +53,33 @@ namespace HolesAreBad.Scripting
                 if(_physicsService.IsCollision(character, spike))
                 {
                     spikesToRemove.Add(spike);
+                }
+            }
+
+            foreach(Actor actor in holes)
+            {
+                Hole hole = (Hole)actor;
+                if(_physicsService.IsCollision(character, hole))
+                {
+                    holesToRemove.Add(hole);
+                }
+            }
+
+            foreach(Actor actor in enemies)
+            {
+                Enemy enemy = (Enemy)actor;
+                if(_physicsService.IsCollision(character, enemy))
+                {
+                    enemiesToRemove.Add(enemy);
+                }
+            }
+
+            foreach(Actor actor in flying_enemies)
+            {
+                FlyingEnemy flying_enemy = (FlyingEnemy)actor;
+                if(_physicsService.IsCollision(character, flying_enemy))
+                {
+                    enemiesToRemove.Add(flying_enemy);
                 }
             }
 
@@ -93,8 +125,25 @@ namespace HolesAreBad.Scripting
                 collectableenv.SetText($"Collectables: {Collectableenv.collectable += 1}/10");
             }
 
+            foreach (Actor hole in holesToRemove)
+            {
+                cast["holes"].Remove(hole);
+                lives.SetText($"Lives left: {Lives.lives -= 10}");
+            }
+
+            foreach (Actor enemy in enemiesToRemove)
+            {
+                cast["enemies"].Remove(enemy);
+                lives.SetText($"Lives left: {Lives.lives -= 3}");
+            }
+
             
-            
+            if (Lives.lives == 0)
+            {
+                billboard.SetText("You Lose!");
+                System.Threading.Thread.Sleep(200);
+                delay = 5;
+            }
         
             
             Dictionary<Actor, string> collision_num = new Dictionary<Actor, string>();
