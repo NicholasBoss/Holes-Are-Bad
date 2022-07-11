@@ -5,7 +5,7 @@ using static Raylib_cs.Color;
 
 namespace HolesAreBad.Scripting
 {
-    public class ParallaxEffect
+    public class ParallaxEffect : Actor
     { 
         private int screenWidth = Constants.MAX_X; 
         private int screenHeight = Constants.MAX_Y; 
@@ -21,6 +21,7 @@ namespace HolesAreBad.Scripting
         private float scrollingBack = 0.0f; 
         private float scrollingMid = 0.0f; 
         private float scrollingFore = 0.0f; 
+        
         public ParallaxEffect(string foreground_image, string midground_image, string background_image)
         {
             foreground = LoadTexture(foreground_image);

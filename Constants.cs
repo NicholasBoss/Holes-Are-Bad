@@ -54,6 +54,9 @@ namespace HolesAreBad
         public const string LVL_1_FOREGROUND = "Assets/Backgrounds/foreground_scaled.png";
         public const string LVL_1_MIDGROUND = "Assets/Backgrounds/back-buildings_scaled.png";
         public const string LVL_1_BACKGROUND = "Assets/Backgrounds/far-buildings_scaled.png";
+        public const string LVL_2_FOREGROUND = "Assets/Backgrounds/background_2.png";
+        public const string LVL_2_MIDGROUND = "Assets/Backgrounds/background_1.png";
+        public const string LVL_2_BACKGROUND = "Assets/Backgrounds/background_0.png";
 
 
         // Sounds for the game will be initialized here
