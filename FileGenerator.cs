@@ -103,7 +103,7 @@ namespace HolesAreBad
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Hole hole = new Hole();
-                        hole.SetPosition(new Point(x, y));
+                        hole.SetPosition(new Point(x+20, y+10));
                         cast["holes"].Add(hole);
                     }
                     
