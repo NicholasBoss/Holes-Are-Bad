@@ -29,7 +29,7 @@ namespace HolesAreBad
             _outputService.DrawImage(1600, 900, "./Assets/Backgrounds/Start.png");
             _outputService.DrawParallax(_parallax);
 
-            _outputService.DrawText(100, 100, "Holes are bad");
+            _outputService.DrawText(100, 100, "Holes Are Bad");
 
             _outputService.EndDrawing();
             
