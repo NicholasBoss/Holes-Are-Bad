@@ -135,7 +135,7 @@ namespace HolesAreBad.Scripting
             }
 
             
-            if (Lives.lives == 0)
+            if (Lives.lives <= 0)
             {
                 billboard.SetText("You Lose!");
                 System.Threading.Thread.Sleep(200);
