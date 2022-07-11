@@ -93,7 +93,7 @@ namespace HolesAreBad
             // Start up the game
             outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Holes Are Bad", Constants.FRAME_RATE); // Open the window
             audioService.StartAudio(); // Start the audio
-            audioService.PlaySound(Constants.SOUND_START); // Play the start sound
+            audioService.PlaySound(Constants.SOUND_Game); // Play the Game sound
 
             Director theDirector = new Director(cast, actions, outputService, inputService); // Create the director
             theDirector.Direct(); // Direct the director

@@ -6,9 +6,7 @@ using static Raylib_cs.Color;
 namespace HolesAreBad.Scripting
 {
     public class ParallaxEffect
-    { 
-        private int screenWidth = Constants.MAX_X; 
-        private int screenHeight = Constants.MAX_Y; 
+    {
 
         private Texture2D foreground;
         private Texture2D midground;

@@ -16,8 +16,6 @@ namespace HolesAreBad
         public const int DEFAULT_FONT_SIZE = 20;
         public const int DEFAULT_TEXT_OFFSET = 4;
 
-        public const int NUM_HOLES = 20;
-        public const int NUM_ENEMIES = 1;
         public const string DEFAULT_BILLBOARD_MESSAGE = "Use A, D and spacebar to move.";
         
         // File setup for the level
@@ -58,7 +56,7 @@ namespace HolesAreBad
 
 
         // Sounds for the game will be initialized here
-        public const string SOUND_START = "./Assets/Music/i_think_i_like_you.mp3";
+        public const string SOUND_Game = "./Assets/Music/i_think_i_like_you.mp3";
 
         
         //Speed and position of the actors will be initialized here

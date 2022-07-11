@@ -130,7 +130,6 @@ namespace HolesAreBad.Services
             }
             else if (actor.HasText())
             {
-                bool darkText = true;
                 string text = actor.GetText();
                 DrawText(x, y, text);
             }
