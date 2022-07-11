@@ -9,7 +9,7 @@ XX     XAAAAAAX         X
 X      XXXXXXXXXXXXXXXXXX
 X                       X
 XXXXXXXXXXXXXXXXXXXXX   X
-X                       X
+X                  E    X
 XA   XXXXXXXXX  XXXXXXXXX
 XX           X         XX
 XX        XXXXXXXXXX   XX
@@ -18,8 +18,8 @@ XXXXXXXXXXX  XXXXXXXXXXXX
 X                       X
 XXXXXX  XX  XXXXXX  XXXXX
 X             A         X           
-X      XXXXXXXXXXXXXXX  X 
-X     AX                X
-XXXXXXXX   XXXXXXXXXXXXXX
+X     AXXXXXXXXXXXXXXX  X 
+XXXXXXXX                X
+           XXXXXXXXXXXXXX
                          
 XXXX XX  XXXXX  XXXX  XXX

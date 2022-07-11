@@ -31,6 +31,8 @@ namespace HolesAreBad
             {segmentDir+"Segment3.txt", 3},
             {segmentDir+"Segment4.txt", 4},
             {segmentDir+"Segment5.txt", 5},
+            {segmentDir+"Segment6.txt", 6},
+            {segmentDir+"Segment7.txt", 7},
         };
 
 
@@ -39,13 +41,14 @@ namespace HolesAreBad
         
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
-        public const string IMAGE_ENEMY = "./Assets/Enemies/Flying_Enemy_lvl_2.png";
+        public const string IMAGE_ENEMY = "./Assets/Enemies/Bad_Dude_1_SMALL.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
         public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
+        public const string IMAGE_GHOST_BLOCK = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
         public const string IMAGE_COLLECTABLE = "./Assets/Good/Collectable_1.png";
         public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
         public const string LVL_1_FOREGROUND = "Assets/Backgrounds/foreground_scaled.png";
@@ -67,8 +70,8 @@ namespace HolesAreBad
         public const int COLLECTABLE_WIDTH = 16;
         public const int COLLECTABLE_HEIGHT = 16;
 
-        public const int ENEMY_WIDTH = 36;
-        public const int ENEMY_HEIGHT = 21;
+        public const int ENEMY_WIDTH = 39;
+        public const int ENEMY_HEIGHT = 29;
 
         public const int HOLE_WIDTH = 35;
         public const int HOLE_HEIGHT = 25;

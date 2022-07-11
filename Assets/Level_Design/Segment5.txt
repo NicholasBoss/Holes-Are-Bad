@@ -10,7 +10,7 @@ XX              X X             AX
 X    X            XXXXX  XXX  XX  
 X C                 XX
 XXX             X    XX
-                X X   XX
+      GGGGG     X X   XX
 X       C         X    XX               
 X             XXX X     XX
 X    C                   XX
@@ -21,5 +21,5 @@ X              CX X          XX
               XXX X           XX
 X                 X            XX
 X       C       X               XX
-X  XX  XXX XX   X X          ACAXX
-XXXXX  XXXXXXXX XXXXXX   XXXXXXXXX
+X  XX  GGG XX   X X          ACAXX
+XXXXX  GXXXXXXX XXXXXX   XXXXXXXXX

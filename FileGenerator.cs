@@ -47,9 +47,16 @@ namespace HolesAreBad
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Platform platform = new Platform();
                         platform.SetPosition(new Point(x, y));
-                        platform.SetImage(Constants.IMAGE_PLATFORM);
                         cast["platforms"].Add(platform);
                         cast["physical_objects"].Add(platform);
+                    }
+                    else if (c.Equals('G')) // Adds Ghost Block
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        GhostBlock platform = new GhostBlock();
+                        platform.SetPosition(new Point(x, y));
+                        cast["ghost_block"].Add(platform);
                     }
                     // Check for spikes, collectables, and other stuff
                     else if (c.Equals('A')) // Adds Spikes
@@ -58,17 +65,15 @@ namespace HolesAreBad
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Spike spike = new Spike();
                         spike.SetPosition(new Point(x+20, y+25));
-                        spike.SetImage(Constants.IMAGE_SPIKE);
                         cast["spikes"].Add(spike);
                     }
 
-                    else if (c.Equals('E')) // Adds Enemires
+                    else if (c.Equals('E')) // Adds Enemies
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Enemy enemy = new Enemy();
                         enemy.SetPosition(new Point(x, y));
-                        enemy.SetImage(Constants.IMAGE_ENEMY);
                         cast["enemies"].Add(enemy);
                     }
 
@@ -78,7 +83,6 @@ namespace HolesAreBad
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Collectable collectable = new Collectable();
                         collectable.SetPosition(new Point(x, y));
-                        collectable.SetImage(Constants.IMAGE_COLLECTABLE);
                         cast["collectables"].Add(collectable);
                     }
                     column++;
