@@ -27,7 +27,7 @@ namespace HolesAreBad
             
             _outputService.DrawParallax(_parallax);
 
-            _outputService.DrawText(100, 100, "Holes are bad");
+            _outputService.DrawText(100, 100, "Holes Are Bad");
 
             _outputService.EndDrawing();
             

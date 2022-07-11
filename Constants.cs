@@ -48,6 +48,7 @@ namespace HolesAreBad
         public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
         public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
+        public const string IMAGE_GHOST_BLOCK = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
         public const string IMAGE_COLLECTABLE = "./Assets/Good/Collectable_1.png";
         public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
 
