@@ -41,7 +41,7 @@ namespace HolesAreBad
         
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
-        public const string IMAGE_ENEMY = "./Assets/Enemies/Bad_Dude_1 _SMALL.png";
+        public const string IMAGE_ENEMY = "./Assets/Enemies/Bad_Dude_1_SMALL.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";
