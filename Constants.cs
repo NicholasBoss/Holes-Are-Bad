@@ -67,8 +67,8 @@ namespace HolesAreBad
         public const int COLLECTABLE_WIDTH = 16;
         public const int COLLECTABLE_HEIGHT = 16;
 
-        public const int ENEMY_WIDTH = 36;
-        public const int ENEMY_HEIGHT = 21;
+        public const int ENEMY_WIDTH = 39;
+        public const int ENEMY_HEIGHT = 29;
 
         public const int HOLE_WIDTH = 35;
         public const int HOLE_HEIGHT = 25;
