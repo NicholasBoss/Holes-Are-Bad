@@ -152,9 +152,13 @@ namespace HolesAreBad.Services
             }
         }
 
-        public void DrawParallax(ParallaxEffect parallax)
-        {
-            parallax.CalculateParallax(); 
+        public void DrawParallax(ParallaxEffect parallax, string background_image, string foreground_image, string midground_image)
+        {   
+
+            parallax.CalculateParallax();
+            parallax.SetBackground(background_image);
+            parallax.SetForeground(foreground_image);
+            parallax.SetMidground(midground_image); 
             Texture2D _background = parallax.GetBackground(); 
             Texture2D _midground = parallax.GetMidground(); 
             Texture2D _foreground = parallax.GetForeground(); 
@@ -176,6 +180,7 @@ namespace HolesAreBad.Services
             DrawTextureEx(_foreground, new Vector2(_foreground.width * 2 + _scrollingFore, 20), 0.0f, 2.0f, Raylib_cs.Color.WHITE);
 
         }
+        
         public void DrawSprite(SpriteAnimations sprite)
         {
             Texture2D _sprite = sprite.GetCharacter(); 

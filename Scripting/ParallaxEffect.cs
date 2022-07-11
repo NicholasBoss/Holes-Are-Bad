@@ -10,20 +10,38 @@ namespace HolesAreBad.Scripting
         private int screenWidth = Constants.MAX_X; 
         private int screenHeight = Constants.MAX_Y; 
 
-        private Texture2D foreground = LoadTexture("Assets/Backgrounds/foreground_scaled.png");
-        private Texture2D midground = LoadTexture("Assets/Backgrounds/back-buildings_scaled.png");
-        private Texture2D background = LoadTexture("Assets/Backgrounds/far-buildings_scaled.png");
+        private Texture2D foreground;
+        private Texture2D midground;
+        private Texture2D background;
+
+        private string _foreground_image;
+        private string _midground_image; 
+        private string _background_image; 
 
         private float scrollingBack = 0.0f; 
         private float scrollingMid = 0.0f; 
         private float scrollingFore = 0.0f; 
-        public ParallaxEffect()
+        public ParallaxEffect(string foreground_image, string midground_image, string background_image)
         {
+            foreground = LoadTexture(foreground_image);
+            midground = LoadTexture(midground_image);
+            background = LoadTexture(background_image);
+
+            _foreground_image = foreground_image;
+            _midground_image = midground_image;
+            _foreground_image = foreground_image;
+
         }
 
         public Texture2D GetBackground()
         {
             return background; 
+        }
+        
+        public void SetBackground(string new_background)
+        {
+            _background_image = new_background;
+            background = LoadTexture(_background_image); 
         }
 
         public Texture2D GetMidground()
@@ -31,9 +49,21 @@ namespace HolesAreBad.Scripting
             return midground;
         }
 
+        public void SetMidground(string new_midground)
+        {
+            _midground_image = new_midground;
+            midground = LoadTexture(_midground_image); 
+        }
+
         public Texture2D GetForeground()
         {
             return foreground;
+        }
+
+        public void SetForeground(string new_foreground)
+        {
+            _foreground_image = new_foreground;
+            midground = LoadTexture(_foreground_image);
         }
 
         public float GetScrollingBack()
