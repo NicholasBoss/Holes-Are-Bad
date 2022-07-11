@@ -14,12 +14,12 @@ XC         XE                   X
 XGXXXXXXXX XXE                  X
 XGXXXXX    XXXE      X          X
 XEXXXXX XXXXXXXE                X
-XEXXXXX    XXXXXE  X     X      X
-XEXXXXXXXX XXXXXXE              X
+XEXXXXX    XXXXXE  X     X       
+XEXXXXXXXX XXXXXXE             XX
 XEXXXXXXXX       XE             X
-XEXXXXXXXXXXXXXX XXE            X
+XEXXXXXXXXXXXXXX XXE        X   X
 XEXXXXXXXXXXXX   XXXE    X      X
 XEXXXXXXXXXXXX  XXXXXE     X    X
 XEXXXXXXXXXXXX X    XXE         X
-                    XXXE
+                    XXXE        X
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
