@@ -1,23 +1,23 @@
 
 XXXXX XXXXX XXXXX XXXXX XXXXXX XXX
-                X X              X
+E               X X              X
 X         X    AX X              X
-         X    XXX X              X
+       E X    XXX X              X
 X     XXX                        X
 X                                X
 XX              X X             AX
-               XX XA            X 
+               XX XA      E     X 
 X    X            XXXXX  XXX  XX  
 X C                 XX
 XXX             X    XX
       GGGGG     X X   XX
 X       C         X    XX               
 X             XXX X     XX
-X    C                   XX
+X    C                   XXE
      X          X         XX
-X                 X        XX
+XE                X        XX
 XXX                         XX
-X              CX X          XX
+X              CX X          XXE
               XXX X           XX
 X                 X            XX
 X       C       X               XX
