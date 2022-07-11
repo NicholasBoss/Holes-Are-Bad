@@ -27,7 +27,7 @@ namespace HolesAreBad
             
             _outputService.DrawImage(0,0, "./Assets/Backgrounds/Icon.png");
             _outputService.DrawImage(1600, 900, "./Assets/Backgrounds/Start.png");
-            _outputService.DrawParallax(_parallax);
+            _outputService.DrawParallax(_parallax, Constants.LVL_1_BACKGROUND, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND);
 
             _outputService.DrawText(100, 100, "Holes are bad");
 
