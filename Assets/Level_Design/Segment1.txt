@@ -1,25 +1,25 @@
 
-        X     XX
+   E     X     XX
    X          X      X
         A
 XX      X            XX
 
   X               X
 
-         XXX   
+         XXX  E 
              XX 
            AXX          X
-XX         XX
+XXE        XX
  XX       XX        XX
 
       X        X
-
+                      E
 X  A                  X
    X    XX      X  
 
 XXX    X    XAA      XX 
       XX    XXX
                   C
-XX                X
+XX         E      X
      X     X    C     X
                          
