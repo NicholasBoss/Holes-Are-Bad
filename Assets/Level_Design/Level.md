@@ -7,3 +7,4 @@ E = enemies
 C = collectables
 A = spikes
 G = ghost block
+H = hole

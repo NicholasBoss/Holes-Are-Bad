@@ -2,7 +2,7 @@
 X  XE       X                      X X
   XXXE                             X
 X  XXXE          X        X        X X
-  XXXXXE                           X
+  XXXXXE              H            X
 X  XXXXXE                          X X
   XXXXXXXE                X        X
 X  XXXXXXXE    X                   X X
@@ -11,7 +11,7 @@ X  XXXXXGXXXE           XCG        X X
   XXXXXXGGGXXE          XXX        X
 X  XXXXXXXGXXXE                    X X
   XGC         GE                   X
-X  XGXXXXXXXX XXE                  X X
+X  XGXXXXXXXX XXE          H       X X
   XXGXXXXX    XXXE      X          X
 X  XFXXXXX XXXXXXXE                X X
   XXFXXXXX    XXXXXE  X     X       
@@ -20,6 +20,6 @@ X  XFXXXXXXXX XXXXXXE             XX X
 X  XFXXXXXXXXXXXXXX XXE        X   X X
   XXFXXXXXXXXXXXX   XXXE    X      X
 X  XFXXXXXXXXXXXX  XXXXXE     X    X X
-  XXFXXXXXXXXXXXX X    XXE         X
+  XXHXXXXXXXXXXXX X    XXE         X
                        XXXE          X
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
