@@ -10,7 +10,7 @@ XX              X X             AX
 X    X            XXXXX  XXX  XX  
 X C                 XX
 XXX             X    XX
-                X X   XX
+      GGGGG     X X   XX
 X       C         X    XX               
 X             XXX X     XX
 X    C                   XX

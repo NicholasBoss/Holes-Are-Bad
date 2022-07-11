@@ -56,6 +56,7 @@ namespace HolesAreBad
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         GhostBlock platform = new GhostBlock();
                         platform.SetPosition(new Point(x, y));
+                        cast["ghost_block"].Add(platform);
                     }
                     // Check for spikes, collectables, and other stuff
                     else if (c.Equals('A')) // Adds Spikes

@@ -33,6 +33,7 @@ namespace HolesAreBad
             cast["movable_objects"] = new List<Actor>();
             cast["holes"] = new List<Actor>();
             cast["platforms"] = new List<Actor>();
+            cast["ghost_block"] = new List<Actor>();
             cast["spikes"] = new List<Actor>();
             cast["collectables"] = new List<Actor>();
 
