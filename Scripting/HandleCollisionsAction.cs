@@ -23,6 +23,7 @@ namespace HolesAreBad.Scripting
 
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
+            // retrieves the cast variables from the cast dictionary
             Actor billboard = cast["environment"][1];
             Actor lives = cast["environment"][2];
             Actor collectableenv = cast["environment"][3];
@@ -89,26 +90,6 @@ namespace HolesAreBad.Scripting
                 }
             }
 
-            while(delay > 5)
-            {
-                delay -= 1;
-            }
-
-            if (delay == 5)
-            {
-                System.Threading.Thread.Sleep(2000);
-                return false;
-            }
-
-            // This will be a Win condition
-            if(Collectableenv.collectable == 10)
-            {
-                billboard.SetText("You Win!");
-                System.Threading.Thread.Sleep(200);
-                delay = 5;
-            }
-
-
             // This removes the actors from the cast.
             foreach(Actor spike in spikesToRemove)
             {
@@ -143,7 +124,26 @@ namespace HolesAreBad.Scripting
                 }
             }
 
-            
+            // This will be a Win condition
+            if(Collectableenv.collectable == 10)
+            {
+                billboard.SetText("You Win!");
+                System.Threading.Thread.Sleep(200);
+                delay = 5;
+            }
+
+            while(delay > 5)
+            {
+                delay -= 1;
+            }
+
+            if (delay == 5)
+            {
+                System.Threading.Thread.Sleep(2000);
+                return false;
+            }
+
+            // This will be a Lose condition
             if (Lives.lives <= 0)
             {
                 billboard.SetText("You Lose!");
@@ -151,7 +151,7 @@ namespace HolesAreBad.Scripting
                 delay = 5;
             }
         
-            
+            // This is the physics engine that will check for collisions.
             Dictionary<Actor, string> collision_num = new Dictionary<Actor, string>();
             List<Actor> delListPhy = new List<Actor>();
             List<Actor> delListMov = new List<Actor>();
