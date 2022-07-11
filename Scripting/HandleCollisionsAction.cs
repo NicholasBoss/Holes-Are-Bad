@@ -159,6 +159,7 @@ namespace HolesAreBad.Scripting
                 {
                     if (actor1 != actor2)
                     {
+                        bool isEnemy = cast["enemies"].Contains(actor1);
                         if (actor2.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
                             delListPhy.Add(actor2);
                         }
@@ -217,6 +218,10 @@ namespace HolesAreBad.Scripting
                                     actor1.SetJumpReady(true);
                                 }
                             }
+                            if (isEnemy && dy > 3) {
+                                actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - (int)dy));
+                                actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
+                            }
                             if (shiftType != "none") 
                             {
                                 int leftRightOffset = Math.Abs(dy) > 3 ? 3 : 0;
@@ -232,10 +237,16 @@ namespace HolesAreBad.Scripting
                                 }
                                 else if (shiftType == "left")
                                 {
+                                    if (isEnemy) {
+                                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
+                                    }
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX() - leftShift - leftRightOffset, actor1.GetPosition().GetY()));
                                 }
                                 else if (shiftType == "right")
                                 {
+                                    if (isEnemy) {
+                                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
+                                    }
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX() + rightShift + leftRightOffset, actor1.GetPosition().GetY()));
                                 }
                                 else if (shiftType == "down")
