@@ -75,7 +75,10 @@ namespace HolesAreBad
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Enemy enemy = new Enemy();
                         enemy.SetPosition(new Point(x+20, y+10));
+                        enemy.SetVelocity(new Pointf(1, 0));
+                        enemy.SetUseGravity(true);
                         cast["enemies"].Add(enemy);
+                        cast["movable_objects"].Add(enemy);
                     }
 
                     else if (c.Equals('C')) // Adds Collectables
