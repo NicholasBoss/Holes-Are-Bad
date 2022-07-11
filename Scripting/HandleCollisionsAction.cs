@@ -14,7 +14,6 @@ namespace HolesAreBad.Scripting
         PhysicsService _physicsService;
         AudioService _audioService;
         private int delay = 0;
-        private bool _lose = false;
 
         public HandleCollisionsAction(PhysicsService physicsService, AudioService audioService)
         {
@@ -33,10 +32,8 @@ namespace HolesAreBad.Scripting
             List<Actor> holes = cast["holes"];
             List<Actor> enemies = cast["enemies"];
             List<Actor> flying_enemies = cast["flying_enemies"];
-            // Actor chest = cast["chest"][0];
-            
-            // List<Actor> bushes = cast["bushes"];
-            // List<Actor> pendants = cast["pendants"];
+       
+            // create a list of all actors that are gaing to be removed from the cast and thus the game
             List<Actor> spikesToRemove = new List<Actor>();
             List<Actor> collectablesToRemove = new List<Actor>();
             List<Actor> holesToRemove = new List<Actor>();
@@ -112,7 +109,7 @@ namespace HolesAreBad.Scripting
             }
 
 
-            // This removes the bushes from the game once they've been searched.
+            // This removes the actors from the cast.
             foreach(Actor spike in spikesToRemove)
             {
                 cast["spikes"].Remove(spike);
