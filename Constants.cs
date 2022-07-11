@@ -31,6 +31,8 @@ namespace HolesAreBad
             {segmentDir+"Segment3.txt", 3},
             {segmentDir+"Segment4.txt", 4},
             {segmentDir+"Segment5.txt", 5},
+            {segmentDir+"Segment6.txt", 6},
+            {segmentDir+"Segment7.txt", 7},
         };
 
 
@@ -39,7 +41,7 @@ namespace HolesAreBad
         
         // Fancy Graphics
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
-        public const string IMAGE_ENEMY = "./Assets/Enemies/Flying_Enemy_lvl_2.png";
+        public const string IMAGE_ENEMY = "./Assets/Enemies/Bad_Dude_1_SMALL.png";
         public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
         public const string IMAGE_SPIKE = "./Assets/Good/Spike.png";
         public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";

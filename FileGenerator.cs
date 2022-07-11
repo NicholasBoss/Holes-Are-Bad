@@ -68,7 +68,7 @@ namespace HolesAreBad
                         cast["spikes"].Add(spike);
                     }
 
-                    else if (c.Equals('E')) // Adds Enemires
+                    else if (c.Equals('E')) // Adds Enemies
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
