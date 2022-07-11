@@ -1,25 +1,25 @@
                     E    
-  XX  XX     X  X   XX  X
+  GG  XX     X  X   XX  X
    X                     
    X         E            
  X X X   X   X    X XXX  
    X   A                  
-   X XXXX      XX X      
+   X GXXX      XX X      
  X X                     
-   X                     
+   X         H           
    X    XX      X    X   
    X E             A      
-XX X X            XX  XX 
-   X         A           
+XX X X            XX  GG 
+   X     E   A           
    X X   X   X           
    X                     
    X A   X         E      
-XX X X  XX    XX  XX  XX 
+XX X X  XX    GG  XX  XX 
    X  X                  
-   X                     
+   X           H         
    X                     
    X               XX    
    XE        XAAX        
 XX  XX  XX    XX  XX  XX 
-            X            
-XXXXXXXXXXX  XXXXXXXXXXXX
+       H    X            
+XXXXXXXXXXX  GGGGGGGGGGG
