@@ -36,6 +36,7 @@ namespace HolesAreBad
             cast["ghost_block"] = new List<Actor>();
             cast["spikes"] = new List<Actor>();
             cast["collectables"] = new List<Actor>();
+            cast["flying_enemies"] = new List<Actor>();
 
 
             FileGenerator fgenerator = new FileGenerator();

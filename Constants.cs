@@ -51,6 +51,9 @@ namespace HolesAreBad
         public const string IMAGE_GHOST_BLOCK = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
         public const string IMAGE_COLLECTABLE = "./Assets/Good/Collectable_1.png";
         public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
+        public const string LVL_1_FOREGROUND = "Assets/Backgrounds/foreground_scaled.png";
+        public const string LVL_1_MIDGROUND = "Assets/Backgrounds/back-buildings_scaled.png";
+        public const string LVL_1_BACKGROUND = "Assets/Backgrounds/far-buildings_scaled.png";
 
 
         // Sounds for the game will be initialized here
@@ -67,8 +70,8 @@ namespace HolesAreBad
         public const int COLLECTABLE_WIDTH = 16;
         public const int COLLECTABLE_HEIGHT = 16;
 
-        public const int ENEMY_WIDTH = 36;
-        public const int ENEMY_HEIGHT = 21;
+        public const int ENEMY_WIDTH = 39;
+        public const int ENEMY_HEIGHT = 29;
 
         public const int HOLE_WIDTH = 35;
         public const int HOLE_HEIGHT = 25;

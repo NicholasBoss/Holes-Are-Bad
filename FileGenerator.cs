@@ -34,6 +34,7 @@ namespace HolesAreBad
             List<Spike> spikes = new List<Spike>();
             List<Enemy> enemies = new List<Enemy>();
             List<Collectable> collectables = new List<Collectable>();
+            List<Enemy> flyingEnemies = new List<Enemy>();
             int row = 0;
             int column = 0;
             foreach (string line in lines)
@@ -73,7 +74,7 @@ namespace HolesAreBad
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Enemy enemy = new Enemy();
-                        enemy.SetPosition(new Point(x, y));
+                        enemy.SetPosition(new Point(x+20, y+10));
                         cast["enemies"].Add(enemy);
                     }
 
@@ -85,6 +86,15 @@ namespace HolesAreBad
                         collectable.SetPosition(new Point(x, y));
                         cast["collectables"].Add(collectable);
                     }
+                    else if (c.Equals('F')) // Adds Flying Enemies
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        Enemy enemy = new Enemy();
+                        enemy.SetPosition(new Point(x+20, y+10));
+                        cast["flying_enemies"].Add(enemy);
+                    }
+                    
                     column++;
                 }
                 row++;
