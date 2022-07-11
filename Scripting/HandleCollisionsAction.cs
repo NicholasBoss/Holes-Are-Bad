@@ -114,6 +114,7 @@ namespace HolesAreBad.Scripting
             {
                 cast["spikes"].Remove(spike);
                 lives.SetText($"Lives left: {Lives.lives += 1}");
+                
             }
 
             foreach (Actor collectable in collectablesToRemove)
@@ -126,12 +127,20 @@ namespace HolesAreBad.Scripting
             {
                 cast["holes"].Remove(hole);
                 lives.SetText($"Lives left: {Lives.lives -= 10}");
+                if (Lives.lives < 0)
+                {
+                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                }
             }
 
             foreach (Actor enemy in enemiesToRemove)
             {
                 cast["enemies"].Remove(enemy);
                 lives.SetText($"Lives left: {Lives.lives -= 3}");
+                if (Lives.lives < 0)
+                {
+                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                }
             }
 
             
