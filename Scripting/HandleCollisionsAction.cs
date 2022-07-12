@@ -329,10 +329,10 @@ namespace HolesAreBad.Scripting
                 }
             }
             foreach (Actor c in delListPhy) {
-                cast["physical_objects"].Remove(c);
                 if (cast["platforms"].Contains(c)) {
                     cast["platforms"].Remove(c);
                 }
+                cast["physical_objects"].Remove(c);
             }
             foreach (Actor c in delListMov) {
                 if (cast["enemies"].Contains(c)) {
@@ -345,6 +345,42 @@ namespace HolesAreBad.Scripting
                     cast["jumping_enemies"].Remove(c);
                 }
                 cast["movable_objects"].Remove(c);
+            }
+            List<Actor> delHoles = new List<Actor>();
+            List<Actor> delGhost = new List<Actor>();
+            List<Actor> delSpikes = new List<Actor>();
+            List<Actor> delCollect = new List<Actor>();
+            foreach (Actor c in cast["holes"]) {
+                if (c.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
+                    delHoles.Add(c);
+                }
+            }
+            foreach (Actor c in cast["ghost_block"]) {
+                if (c.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
+                    delGhost.Add(c);
+                }
+            }
+            foreach (Actor c in cast["spikes"]) {
+                if (c.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
+                    delSpikes.Add(c);
+                }
+            }
+            foreach (Actor c in cast["collectables"]) {
+                if (c.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
+                    delCollect.Add(c);
+                }
+            }
+            foreach (Actor c in delHoles) {
+                cast["holes"].Remove(c);
+            }
+            foreach (Actor c in delGhost) {
+                cast["ghost_block"].Remove(c);
+            }
+            foreach (Actor c in delSpikes) {
+                cast["spikes"].Remove(c);
+            }
+            foreach (Actor c in delCollect) {
+                cast["collectables"].Remove(c);
             }
             foreach (var actor in jump_ready) {
                 actor.Key.SetJumpReady(actor.Value);
