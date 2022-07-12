@@ -79,7 +79,7 @@ namespace HolesAreBad
                         play = false;
                     }
                 }
-                var creditScreen = new CreditScreen(_outputService);
+                var creditScreen = new CreditScreen(_outputService, _parallax);
                 // Display Credit Screen
                 while (restart != true || end != true) //, don't go beyond credit screen
                 {
