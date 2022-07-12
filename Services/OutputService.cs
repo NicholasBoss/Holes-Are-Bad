@@ -14,7 +14,7 @@ namespace HolesAreBad.Services
     /// </summary>
     public class OutputService
     {
-        private Raylib_cs.Color _backgroundColor = Raylib_cs.Color.LIME;
+        private Raylib_cs.Color _backgroundColor = Raylib_cs.Color.BLACK;
         private Dictionary<string, Raylib_cs.Texture2D> _textures
             = new Dictionary<string, Raylib_cs.Texture2D>();
 

@@ -117,7 +117,7 @@ namespace HolesAreBad.Scripting
             foreach (Actor hole in holesToRemove)
             {
                 cast["holes"].Remove(hole);
-                lives.SetText($"Lives left: {Lives.lives -= 10}");
+                lives.SetText($"Lives left: {Lives.lives -= 5}");
                 if (Lives.lives < 0)
                 {
                     lives.SetText($"Lives left: {Lives.lives = 0}");
@@ -128,7 +128,7 @@ namespace HolesAreBad.Scripting
             {
                 cast["enemies"].Remove(enemy);
                 cast["movable_objects"].Remove(enemy);
-                lives.SetText($"Lives left: {Lives.lives -= 3}");
+                lives.SetText($"Lives left: {Lives.lives -= 2}");
                 if (Lives.lives < 0)
                 {
                     lives.SetText($"Lives left: {Lives.lives = 0}");
@@ -139,7 +139,7 @@ namespace HolesAreBad.Scripting
             {
                 cast["flying_enemies"].Remove(enemy);
                 cast["movable_objects"].Remove(enemy);
-                lives.SetText($"Lives left: {Lives.lives -= 3}");
+                lives.SetText($"Lives left: {Lives.lives -= 2}");
                 if (Lives.lives < 0)
                 {
                     lives.SetText($"Lives left: {Lives.lives = 0}");
