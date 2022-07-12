@@ -4,7 +4,7 @@
 E       A
 XX      X            GX
 
-  X               X
+  X         C     X
 
       H  XGX  E 
              XX 

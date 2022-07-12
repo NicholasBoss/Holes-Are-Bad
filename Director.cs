@@ -90,11 +90,11 @@ namespace HolesAreBad
                         end = true;
                         Environment.Exit(0);
                     }
-                    // else if (_inputService.IsKeyRPressed())
-                    // {
-                    //     restart = true;
-                    //     _keepPlaying = true;
-                    // }
+                    else if (_inputService.IsKeyRPressed())
+                    {
+                        restart = true;
+                        _keepPlaying = true;
+                    }
                 }
 
                 Console.WriteLine("Game over!");

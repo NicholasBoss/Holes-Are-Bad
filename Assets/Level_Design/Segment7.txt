@@ -1,6 +1,6 @@
 
 X  XE       X                      X X
-  XXXE                             X
+  XXXE           C                 X
 X  XXX           X        X        X X
   XXXXX               H            X
 X  XXXXX                           X X
@@ -21,5 +21,5 @@ X  XFXXXXXXXXXXXXXX XX         X   X X
   XXFXXXXXXXXXXXX   XXX     X      X
 X  XFXXXXXXXXXXXX  XXXXX      X    X X
   XXHXXXXXXGGGXXX X    XXE         X
-                       XXXE          X
+                       XXXE         CX
 XXXXXXXXXXXXGXXXXXXXXXXXXXXXXXXXXXXXGX

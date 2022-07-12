@@ -15,7 +15,7 @@ namespace HolesAreBad
 
         public HolesGenerator()
         {
-            // LoadMessages();
+            
         }
 
         /// <summary>

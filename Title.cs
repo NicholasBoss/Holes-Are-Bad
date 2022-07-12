@@ -34,20 +34,5 @@ namespace HolesAreBad
             return true;
         }
 
-        //create the cast
-        
-        //environment objects
-        // _cast["Tenvironment"] = new List<Actor>();
-        // private TitleImage _background = new TitleImage();
-        // _cast["Tenvironment"].Add(_background);
-
-        //physics objects
-        // _cast["buttons"] = new List<Actor>();
-        // private Button _startButton = new Button();
-        // _cast["buttons"].Add(_startButton);
-        // private Button _creditButton = new Button();
-        // _cast["buttons"].Add(_creditButton);
-        // private Button _icon = new Button();
-        // _cast["buttons"].Add(_icon);
         
     }}

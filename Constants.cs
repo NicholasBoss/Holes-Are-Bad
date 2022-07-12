@@ -36,30 +36,29 @@ namespace HolesAreBad
         };
 
 
-        // Images for the game will be initialized here
-        // Primitive Graphics
-        
-        // Fancy Graphics
+        // Images for the game will be initialized here.
+        public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";
+        public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
         public const string IMAGE_CHARACTER = "./Assets/Character/player.png";
+        public const string IMAGE_COLLECTABLE = "./Assets/Good/Collectable_1.png";
         public const string IMAGE_CREDIT = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
         public const string IMAGE_ENEMY = "./Assets/Enemies/Bad_Dude_1_SMALL.png";
         public const string IMAGE_FLYINGENEMY = "./Assets/Enemies/Flying_Bad_Dude_1_SMALL.png";
-        public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";
-        public const string IMAGE_SPIKE = "./Assets/Good/Spike_Row.png";
-        public const string IMAGE_BACKGROUND = "./Assets/Backgrounds/cyberpunk-street-full.png";
-        public const string IMAGE_BLUE_STUDDED_BLOCK = "./Assets/Platforms/Blue_Studded_Block.png";
+        public const string IMAGE_GHOST_BLOCK = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
+        public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
         public const string IMAGE_PLATFORM = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
-        public const string IMAGE_GHOST_BLOCK = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
-        public const string IMAGE_COLLECTABLE = "./Assets/Good/Collectable_1.png";
-        public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
+        public const string IMAGE_SPIKE = "./Assets/Good/Spike_Row.png";
+        public const string IMAGE_SPIKE_ROW = "./Assets/Good/Spike_Row.png";  
+        
+        
         public const string LVL_1_FOREGROUND = "Assets/Backgrounds/foreground_scaled.png";
         public const string LVL_1_MIDGROUND = "Assets/Backgrounds/back-buildings_scaled.png";
         public const string LVL_1_BACKGROUND = "Assets/Backgrounds/far-buildings_scaled.png";
 
 
         // Sounds for the game will be initialized here
-        public const string SOUND_Game = "./Assets/Music/i_think_i_like_you.mp3";
+        public const string SOUND_GAME = "./Assets/Music/i_think_i_like_you.mp3";
 
         
         //Speed and position of the actors will be initialized here
@@ -92,7 +91,6 @@ namespace HolesAreBad
         public const double SCROLL_THRESHOLD_FORWARD = 0.55; // Percentage of screen before beginning to scroll screen forward. Must be greater than 0.5 (50%).
         public const double SCROLL_THRESHOLD_BACKWARD = 0.2; // Percentage of screen before beginning to scroll screen forward. Must be less than 0.5 (50%).
 
-        public const string MESSAGE_FILE = "messages.txt";
     }
 
 }

@@ -22,19 +22,13 @@ namespace HolesAreBad
             _outputService.StartDrawing();
 
             _outputService.DrawImage(0, 0, Constants.IMAGE_CREDIT);
-            
+
             _outputService.DrawText(100, 100, "Thanks for Playing. Press [spacebar] to quit game.");
             
 
             _outputService.EndDrawing();
             return true;
         }
-        //create the cast
-
-        //environment objects
-        // _cast["Cenvironment"] = new List<Actor>();
-        // private CreditImage _background = new CreditImage();
-        // _cast["Cenvironment"].Add(_background);
 
     }
     }
