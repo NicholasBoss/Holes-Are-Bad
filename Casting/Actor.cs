@@ -22,6 +22,7 @@ namespace HolesAreBad.Casting
 
         private bool _jump;
 
+        private double _jump_multiplier;
 
         public Actor()
         {
@@ -56,6 +57,18 @@ namespace HolesAreBad.Casting
         public void SetJump(bool jump)
         {
             _jump = jump;
+        }
+
+        public double GetJumpMultiplier()
+        {
+            double returnVal = _jump_multiplier;
+            _jump_multiplier = 0;
+            return returnVal;
+        }
+
+        public void AddJumpPower()
+        {
+            _jump_multiplier += 0.01;
         }
 
         public bool GetJump()

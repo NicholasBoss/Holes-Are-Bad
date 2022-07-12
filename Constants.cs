@@ -44,6 +44,7 @@ namespace HolesAreBad
         public const string IMAGE_CREDIT = "./Assets/Backgrounds/Vaporwave_Background_Sample_Real_big.gif";
         public const string IMAGE_ENEMY = "./Assets/Enemies/Bad_Dude_1_SMALL.png";
         public const string IMAGE_FLYINGENEMY = "./Assets/Enemies/Flying_Bad_Dude_1_SMALL.png";
+        public const string IMAGE_JUMPING_ENEMY = "./Assets/Enemies/Tall_Bad_Guy_SMALL.png";
         public const string IMAGE_GHOST_BLOCK = "./Assets/Platforms/Blue_Studded_Block_FAT.png";
         public const string IMAGE_HOLE = "./Assets/Enemies/Hole_lvl_1.png";
         public const string IMAGE_PINK_STUDDED_BLOCK = "./Assets/Platforms/Pink_Studded_Block.png";
@@ -73,6 +74,12 @@ namespace HolesAreBad
 
         public const int ENEMY_WIDTH = 20;
         public const int ENEMY_HEIGHT = 29;
+
+        public const int FLYING_ENEMY_WIDTH = 22;
+        public const int FLYING_ENEMY_HEIGHT = 29;
+
+        public const int JUMPING_ENEMY_WIDTH = 11;
+        public const int JUMPING_ENEMY_HEIGHT = 29;
 
         public const int HOLE_WIDTH = 35;
         public const int HOLE_HEIGHT = 25;

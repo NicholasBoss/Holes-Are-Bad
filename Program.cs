@@ -37,6 +37,7 @@ namespace HolesAreBad
             cast["collectables"] = new List<Actor>();       // Create the collectables cast
             cast["enemies"] = new List<Actor>();            // Create the enemies cast
             cast["flying_enemies"] = new List<Actor>();     // Create the flying enemies cast
+            cast["jumping_enemies"] = new List<Actor>();     // Create the jumping enemies cast
 
 
             FileGenerator fgenerator = new FileGenerator(); // Create the file generator

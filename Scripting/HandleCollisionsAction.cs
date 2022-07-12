@@ -33,6 +33,7 @@ namespace HolesAreBad.Scripting
             List<Actor> holes = cast["holes"];
             List<Actor> enemies = cast["enemies"];
             List<Actor> flying_enemies = cast["flying_enemies"];
+            List<Actor> jumping_enemies = cast["jumping_enemies"];
        
             // create a list of all actors that are gaing to be removed from the cast and thus the game
             List<Actor> spikesToRemove = new List<Actor>();
@@ -40,7 +41,7 @@ namespace HolesAreBad.Scripting
             List<Actor> holesToRemove = new List<Actor>();
             List<Actor> enemiesToRemove = new List<Actor>();
             List<Actor> flyingEnemiesToRemove = new List<Actor>();
-            
+            List<Actor> jumpingEnemiesToRemove = new List<Actor>();
 
             billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
 
@@ -78,6 +79,15 @@ namespace HolesAreBad.Scripting
                 if(_physicsService.IsCollision(character, flying_enemy))
                 {
                     flyingEnemiesToRemove.Add(flying_enemy);
+                }
+            }
+
+            foreach(Actor actor in jumping_enemies)
+            {
+                JumpingEnemy jumping_enemy = (JumpingEnemy)actor;
+                if(_physicsService.IsCollision(character, jumping_enemy))
+                {
+                    jumpingEnemiesToRemove.Add(jumping_enemy);
                 }
             }
 
@@ -136,6 +146,17 @@ namespace HolesAreBad.Scripting
                 }
             }
 
+            foreach (Actor enemy in jumpingEnemiesToRemove)
+            {
+                cast["jumping_enemies"].Remove(enemy);
+                cast["movable_objects"].Remove(enemy);
+                lives.SetText($"Lives left: {Lives.lives -= 3}");
+                if (Lives.lives < 0)
+                {
+                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                }
+            }
+
             // This will be a Win condition
             while(delay > 5)
             {
@@ -171,6 +192,7 @@ namespace HolesAreBad.Scripting
             List<Actor> delListMov = new List<Actor>();
             bool isEnemy = false;
             bool isFlyingEnemy = false;
+            bool isJumpingEnemy = false;
             /*foreach (Actor c in cast["character"])
             {
                 c.SetJumpReady(false);
@@ -180,6 +202,7 @@ namespace HolesAreBad.Scripting
                 jump_ready.Add(actor1, false);
                 isEnemy = cast["enemies"].Contains(actor1);
                 isFlyingEnemy = cast["flying_enemies"].Contains(actor1);
+                isJumpingEnemy = cast["jumping_enemies"].Contains(actor1);
                 if (isEnemy) {
                     Enemy e = (Enemy)actor1;
                     e.addYPos(actor1.GetVelocity().GetY());
@@ -188,6 +211,22 @@ namespace HolesAreBad.Scripting
                         actor1.SetPosition(new Point(actor1.GetPosition().GetX() - Constants.ENEMY_WIDTH * Math.Sign(actor1.GetVelocity().GetX()), actor1.GetPosition().GetY()/* - (int)(actor1.GetVelocity().GetY()*1.55)*/));
                         actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
                         jump_ready[actor1] = true;
+                    }
+                }
+                if (isJumpingEnemy) {
+                    if (cast["character"][0].GetX() < actor1.GetX()) {
+                        actor1.SetVelocity(new Pointf(-Math.Abs(actor1.GetVelocity().GetX()), actor1.GetVelocity().GetY()));
+                    }
+                    else {
+                        actor1.SetVelocity(new Pointf(Math.Abs(actor1.GetVelocity().GetX()), actor1.GetVelocity().GetY()));
+                    }
+
+                    if (cast["character"][0].GetBottomEdge() < actor1.GetBottomEdge() - 5) {
+                        actor1.SetJump(true);
+                    }
+                    else {
+                        actor1.SetJump(false);
+                        //actor1.SetVelocity(new Pointf(Math.Abs(actor1.GetVelocity().GetX()), actor1.GetVelocity().GetY()));
                     }
                 }
                 if (actor1.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {

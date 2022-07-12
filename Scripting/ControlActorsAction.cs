@@ -22,6 +22,10 @@ namespace HolesAreBad
             
             Actor player = cast["character"][0];
 
+            if (_inputService.IsDownPressed()) {
+                player.AddJumpPower();
+            }
+
             player.SetJump(direction.GetY() != 0);
 
             double dx = direction.GetX() * Constants.CHARACTER_SPEED;

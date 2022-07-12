@@ -100,6 +100,17 @@ namespace HolesAreBad
                         cast["flying_enemies"].Add(enemy);
                         cast["movable_objects"].Add(enemy);
                     }
+                    else if (c.Equals('J')) // Adds Jumping Enemies
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        JumpingEnemy enemy = new JumpingEnemy();
+                        enemy.SetPosition(new Point(x+20, y+10));
+                        enemy.SetVelocity(new Pointf(new Random().NextDouble()*(Constants.CHARACTER_SPEED+Constants.CHARACTER_SPEED)-Constants.CHARACTER_SPEED, 0));
+                        enemy.SetUseGravity(true);
+                        cast["jumping_enemies"].Add(enemy);
+                        cast["movable_objects"].Add(enemy);
+                    }
                     else if (c.Equals('H')) // Adds Holes
                     {
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
