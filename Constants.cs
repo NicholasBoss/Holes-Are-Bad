@@ -32,6 +32,7 @@ namespace HolesAreBad
             {segmentDir+"Segment6.txt", 6},
             {segmentDir+"Segment7.txt", 7},
             {segmentDir+"Segment8.txt", 50},
+            {segmentDir+"Segment9.txt", 1},
         };
 
 
