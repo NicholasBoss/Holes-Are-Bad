@@ -21,7 +21,10 @@ namespace HolesAreBad
         {
             _outputService.StartDrawing();
 
+            _outputService.DrawImage(0, 0, Constants.IMAGE_CREDIT);
+            
             _outputService.DrawText(100, 100, "Thanks for Playing. Press [spacebar] to quit game.");
+            
 
             _outputService.EndDrawing();
             return true;
