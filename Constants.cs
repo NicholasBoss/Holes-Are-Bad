@@ -29,7 +29,7 @@ namespace HolesAreBad
             {segmentDir+"Segment3.txt", 3},
             {segmentDir+"Segment4.txt", 4},
             {segmentDir+"Segment5.txt", 5},
-            {segmentDir+"Segment6.txt", 600},
+            {segmentDir+"Segment6.txt", 6},
             {segmentDir+"Segment7.txt", 7},
             {segmentDir+"Segment8.txt", 50},
         };
