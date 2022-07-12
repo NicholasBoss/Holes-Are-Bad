@@ -5,19 +5,19 @@
  X X X   X   X    X XXX  
    X   A                  
    X GXXX      XX X      
- X X                     
+ X X      F               
    X         H           
    X    XX      X    X   
    X E             A      
 XX X X            XX  GG 
    X     E   A           
-   X X   X   X           
+   X X   X   X       F    
    X                     
    X A   X         E      
 XX X X  XX    GG  XX  XX 
-   X  X                  
+   X  X    F              
    X           H         
-   X                     
+   X       F             
    X               XX    
    XE        XAAX        
 XX  XX  XX    XX  XX  XX 

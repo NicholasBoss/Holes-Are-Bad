@@ -28,7 +28,6 @@ namespace HolesAreBad
             cast["environment"].Add(collectableenv); // Add the collectableenv to the cast
 
             // Physics Objects
-            cast["enemies"] = new List<Actor>();            // Create the enemies cast
             cast["physical_objects"] = new List<Actor>();   // Create the physical objects cast
             cast["movable_objects"] = new List<Actor>();    // Create the movable objects cast
             cast["holes"] = new List<Actor>();              // Create the holes cast
@@ -36,6 +35,7 @@ namespace HolesAreBad
             cast["ghost_block"] = new List<Actor>();        // Create the ghost block cast
             cast["spikes"] = new List<Actor>();             // Create the spikes cast
             cast["collectables"] = new List<Actor>();       // Create the collectables cast
+            cast["enemies"] = new List<Actor>();            // Create the enemies cast
             cast["flying_enemies"] = new List<Actor>();     // Create the flying enemies cast
 
 

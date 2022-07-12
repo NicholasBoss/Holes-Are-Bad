@@ -39,7 +39,7 @@ namespace HolesAreBad.Scripting
             List<Actor> collectablesToRemove = new List<Actor>();
             List<Actor> holesToRemove = new List<Actor>();
             List<Actor> enemiesToRemove = new List<Actor>();
-            
+            List<Actor> flyingEnemiesToRemove = new List<Actor>();
             
 
             billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
@@ -77,7 +77,7 @@ namespace HolesAreBad.Scripting
                 FlyingEnemy flying_enemy = (FlyingEnemy)actor;
                 if(_physicsService.IsCollision(character, flying_enemy))
                 {
-                    enemiesToRemove.Add(flying_enemy);
+                    flyingEnemiesToRemove.Add(flying_enemy);
                 }
             }
 
@@ -117,6 +117,18 @@ namespace HolesAreBad.Scripting
             foreach (Actor enemy in enemiesToRemove)
             {
                 cast["enemies"].Remove(enemy);
+                cast["movable_objects"].Remove(enemy);
+                lives.SetText($"Lives left: {Lives.lives -= 3}");
+                if (Lives.lives < 0)
+                {
+                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                }
+            }
+
+            foreach (Actor enemy in flyingEnemiesToRemove)
+            {
+                cast["flying_enemies"].Remove(enemy);
+                cast["movable_objects"].Remove(enemy);
                 lives.SetText($"Lives left: {Lives.lives -= 3}");
                 if (Lives.lives < 0)
                 {
@@ -153,24 +165,39 @@ namespace HolesAreBad.Scripting
         
             // This is the physics engine that will check for collisions.
             Dictionary<Actor, string> collision_num = new Dictionary<Actor, string>();
+            Dictionary<Actor, bool> jump_ready = new Dictionary<Actor, bool>();
             List<Actor> delListPhy = new List<Actor>();
             List<Actor> delListMov = new List<Actor>();
-            foreach (Actor c in cast["character"])
+            bool isEnemy = false;
+            bool isFlyingEnemy = false;
+            /*foreach (Actor c in cast["character"])
             {
                 c.SetJumpReady(false);
-            }
+            }*/
             foreach (Actor actor1 in cast["movable_objects"])
             {
+                jump_ready.Add(actor1, false);
+                isEnemy = cast["enemies"].Contains(actor1);
+                isFlyingEnemy = cast["flying_enemies"].Contains(actor1);
+                if (isEnemy) {
+                    Enemy e = (Enemy)actor1;
+                    e.addYPos(actor1.GetVelocity().GetY());
+                    if (e.isYDifferent(actor1.GetVelocity().GetY())) {
+                        double first = actor1.GetVelocity().GetX();
+                        actor1.SetPosition(new Point(actor1.GetPosition().GetX() - Constants.ENEMY_WIDTH * Math.Sign(actor1.GetVelocity().GetX()), actor1.GetPosition().GetY()/* - (int)(actor1.GetVelocity().GetY()*1.55)*/));
+                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
+                        jump_ready[actor1] = true;
+                    }
+                }
+                if (actor1.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
+                    delListMov.Add(actor1);
+                }
                 foreach (Actor actor2 in cast["physical_objects"])
                 {
                     if (actor1 != actor2)
                     {
-                        bool isEnemy = cast["enemies"].Contains(actor1);
                         if (actor2.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
                             delListPhy.Add(actor2);
-                        }
-                        if (actor1.GetX() < cast["back_marker"][0].GetX() - Constants.MAX_X) {
-                            delListMov.Add(actor1);
                         }
                         if (_physicsService.IsCollision(actor1, actor2) && actor1.HasBox() && actor2.HasBox()) 
                         {
@@ -221,37 +248,33 @@ namespace HolesAreBad.Scripting
                                 {
                                     actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
-                                    actor1.SetJumpReady(true);
+                                    jump_ready[actor1] = true;
                                 }
-                            }
-                            if (isEnemy && dy > 3) {
-                                actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - (int)dy));
-                                actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
                             }
                             if (shiftType != "none") 
                             {
-                                int leftRightOffset = Math.Abs(dy) > 3 ? 3 : 0;
+                                int leftRightOffset = Math.Abs(dy) > 3 * Constants.GRAVITY ? 3 : 0;
                                 collision_num[actor1] = shiftType;
                                 if (shiftType == "up") // This will be by far the most common case (standing on platform) so it goes first
                                 {
                                     actor1.SetVelocity(new Pointf(actor1.GetVelocity().GetX(), 0));
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX(), actor1.GetPosition().GetY() - upShift));
-                                    actor1.SetJumpReady(true);
+                                    jump_ready[actor1] = true;
                                     if (actor1 == cast["character"][0] && cast["platforms"].Contains(actor2)) {
                                         cast["last_known_location"][0] = actor2;
                                     }
                                 }
                                 else if (shiftType == "left")
                                 {
-                                    if (isEnemy) {
-                                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
+                                    if (isEnemy || isFlyingEnemy) {
+                                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), actor1.GetVelocity().GetY()));
                                     }
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX() - leftShift - leftRightOffset, actor1.GetPosition().GetY()));
                                 }
                                 else if (shiftType == "right")
                                 {
-                                    if (isEnemy) {
-                                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), 0));
+                                    if (isEnemy || isFlyingEnemy) {
+                                        actor1.SetVelocity(new Pointf(-actor1.GetVelocity().GetX(), actor1.GetVelocity().GetY()));
                                     }
                                     actor1.SetPosition(new Point(actor1.GetPosition().GetX() + rightShift + leftRightOffset, actor1.GetPosition().GetY()));
                                 }
@@ -270,6 +293,9 @@ namespace HolesAreBad.Scripting
             }
             foreach (Actor c in delListMov) {
                 cast["movable_objects"].Remove(c);
+            }
+            foreach (var actor in jump_ready) {
+                actor.Key.SetJumpReady(actor.Value);
             }
             return true;
         }
