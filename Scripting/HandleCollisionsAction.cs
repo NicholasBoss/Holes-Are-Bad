@@ -137,13 +137,6 @@ namespace HolesAreBad.Scripting
             }
 
             // This will be a Win condition
-            if(Collectableenv.collectable == 10)
-            {
-                billboard.SetText("You Win!");
-                System.Threading.Thread.Sleep(200);
-                delay = 5;
-            }
-
             while(delay > 5)
             {
                 delay -= 1;
@@ -154,6 +147,14 @@ namespace HolesAreBad.Scripting
                 System.Threading.Thread.Sleep(2000);
                 return false;
             }
+            if(Collectableenv.collectable == 10)
+            {
+                billboard.SetText("You Win!");
+                System.Threading.Thread.Sleep(200);
+                delay = 5;
+            }
+
+            
 
             // This will be a Lose condition
             if (Lives.lives <= 0)
