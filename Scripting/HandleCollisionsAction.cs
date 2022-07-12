@@ -330,8 +330,20 @@ namespace HolesAreBad.Scripting
             }
             foreach (Actor c in delListPhy) {
                 cast["physical_objects"].Remove(c);
+                if (cast["platforms"].Contains(c)) {
+                    cast["platforms"].Remove(c);
+                }
             }
             foreach (Actor c in delListMov) {
+                if (cast["enemies"].Contains(c)) {
+                    cast["enemies"].Remove(c);
+                }
+                if (cast["flying_enemies"].Contains(c)) {
+                    cast["flying_enemies"].Remove(c);
+                }
+                if (cast["jumping_enemies"].Contains(c)) {
+                    cast["jumping_enemies"].Remove(c);
+                }
                 cast["movable_objects"].Remove(c);
             }
             foreach (var actor in jump_ready) {
