@@ -100,7 +100,7 @@ namespace HolesAreBad
 
         public const double SCROLL_THRESHOLD_FORWARD = 0.55; // Percentage of screen before beginning to scroll screen forward. Must be greater than 0.5 (50%).
         public const double SCROLL_THRESHOLD_BACKWARD = 0.2; // Percentage of screen before beginning to scroll screen forward. Must be less than 0.5 (50%).
-
+        public const float PARALLAX_SCROLL_SPEED = 2.0f;
     }
 
 }

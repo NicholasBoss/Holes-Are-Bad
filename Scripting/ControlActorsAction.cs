@@ -36,7 +36,7 @@ namespace HolesAreBad
                 (dx < 0 && player.GetPosition().GetX() > cast["back_marker"][0].GetX() + Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD && player.GetPosition().GetX() < Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD)) {
                 ScrollAllActors(cast, dx);
                 Character temp = (Character)player;
-                temp.setScrollingDir(Math.Sign(dx));
+                temp.setScrollingDir(Math.Sign(dx)*Constants.PARALLAX_SCROLL_SPEED);
             }
             else {
                 Character temp = (Character)player;
@@ -46,6 +46,7 @@ namespace HolesAreBad
             if (player.GetLeftEdge() < 0) {
                 player.SetPosition(new Point(0, player.GetY()));
             }
+         
             return true;
         }
 
