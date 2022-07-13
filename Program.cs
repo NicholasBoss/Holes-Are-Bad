@@ -12,20 +12,6 @@ namespace HolesAreBad
             // Create the cast
             Dictionary<string, List<Actor>> cast = new Dictionary<string, List<Actor>>();
 
-            //Environment Objects
-            Billboard billboard = new Billboard();
-            cast["environment"] = new List<Actor>(); 
-            cast["environment"].Add(billboard);
-            
-            Lives lives = new Lives(); // Create the lives
-            cast["environment"].Add(lives); // Add the lives to the cast
-
-            Collectableenv collectableenv = new Collectableenv(); // Create the collectableenv
-            cast["environment"].Add(collectableenv); // Add the collectableenv to the cast
-
-            JumpEnv jumpenv = new JumpEnv(); // Create the jumpenv
-            cast["environment"].Add(jumpenv); // Add the jumpenv to the cast
-
             // Physics Objects
             cast["physical_objects"] = new List<Actor>();   // Create the physical objects cast
             cast["movable_objects"] = new List<Actor>();    // Create the movable objects cast
@@ -64,6 +50,21 @@ namespace HolesAreBad
 
             cast["last_known_location"] = new List<Actor>(); // Create the last known location cast
             cast["last_known_location"].Add(new Actor());    // Add the last known location to the last known location cast
+
+            //Environment Objects
+            Billboard billboard = new Billboard();
+            cast["environment"] = new List<Actor>(); 
+            cast["environment"].Add(billboard);
+            
+            Lives lives = new Lives(); // Create the lives
+            cast["environment"].Add(lives); // Add the lives to the cast
+
+            Collectableenv collectableenv = new Collectableenv(); // Create the collectableenv
+            cast["environment"].Add(collectableenv); // Add the collectableenv to the cast
+
+            JumpEnv jumpenv = new JumpEnv(); // Create the jumpenv
+            cast["environment"].Add(jumpenv); // Add the jumpenv to the cast
+
  
             // Create the action list
             List<Action> actions = new List<Action>(); // Create the action list
