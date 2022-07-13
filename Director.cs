@@ -50,7 +50,6 @@ namespace HolesAreBad
                 while (play != true) //, don't go beyond title screen
                 // for (int i = 0; i < 250; i++)
                 {
-                    _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND, 1);
                     CueAction(title);
                     if (_inputService.IsSpacePressed())
                     {
