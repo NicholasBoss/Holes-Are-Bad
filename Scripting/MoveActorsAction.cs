@@ -16,7 +16,7 @@ namespace HolesAreBad.Scripting
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
             Actor player = cast["character"][0];
-            Actor lives = cast["environment"][2];
+            Actor lives = cast["environment"][1];
             List<Actor> checklist = new List<Actor>();
             foreach (List<Actor> group in cast.Values)
             {
