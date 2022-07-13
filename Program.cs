@@ -27,6 +27,9 @@ namespace HolesAreBad
             Collectableenv collectableenv = new Collectableenv(); // Create the collectableenv
             cast["environment"].Add(collectableenv); // Add the collectableenv to the cast
 
+            JumpEnv jumpenv = new JumpEnv(); // Create the jumpenv
+            cast["environment"].Add(jumpenv); // Add the jumpenv to the cast
+
             // Physics Objects
             cast["physical_objects"] = new List<Actor>();   // Create the physical objects cast
             cast["movable_objects"] = new List<Actor>();    // Create the movable objects cast

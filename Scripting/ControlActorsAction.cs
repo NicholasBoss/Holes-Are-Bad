@@ -22,11 +22,12 @@ namespace HolesAreBad
             
             Actor player = cast["character"][0];
 
-            if (_inputService.IsDownPressed()) {
+            if (_inputService.IsDownPressed() && player.GetJumpReady()) {
                 player.AddJumpPower();
             }
 
             player.SetJump(direction.GetY() != 0);
+            cast["environment"][4].SetText($"Jump Power: {player.GetJumpMultiplier().ToString("0.00")}");
 
             double dx = direction.GetX() * Constants.CHARACTER_SPEED;
             Pointf velocity = new Pointf(dx, player.GetVelocity().GetY());

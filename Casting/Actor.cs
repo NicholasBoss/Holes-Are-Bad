@@ -32,6 +32,7 @@ namespace HolesAreBad.Casting
             _using_gravity = false;
             _jump_ready = false;
             _jump = false;
+            _jump_multiplier = 1;
         }
 
         public void SetUseGravity(bool using_gravity)
@@ -61,8 +62,13 @@ namespace HolesAreBad.Casting
 
         public double GetJumpMultiplier()
         {
+            return _jump_multiplier;
+        }
+
+        public double UseJumpMultiplier()
+        {
             double returnVal = _jump_multiplier;
-            _jump_multiplier = 0;
+            _jump_multiplier = 1;
             return returnVal;
         }
 
