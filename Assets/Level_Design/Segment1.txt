@@ -1,25 +1,25 @@
 
-        X     XX
+   E     G     XX
    X          X      X
-        A
-XX      X            XX
+E       A
+XX      X            GX
 
-  X               X
+  X         C     X
 
-         XXX   
+      H  XGX  E 
              XX 
            AXX          X
-XX         XX
+XXE        GX
  XX       XX        XX
 
-      X        X
-
-X  A                  X
+      X        X   H
+                      E
+X  A     E            X
    X    XX      X  
-
+E
 XXX    X    XAA      XX 
       XX    XXX
                   C
-XX                X
-     X     X    C     X
-                         
+XX         E      X
+     G     X    C     X
+            H           

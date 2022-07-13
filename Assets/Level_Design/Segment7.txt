@@ -1,25 +1,25 @@
 
 X  XE       X                      X X
-  XXXE                             X
-X  XXXE          X        X        X X
-  XXXXXE                           X
-X  XXXXXE                          X X
-  XXXXXXXE                X        X
-X  XXXXXXXE    X                   X X
-  XXXXXXGGGE            XXX        X
+  XXXE           C                 X
+X  XXX           X        X        X X
+  XXXXX               H            X
+X  XXXXX                           X X
+  XXXXXXX                 X        X
+X  XXXXXXX     X                   X X
+  XXXXXXGGG             XXX        X
 X  XXXXXGXXXE           XCG        X X
-  XXXXXXGGGXXE          XXX        X
-X  XXXXXXXGXXXE                    X X
-  XGC         GE                   X
-X  XGXXXXXXXX XXE                  X X
-  XXGXXXXX    XXXE      X          X
-X  XFXXXXX XXXXXXXE                X X
-  XXFXXXXX    XXXXXE  X     X       
-X  XFXXXXXXXX XXXXXXE             XX X
-  XXFXXXXXXXX       XE             X
-X  XFXXXXXXXXXXXXXX XXE        X   X X
-  XXFXXXXXXXXXXXX   XXXE    X      X
-X  XFXXXXXXXXXXXX  XXXXXE     X    X X
-  XXFXXXXXXXXXXXX X    XXE         X
-                       XXXE          X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXGGGXX           XXX        X
+X  XXXXXXXGXXX                     X X
+  XGC         G                    X
+X  XGXXXXXXXX XXE          H       X X
+  XXGXXXXX    XXX       X          X
+X  XFXXXXX XXXXXXX                 X X
+  XXFXXXXX    XXXXX   X     X       
+X  XFXXXXXXXX XXXXXX              XX X
+  XXFXXXXXXXXA      X              X
+X  XFXXXXXXXXXXXXXX XX         X   X X
+  XXFXXXXXXXXXXXX   XXX     X      X
+X  XFXXXXXXXXXXXX  XXXXX      X    X X
+  XXHXXXXXXGGGXXX X    XXE         X
+                       XXXE         CX
+XXXXXXXXXXXXGXXXXXXXXXXXXXXXXXXXXXXXGX

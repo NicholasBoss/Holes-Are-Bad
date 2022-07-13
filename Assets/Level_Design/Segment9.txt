@@ -1,0 +1,25 @@
+   EE
+  XEE  H   
+ XXXEE H   
+  XXXECH   
+ XXXXE H   
+  XXXE H   
+ XXXXE  H   
+  XXXEC H   
+ XXXXXE H  
+  XXXXE H  
+ XXXXXECH  
+  XXXXE H  
+ XXXEEE H  
+  XXXXEC H 
+ XXXXXE  H 
+  XXXXE CH 
+ XXXXXXE  H
+  XXXXXE  H
+ XXXXXXE  H
+  XXXXXX  H
+ XXXXXXX  H
+  XXXXXX   
+ XXXXXXX   
+           
+XXXXXXXXXGX

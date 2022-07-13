@@ -51,7 +51,7 @@ namespace HolesAreBad.Scripting
         {
             if (actor.GetJump() && actor.GetJumpReady())
             {   
-                double newVY = -Constants.JUMP_POWER;
+                double newVY = -Constants.JUMP_POWER*actor.UseJumpMultiplier();
                 actor.SetJumpReady(false);
                 actor.SetVelocity(new Pointf(actor.GetVelocity().GetX(), newVY));
                 return newVY;

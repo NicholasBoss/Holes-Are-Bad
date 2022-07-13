@@ -11,30 +11,13 @@ namespace HolesAreBad
     /// </summary>
     public class EnemyGenerator
     {
-        private List<string> _messages;
         private Random _randomGenerator = new Random();
 
         public EnemyGenerator()
         {
-            // LoadMessages();
+            
         }
 
-        /// <summary>
-        /// Loads messages from a file.
-        /// </summary>
-        private void LoadMessages()
-        {
-            // There are other ways to do this, including not putting it into an
-            // actual List<string>, but this seemed most consistent with what we have
-            // done to this point.
-            string[] allLines = File.ReadAllLines(Constants.MESSAGE_FILE);
-
-            _messages = new List<string>();
-            foreach (string line in allLines)
-            {
-                _messages.Add(line);
-            }
-        }
 
         /// <summary>
         /// Generates a new artifact at a random location.
@@ -50,20 +33,8 @@ namespace HolesAreBad
 
             enemy.SetImage(Constants.IMAGE_ENEMY);
 
-            // string message = GetRandomMessage();
-            // enemy.SetDescription(message);
-
             return enemy;
         }
 
-        /// <summary>
-        /// Gets a random message from the messages file.
-        /// </summary>
-        /// <returns></returns>
-        public string GetRandomMessage()
-        {
-            string message = _messages[_randomGenerator.Next(0, _messages.Count)];
-            return message;
-        }
     }
 }

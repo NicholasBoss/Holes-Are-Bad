@@ -34,6 +34,8 @@ namespace HolesAreBad
             List<Spike> spikes = new List<Spike>();
             List<Enemy> enemies = new List<Enemy>();
             List<Collectable> collectables = new List<Collectable>();
+            List<FlyingEnemy> flyingEnemies = new List<FlyingEnemy>();
+            List<Hole> holes = new List<Hole>();
             int row = 0;
             int column = 0;
             foreach (string line in lines)
@@ -64,7 +66,7 @@ namespace HolesAreBad
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Spike spike = new Spike();
-                        spike.SetPosition(new Point(x+20, y+25));
+                        spike.SetPosition(new Point(x+10, y+26));
                         cast["spikes"].Add(spike);
                     }
 
@@ -73,8 +75,11 @@ namespace HolesAreBad
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Enemy enemy = new Enemy();
-                        enemy.SetPosition(new Point(x, y));
+                        enemy.SetPosition(new Point(x+20, y+10));
+                        enemy.SetVelocity(new Pointf(new Random().NextDouble()*(Constants.CHARACTER_SPEED+Constants.CHARACTER_SPEED)-Constants.CHARACTER_SPEED, 0));
+                        enemy.SetUseGravity(true);
                         cast["enemies"].Add(enemy);
+                        cast["movable_objects"].Add(enemy);
                     }
 
                     else if (c.Equals('C')) // Adds Collectables
@@ -82,9 +87,39 @@ namespace HolesAreBad
                         int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
                         int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
                         Collectable collectable = new Collectable();
-                        collectable.SetPosition(new Point(x, y));
+                        collectable.SetPosition(new Point(x+28, y+12));
                         cast["collectables"].Add(collectable);
                     }
+                    else if (c.Equals('F')) // Adds Flying Enemies
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        FlyingEnemy enemy = new FlyingEnemy();
+                        enemy.SetPosition(new Point(x+20, y+10));
+                        enemy.SetVelocity(new Pointf(new Random().NextDouble()*(Constants.CHARACTER_SPEED+Constants.CHARACTER_SPEED)-Constants.CHARACTER_SPEED, 0));
+                        cast["flying_enemies"].Add(enemy);
+                        cast["movable_objects"].Add(enemy);
+                    }
+                    else if (c.Equals('J')) // Adds Jumping Enemies
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        JumpingEnemy enemy = new JumpingEnemy();
+                        enemy.SetPosition(new Point(x+20, y+10));
+                        enemy.SetVelocity(new Pointf(new Random().NextDouble()*(Constants.CHARACTER_SPEED+Constants.CHARACTER_SPEED)-Constants.CHARACTER_SPEED, 0));
+                        enemy.SetUseGravity(true);
+                        cast["jumping_enemies"].Add(enemy);
+                        cast["movable_objects"].Add(enemy);
+                    }
+                    else if (c.Equals('H')) // Adds Holes
+                    {
+                        int x = (Constants.MAX_X / Constants.GRID_X) * column + xOffset;
+                        int y = (Constants.MAX_Y / Constants.GRID_Y) * row;
+                        Hole hole = new Hole();
+                        hole.SetPosition(new Point(x+20, y+10));
+                        cast["holes"].Add(hole);
+                    }
+                    
                     column++;
                 }
                 row++;

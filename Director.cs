@@ -81,7 +81,7 @@ namespace HolesAreBad
                         play = false;
                     }
                 }
-                var creditScreen = new CreditScreen(_outputService);
+                var creditScreen = new CreditScreen(_outputService, _parallax);
                 // Display Credit Screen
                 while (restart != true || end != true) //, don't go beyond credit screen
                 {
@@ -92,11 +92,11 @@ namespace HolesAreBad
                         end = true;
                         Environment.Exit(0);
                     }
-                    // else if (_inputService.IsKeyRPressed())
-                    // {
-                    //     restart = true;
-                    //     _keepPlaying = true;
-                    // }
+                    else if (_inputService.IsKeyRPressed())
+                    {
+                        restart = true;
+                        _keepPlaying = true;
+                    }
                 }
 
                 Console.WriteLine("Game over!");

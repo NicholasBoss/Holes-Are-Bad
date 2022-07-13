@@ -5,25 +5,16 @@ namespace HolesAreBad.Casting
     ///<summary>
     public class Hole : Actor
     {
-        private string _description;
+        private string _charimg = Constants.IMAGE_HOLE;
+        private int _charwidth = Constants.HOLE_WIDTH;
+        private int _charheight = Constants.HOLE_HEIGHT;
 
         public Hole()
         {
-            SetText("?");
-            SetHeight(Constants.HOLE_HEIGHT);
-            SetWidth(Constants.HOLE_WIDTH);
+            SetImage(_charimg);
+            SetHeight(_charheight);
+            SetWidth(_charwidth);
         }
-
-        public string GetDescription()
-        {
-            return _description;
-        }
-
-        public void SetDescription(string description)
-        {
-            _description = description;
-        }
-        
         
     }
 }
