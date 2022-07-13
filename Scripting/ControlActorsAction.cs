@@ -27,7 +27,7 @@ namespace HolesAreBad
             }
 
             player.SetJump(direction.GetY() != 0);
-            cast["environment"][4].SetText($"Jump Power: {player.GetJumpMultiplier().ToString("0.00")}");
+            cast["environment"][3].SetText($"Jump Power: {player.GetJumpMultiplier().ToString("0.00")}");
 
             double dx = direction.GetX() * Constants.CHARACTER_SPEED;
             Pointf velocity = new Pointf(dx, player.GetVelocity().GetY());
