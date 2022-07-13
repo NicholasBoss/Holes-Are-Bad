@@ -25,7 +25,7 @@ namespace HolesAreBad
         {
             _outputService.StartDrawing();
             
-            _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND);
+            _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND, 1);
 
             _outputService.DrawText(100, 100, "Holes Are Bad");
 

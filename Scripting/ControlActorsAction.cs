@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using HolesAreBad.Casting;
 using HolesAreBad.Services;
+using System;
 
 namespace HolesAreBad
 {
@@ -34,6 +35,12 @@ namespace HolesAreBad
             if ((dx > 0 && player.GetPosition().GetX() > Constants.MAX_X * Constants.SCROLL_THRESHOLD_FORWARD) ||
                 (dx < 0 && player.GetPosition().GetX() > cast["back_marker"][0].GetX() + Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD && player.GetPosition().GetX() < Constants.MAX_X * Constants.SCROLL_THRESHOLD_BACKWARD)) {
                 ScrollAllActors(cast, dx);
+                Character temp = (Character)player;
+                temp.setScrollingDir(Math.Sign(dx));
+            }
+            else {
+                Character temp = (Character)player;
+                temp.setScrollingDir(0);
             }
             player.SetVelocity(velocity);
             if (player.GetLeftEdge() < 0) {

@@ -79,11 +79,11 @@ namespace HolesAreBad.Scripting
             return scrollingFore; 
         }
 
-        public void CalculateParallax()
+        public void CalculateParallax(float scrolling_dir)
         {
-            scrollingBack -= 0.1f; 
-            scrollingMid -= 0.5f; 
-            scrollingFore -= 1.0f; 
+            scrollingBack -= 0.1f * scrolling_dir; 
+            scrollingMid -= 0.5f * scrolling_dir; 
+            scrollingFore -= 1.0f * scrolling_dir; 
 
             if(scrollingBack <= -background.width * 2)
             {

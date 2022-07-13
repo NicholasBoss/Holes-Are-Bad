@@ -50,7 +50,7 @@ namespace HolesAreBad
                 while (play != true) //, don't go beyond title screen
                 // for (int i = 0; i < 250; i++)
                 {
-                    _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND);
+                    _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND, 1);
                     CueAction(title);
                     if (_inputService.IsSpacePressed())
                     {
@@ -60,7 +60,8 @@ namespace HolesAreBad
 
                 while (_keepPlaying)
                 {
-                    _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND);
+                    Character temp = (Character)_cast["character"][0];
+                    _outputService.DrawParallax(_parallax, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND, temp.getScrollingDir());
                     if (!CueAction(_actions.OfType<InputAction>().ToArray()))
                     {
                         break;

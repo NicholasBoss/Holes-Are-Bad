@@ -8,6 +8,7 @@ namespace HolesAreBad.Casting
         private string _charimg = Constants.IMAGE_CHARACTER;
         private int _charwidth = Constants.CHARACTER_WIDTH;
         private int _charheight = Constants.CHARACTER_HEIGHT;
+        private float _scrollingdir;
         public Character()
         {
             SetImage(_charimg);
@@ -20,6 +21,14 @@ namespace HolesAreBad.Casting
             SetPosition(position);
 
             SetVelocity(new Pointf(0, 0));
+            _scrollingdir = 0;
+        }
+        public float getScrollingDir() {
+            return _scrollingdir;
+        }
+
+        public void setScrollingDir(float dir) {
+            _scrollingdir = dir;
         }
     }
 }

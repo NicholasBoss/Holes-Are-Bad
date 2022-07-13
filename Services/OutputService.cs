@@ -151,10 +151,10 @@ namespace HolesAreBad.Services
             }
         }
 
-        public void DrawParallax(ParallaxEffect parallax, string foreground_image, string midground_image, string background_image)
+        public void DrawParallax(ParallaxEffect parallax, string foreground_image, string midground_image, string background_image, float scrolling_dir)
         {   
 
-            parallax.CalculateParallax();
+            parallax.CalculateParallax(scrolling_dir);
             parallax.SetBackground(background_image);
             parallax.SetForeground(foreground_image);
             parallax.SetMidground(midground_image); 
