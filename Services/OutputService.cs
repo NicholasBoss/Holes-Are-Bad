@@ -152,7 +152,7 @@ namespace HolesAreBad.Services
             }
         }
 
-        public void DrawParallax(ParallaxEffect parallax, string background_image, string foreground_image, string midground_image)
+        public void DrawParallax(ParallaxEffect parallax, string foreground_image, string midground_image, string background_image)
         {   
 
             parallax.CalculateParallax();

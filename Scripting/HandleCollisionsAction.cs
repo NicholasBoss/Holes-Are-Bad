@@ -21,12 +21,12 @@ namespace HolesAreBad.Scripting
             _physicsService = physicsService;
             _audioService = audioService;
         }
-
+        //changed billboard to 0 lives to 1 collectables to 2
         public override bool Execute(Dictionary<string, List<Actor>> cast)
         {
-            Actor billboard = cast["environment"][1];
-            Actor lives = cast["environment"][2];
-            Actor collectableenv = cast["environment"][3];
+            Actor billboard = cast["environment"][0];
+            Actor lives = cast["environment"][1];
+            Actor collectableenv = cast["environment"][2];
             Actor character = cast["character"][0];
             List<Actor> spikes = cast["spikes"];
             List<Actor> collectables = cast["collectables"];

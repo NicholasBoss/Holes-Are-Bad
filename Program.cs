@@ -13,12 +13,8 @@ namespace HolesAreBad
             Dictionary<string, List<Actor>> cast = new Dictionary<string, List<Actor>>();
 
             //Environment Objects
-            cast["environment"] = new List<Actor>();
-            Background background = new Background();
-            cast["environment"].Add(background);
-
             Billboard billboard = new Billboard();
-            
+            cast["environment"] = new List<Actor>(); 
             cast["environment"].Add(billboard);
             
             Lives lives = new Lives();
@@ -26,6 +22,10 @@ namespace HolesAreBad
 
             Collectableenv collectableenv = new Collectableenv();
             cast["environment"].Add(collectableenv);
+            //ParallaxEffect background_lvl_1 = new ParallaxEffect(Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, Constants.LVL_1_BACKGROUND);            
+            //ParallaxEffect background_lvl_2 = new ParallaxEffect(Constants.LVL_2_FOREGROUND, Constants.LVL_1_FOREGROUND, Constants.LVL_2_BACKGROUND);
+            //cast["environment"].Add(background_lvl_1);
+            //cast["environment"].Add(background_lvl_2);
 
             // Physics Objects
             cast["enemies"] = new List<Actor>();

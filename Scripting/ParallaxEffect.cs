@@ -42,7 +42,6 @@ namespace HolesAreBad.Scripting
         public void SetBackground(string new_background)
         {
             _background_image = new_background;
-            background = LoadTexture(_background_image); 
         }
 
         public Texture2D GetMidground()
@@ -52,8 +51,7 @@ namespace HolesAreBad.Scripting
 
         public void SetMidground(string new_midground)
         {
-            _midground_image = new_midground;
-            midground = LoadTexture(_midground_image); 
+            _midground_image = new_midground; 
         }
 
         public Texture2D GetForeground()
@@ -64,7 +62,6 @@ namespace HolesAreBad.Scripting
         public void SetForeground(string new_foreground)
         {
             _foreground_image = new_foreground;
-            midground = LoadTexture(_foreground_image);
         }
 
         public float GetScrollingBack()
@@ -103,5 +100,6 @@ namespace HolesAreBad.Scripting
                 scrollingFore = 0; 
             }
         }
+
     }
 }
