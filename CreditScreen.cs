@@ -24,7 +24,7 @@ namespace HolesAreBad
         {
             _outputService.StartDrawing();
 
-            _outputService.DrawParallax(_parallax, Constants.LVL_1_BACKGROUND, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, 0);
+            _outputService.DrawParallax(_parallax, Constants.LVL_1_BACKGROUND, Constants.LVL_1_FOREGROUND, Constants.LVL_1_MIDGROUND, 1);
 
             _outputService.DrawText(100, 100, "Thanks for Playing. Press [spacebar] to quit game.");
             
