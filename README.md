@@ -6,24 +6,32 @@ This goal of this game is to collect a certain amount of collectables while avoi
 
 [Software Demo Video](http://youtube.link.goes.here)
 
+
 # Development Environment
 
-* C#
-* Visual Studio Code
-* Raylib-cs
-* WeightedRandomizer
+* Language: C#
+* IDE: Visual Studio Code
+* Library 1: Raylib-cs
+* Library 2: WeightedRandomizer
+
 
 # Collaborators
 
 Olivia Richards, Jake Zakensy, Ben Heydorn, Nicholas Boss, Mark Van Horn, and Mike Heston
 
+
 # Useful Websites
 
 * [Weighted Randomizer Library](https://github.com/BlueRaja/Weighted-Item-Randomizer-for-C-Sharp/wiki/Getting-Started)
-* [Web Site Name](http://url.link.goes.here)
+* [Raylib C# Library](http://url.link.goes.here](https://github.com/ChrisDill/Raylib-cs)
+* [Piskel](https://www.piskelapp.com/)
+* [Itch](https://itch.io/)
+* [w3schools](https://www.w3schools.com/cs/index.php)
+* [Trello](https://trello.com/b/mX1blFSI/team-project-01)
+
 
 # Future Work
 
 * 'Cast' Animations (individual player and enemy movements)
-* Item 2
-* Item 3
+* Create Level 2 with different background and map segments
+* Add game credits
