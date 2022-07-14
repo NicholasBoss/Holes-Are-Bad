@@ -23,7 +23,7 @@ Olivia Richards, Jake Zakensy, Ben Heydorn, Nicholas Boss, Mark Van Horn, and Mi
 # Useful Websites
 
 * [Weighted Randomizer Library](https://github.com/BlueRaja/Weighted-Item-Randomizer-for-C-Sharp/wiki/Getting-Started)
-* [Raylib C# Library](http://url.link.goes.here](https://github.com/ChrisDill/Raylib-cs)
+* [Raylib C# Library](https://github.com/ChrisDill/Raylib-cs)
 * [Piskel](https://www.piskelapp.com/)
 * [Itch](https://itch.io/)
 * [w3schools](https://www.w3schools.com/cs/index.php)
