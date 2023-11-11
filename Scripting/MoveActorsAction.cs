@@ -27,7 +27,7 @@ namespace HolesAreBad.Scripting
                         if (actor == player && actor.GetBottomEdge() > Constants.MAX_Y) {
                             Actor restorePoint = cast["last_known_location"][0];
                             actor.SetPosition(new Point(restorePoint.GetLeftEdge() + restorePoint.GetWidth() / 2 - actor.GetWidth() / 2, restorePoint.GetTopEdge() - actor.GetHeight()));
-                            lives.SetText($"Lives left: {Lives.lives -= 1}");
+                            lives.SetText($"Lives left: {Lives._lives -= 1}");
                         }
                         checklist.Add(actor);
                     }

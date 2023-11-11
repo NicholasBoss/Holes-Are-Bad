@@ -94,6 +94,8 @@ namespace HolesAreBad
         public const int SPIKE_HEIGHT = 11;
 
         public const int CHARACTER_SPEED = 6;
+
+        public const int lives = 15;
         public const int JUMP_POWER = 20;
         public const double GRAVITY = 0.99;
         public const double TERMINAL_VELOCITY = 30;

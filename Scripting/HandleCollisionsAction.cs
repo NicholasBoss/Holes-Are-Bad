@@ -103,7 +103,7 @@ namespace HolesAreBad.Scripting
             foreach(Actor spike in spikesToRemove)
             {
                 cast["spikes"].Remove(spike);
-                lives.SetText($"Lives left: {Lives.lives += 1}");
+                lives.SetText($"Lives left: {Lives._lives += 1}");
                 
             }
 
@@ -111,15 +111,16 @@ namespace HolesAreBad.Scripting
             {
                 cast["collectables"].Remove(collectable);
                 collectableenv.SetText($"Collectables: {Collectableenv.collectable += 1}/10");
+                lives.SetText($"Lives left: {Lives._lives += 3}");
             }
 
             foreach (Actor hole in holesToRemove)
             {
                 cast["holes"].Remove(hole);
-                lives.SetText($"Lives left: {Lives.lives -= 5}");
-                if (Lives.lives < 0)
+                lives.SetText($"Lives left: {Lives._lives -= 5}");
+                if (Lives._lives < 0)
                 {
-                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                    lives.SetText($"Lives left: {Lives._lives = 0}");
                 }
             }
 
@@ -127,10 +128,10 @@ namespace HolesAreBad.Scripting
             {
                 cast["enemies"].Remove(enemy);
                 cast["movable_objects"].Remove(enemy);
-                lives.SetText($"Lives left: {Lives.lives -= 2}");
-                if (Lives.lives < 0)
+                lives.SetText($"Lives left: {Lives._lives -= 2}");
+                if (Lives._lives < 0)
                 {
-                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                    lives.SetText($"Lives left: {Lives._lives = 0}");
                 }
             }
 
@@ -138,10 +139,10 @@ namespace HolesAreBad.Scripting
             {
                 cast["flying_enemies"].Remove(enemy);
                 cast["movable_objects"].Remove(enemy);
-                lives.SetText($"Lives left: {Lives.lives -= 2}");
-                if (Lives.lives < 0)
+                lives.SetText($"Lives left: {Lives._lives -= 2}");
+                if (Lives._lives < 0)
                 {
-                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                    lives.SetText($"Lives left: {Lives._lives = 0}");
                 }
             }
 
@@ -149,10 +150,10 @@ namespace HolesAreBad.Scripting
             {
                 cast["jumping_enemies"].Remove(enemy);
                 cast["movable_objects"].Remove(enemy);
-                lives.SetText($"Lives left: {Lives.lives -= 3}");
-                if (Lives.lives < 0)
+                lives.SetText($"Lives left: {Lives._lives -= 3}");
+                if (Lives._lives < 0)
                 {
-                    lives.SetText($"Lives left: {Lives.lives = 0}");
+                    lives.SetText($"Lives left: {Lives._lives = 0}");
                 }
             }
 
@@ -176,8 +177,8 @@ namespace HolesAreBad.Scripting
 
             
 
-            // This will be a Lose condition
-            if (Lives.lives <= 0)
+            //This will be a Lose condition
+            if (Lives._lives <= 0)
             {
                 billboard.SetText("You Lose!");
                 System.Threading.Thread.Sleep(200);

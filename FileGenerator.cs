@@ -7,7 +7,8 @@ using Weighted_Randomizer;
 namespace HolesAreBad
 {
     /// <summary>
-    /// 
+    /// Generates a file with a given number of lines, each line 
+    /// containing a charater that is either a hole or a block, enemy, or  collectable.
     /// </summary>
     public class FileGenerator
     {
